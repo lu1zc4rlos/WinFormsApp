@@ -1,5 +1,5 @@
 ﻿namespace Projeto_teste {
-    partial class Form1 {
+    partial class Cadastro {
         /// <summary>
         /// Variável de designer necessária.
         /// </summary>
@@ -25,6 +25,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label5;
     }
 }
 

@@ -1,16 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco_de_dados;
+using Data_Access;
 
 namespace Regras_de_negócio {
-    public class UsuarioBLL {
+    public class LoginBLL {
 
-        private UsuarioDAL _usuariodal = new UsuarioDAL();
+        private LoginDAL _logindal = new LoginDAL();
+
+        public class Login {
+            public string Email { get; set; }
+            public string Senha { get; set; }
+        }
 
         //Método de validação do email
         public bool EmailValido(string email) {
@@ -18,46 +25,30 @@ namespace Regras_de_negócio {
             return Regex.IsMatch(email, padrao);
         }
 
-        public void AdicionarUsuario(Usuario novoUsuario) {
-
-            // Validação de dados
-
-            // Verifica se o nome é vazio ou nulo
-            if (string.IsNullOrWhiteSpace(novoUsuario.Nome)) {
-                string msg = "Nome de usuário obrigatório";
-                MessageBox.Show(msg,"Erro", MessageBoxButtons.OK,MessageBoxIcon.Error);
-                throw new Exception(msg);
-            }
-
-            // Verifica se a data de nascimento é válida
-            if (novoUsuario.Data_Nascimento == DateTime.MinValue) {
-                string msg = "Data de nascimento obrigatória";
-                MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw new Exception(msg);
-            }
+        public bool ValidarLogin(string Email, string Senha) {
 
             // Verifica se o email é vazio ou nulo
-            if (string.IsNullOrWhiteSpace(novoUsuario.Email)) {
+            if (string.IsNullOrWhiteSpace(Email)) {
                 string msg = "Email obrigatório";
                 MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw new Exception(msg);
             }
 
             // Verifica se o email é válido
-            if (!EmailValido(novoUsuario.Email)) {
+            if (!EmailValido(Email)) {
                 string msg = "Email inválido";
                 MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw new Exception(msg);
             }
 
             // Verifica se a senha é vazia ou nula
-            if (string.IsNullOrWhiteSpace(novoUsuario.Senha)) {
+            if (string.IsNullOrWhiteSpace(Senha)) {
                 string msg = "Senha obrigatória";
                 MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 throw new Exception(msg);
             }
 
-           _usuariodal.AdicionarUsuario(novoUsuario);
+            return _logindal.VerificarLogin(Email,Senha);
         }
     }
 }

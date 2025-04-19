@@ -11,8 +11,8 @@ using System.Windows.Forms;
 using Regras_de_negócio;
 
 namespace Projeto_teste {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class Cadastro : Form {
+        public Cadastro() {
             InitializeComponent();
         }
 
@@ -26,6 +26,7 @@ namespace Projeto_teste {
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -43,6 +44,7 @@ namespace Projeto_teste {
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(205, 22);
             this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
@@ -102,9 +104,19 @@ namespace Projeto_teste {
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // Form1
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(211, 78);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(112, 16);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Tela de Cadastro";
+            // 
+            // Cadastro
             // 
             this.ClientSize = new System.Drawing.Size(540, 424);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
@@ -114,7 +126,7 @@ namespace Projeto_teste {
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "Cadastro";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -147,9 +159,13 @@ namespace Projeto_teste {
                 _usuarioBLL.AdicionarUsuario(novo);
                 MessageBox.Show("Usuário Adicionado com sucesso!");
             }
-            catch (Exception ex){
-                MessageBox.Show("Erro ao adicionar usuário" + ex.Message, "Erro");
+            catch{
+                MessageBox.Show("Erro ao adicionar usuário", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
 
         }
     }
