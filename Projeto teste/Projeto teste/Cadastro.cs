@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
@@ -137,7 +138,9 @@ namespace Projeto_teste {
         private void button1_Click(object sender, EventArgs e) {
 
             string data = textBox2.Text;
-            DateTime Data = DateTime.Parse(data);
+            DateTime Data = DateTime.ParseExact(data, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+
+
 
             /*
             try {
@@ -162,6 +165,10 @@ namespace Projeto_teste {
             catch{
                 MessageBox.Show("Erro ao adicionar usuário", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            Exemplo exemplo = new Exemplo();
+            exemplo.ShowDialog();
+            this.Hide();
 
         }
 
