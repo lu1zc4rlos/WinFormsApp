@@ -43,5 +43,15 @@ namespace Banco_de_dados {
             }
         }
 
+        public bool EmailJaCadastrado(Usuario usuario) {
+            string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email";
+            using (var conexao = Conexao.Abrir())
+            using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
+                comando.Parameters.AddWithValue("@Email", usuario.Email);
+                int count = Convert.ToInt32(comando.ExecuteScalar());
+                return count > 0;
+            }
+        }
+
     }
 }
