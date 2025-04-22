@@ -13,5 +13,9 @@ namespace Projeto_teste {
         public Exemplo() {
             InitializeComponent();
         }
+
+        private void Exemplo_Load(object sender, EventArgs e) {
+
+        }
     }
 }

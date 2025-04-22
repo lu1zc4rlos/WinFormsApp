@@ -32,7 +32,9 @@
             this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "Exemplo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Exemplo";
+            this.Load += new System.EventHandler(this.Exemplo_Load);
             this.ResumeLayout(false);
 
         }
