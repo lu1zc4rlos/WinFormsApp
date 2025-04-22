@@ -43,5 +43,9 @@ namespace Projeto_teste {
                 MessageBox.Show("Erro" + ex.Message);
             }
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
+            textBox2.PasswordChar = checkBox1.Checked ? '\0' : '*';
+        }
     }
 }

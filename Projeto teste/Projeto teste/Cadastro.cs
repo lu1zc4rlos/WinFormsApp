@@ -30,6 +30,7 @@ namespace Projeto_teste {
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -78,6 +79,7 @@ namespace Projeto_teste {
             // 
             this.textBox4.Location = new System.Drawing.Point(190, 282);
             this.textBox4.Name = "textBox4";
+            this.textBox4.PasswordChar = '*';
             this.textBox4.Size = new System.Drawing.Size(155, 22);
             this.textBox4.TabIndex = 7;
             // 
@@ -128,9 +130,21 @@ namespace Projeto_teste {
             this.dateTimePicker1.TabIndex = 11;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(365, 284);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(114, 20);
+            this.checkBox1.TabIndex = 12;
+            this.checkBox1.Text = "Mostrar senha";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // Cadastro
             // 
             this.ClientSize = new System.Drawing.Size(540, 424);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -230,6 +244,10 @@ namespace Projeto_teste {
             dateTimePicker1.MaxDate = DateTime.Today;
 
 
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
+            textBox4.PasswordChar = checkBox1.Checked ? '\0' : '*';
         }
     }
 
