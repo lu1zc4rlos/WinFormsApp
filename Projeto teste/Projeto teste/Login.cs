@@ -17,6 +17,8 @@ namespace Projeto_teste {
         }
 
         private void button1_Click(object sender, EventArgs e) {
+
+            this.Hide();
             Cadastro cadastro = new Cadastro();
             cadastro.ShowDialog();
             this.Hide();
@@ -31,6 +33,8 @@ namespace Projeto_teste {
 
             try {
                 if (loginBLL.ValidarLogin(email, senha)) {
+
+                    this.Hide();
                     Exemplo exemplo = new Exemplo();
                     exemplo.ShowDialog();
                     this.Hide();
@@ -46,6 +50,10 @@ namespace Projeto_teste {
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
             textBox2.PasswordChar = checkBox1.Checked ? '\0' : '*';
+        }
+
+        private void Login_Load(object sender, EventArgs e) {
+            
         }
     }
 }

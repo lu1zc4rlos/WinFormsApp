@@ -34,6 +34,7 @@ namespace Projeto_teste {
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -97,9 +98,9 @@ namespace Projeto_teste {
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(226, 328);
+            this.button1.Location = new System.Drawing.Point(226, 330);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(75, 36);
             this.button1.TabIndex = 8;
             this.button1.Text = "Confirmar";
             this.button1.UseVisualStyleBackColor = true;
@@ -170,9 +171,20 @@ namespace Projeto_teste {
             this.label8.Size = new System.Drawing.Size(0, 16);
             this.label8.TabIndex = 15;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(360, 377);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(168, 35);
+            this.button2.TabIndex = 16;
+            this.button2.Text = "Voltar para tela de login";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Cadastro
             // 
             this.ClientSize = new System.Drawing.Size(540, 424);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label7);
@@ -240,6 +252,7 @@ namespace Projeto_teste {
 
                     MessageBox.Show("Usuário Adicionado com sucesso!");
 
+                    this.Hide();
                     Exemplo exemplo = new Exemplo();
                     exemplo.ShowDialog();
                     this.Hide();
@@ -293,6 +306,14 @@ namespace Projeto_teste {
 
         private void textBox2_TextChanged(object sender, EventArgs e) {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e) {
+
+            this.Hide();
+            Login login = new Login();
+            login.ShowDialog();
+            this.Hide();
         }
     }
 
