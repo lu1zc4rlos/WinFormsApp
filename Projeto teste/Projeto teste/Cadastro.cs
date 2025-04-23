@@ -86,6 +86,7 @@ namespace Projeto_teste {
             this.textBox4.PasswordChar = '*';
             this.textBox4.Size = new System.Drawing.Size(155, 22);
             this.textBox4.TabIndex = 7;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label4
             // 
@@ -315,6 +316,10 @@ namespace Projeto_teste {
             Login login = new Login();
             login.ShowDialog();
             this.Hide();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e) {
+
         }
     }
 
