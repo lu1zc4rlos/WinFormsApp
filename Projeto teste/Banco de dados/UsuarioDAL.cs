@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Data_Access;
 using MySql.Data.MySqlClient;
 using Regras_de_negócio;
 
@@ -13,24 +14,11 @@ namespace Banco_de_dados {
 
     public class UsuarioDAL {
 
-        private static class Conexao {
-
-            private static string _ConexaoComBanco = "Server=localhost;Uid=root;Pwd=120920;Database=usuarios";
-
-            public static MySqlConnection Abrir() {
-                var Conexao = new MySqlConnection(_ConexaoComBanco);
-                Conexao.Open();
-                return Conexao;
-
-            }
-
-        }
-
         public void AdicionarUsuario(Usuario usuario) {
 
             string CadastrarUser = "insert into dados_pessoais (Nome, Data_Nascimento, Email, Senha) values(@Nome,@Data_Nascimento,@Email,@Senha)";
 
-            using (var conexao = Conexao.Abrir())
+            using (var conexao = ConexaoDAL.Abrir())
             using (MySqlCommand comando = new MySqlCommand(CadastrarUser, conexao)) {
 
                 comando.Parameters.AddWithValue("@Nome", usuario.Nome);
@@ -45,7 +33,7 @@ namespace Banco_de_dados {
 
         public bool EmailJaCadastrado(Usuario usuario) {
             string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email";
-            using (var conexao = Conexao.Abrir())
+            using (var conexao = ConexaoDAL.Abrir())
             using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
                 comando.Parameters.AddWithValue("@Email", usuario.Email);
                 int count = Convert.ToInt32(comando.ExecuteScalar());

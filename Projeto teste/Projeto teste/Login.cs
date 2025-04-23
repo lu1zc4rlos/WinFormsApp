@@ -55,5 +55,16 @@ namespace Projeto_teste {
         private void Login_Load(object sender, EventArgs e) {
             
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e) {
+            this.Hide();
+            RecuperarSenha recuperarsenha = new RecuperarSenha();
+            recuperarsenha.ShowDialog();
+            this.Hide();
+        }
     }
 }
