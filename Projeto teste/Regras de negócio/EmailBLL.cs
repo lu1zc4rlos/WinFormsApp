@@ -39,7 +39,6 @@ namespace Regras_de_negócio {
 
             using (SmtpClient smtp = new SmtpClient()) {
                 smtp.Host = "smtp.gmail.com";
-               // smtp.Host = "smtp.office365.com";
                 smtp.Port = 587;
                 smtp.EnableSsl = true;
 

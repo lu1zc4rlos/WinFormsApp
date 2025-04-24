@@ -104,9 +104,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(79, 272);
+            this.button2.Location = new System.Drawing.Point(56, 272);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(150, 23);
+            this.button2.Size = new System.Drawing.Size(173, 23);
             this.button2.TabIndex = 7;
             this.button2.Text = "Tentar de outra forma";
             this.button2.UseVisualStyleBackColor = true;
