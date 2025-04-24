@@ -30,6 +30,26 @@ namespace Data_Access {
                 return count > 0;
             }
 
+
+        }
+
+        public string RetornoNome(string Email) {
+            string nome = "";
+
+            using (var conexao = ConexaoDAL.Abrir()) {
+                string query = "SELECT nome FROM dados_pessoais WHERE email = @email";
+                using (var comando = new MySqlCommand(query, conexao)) {
+                    comando.Parameters.AddWithValue("@email", Email);
+
+                    using (var reader = comando.ExecuteReader()) {
+                        if (reader.Read()) {
+                            nome = reader.GetString("nome");
+                        }
+                    }
+                }
+            }
+
+            return nome;
         }
     }
 

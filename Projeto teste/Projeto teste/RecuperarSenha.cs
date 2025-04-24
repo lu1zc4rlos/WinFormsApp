@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste {
     public partial class RecuperarSenha : Form {
@@ -55,6 +56,7 @@ namespace Projeto_teste {
 
             RecuperarSenhaBLL _recuperarsenhabll = new RecuperarSenhaBLL();
             RecuperarSenhaBLL _alterarsenhadal = new RecuperarSenhaBLL();
+            RecuperarSenhaBLL _retornarnomedal = new RecuperarSenhaBLL();
 
             try {
                 if (_recuperarsenhabll.RecuperarSenha(email, senha)) {
@@ -62,6 +64,18 @@ namespace Projeto_teste {
                         label5.Visible = false;
                         _alterarsenhadal.AlterarSenha(email, SenhaAlterada);
                         MessageBox.Show("Senha Alterada com sucesso!");
+                        EmailBLL.EnviarEmailBLL(
+                         "Olá, " + _retornarnomedal.RetornoNome(email) + "\r\n\r\n" +
+                         "Informamos que sua senha foi alterada com sucesso.\r\n\r\n" +
+                         "Se você realizou essa alteração, pode desconsiderar esta mensagem.\r\n\r\n" +
+                         "Caso não tenha solicitado essa mudança, recomendamos que entre em contato imediatamente com nossa equipe de suporte para garantir a segurança da sua conta.\r\n\r\n" +
+                         "Atenciosamente,\r\nEquipe AtendeTech\r\nsuporte@atendetech.com.br",
+                         email,
+                         "Alteração de senha realizada com sucesso",
+                         button1
+                        );
+
+
                         this.Hide();
                         Exemplo exemplo = new Exemplo();
                         exemplo.ShowDialog();
