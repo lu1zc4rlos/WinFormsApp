@@ -31,7 +31,10 @@ namespace Projeto_teste {
         }
 
         private void button2_Click(object sender, EventArgs e) {
-
+            this.Hide();
+            RecuperarSenhaEmail recuperarsenhaemail = new RecuperarSenhaEmail();
+            recuperarsenhaemail.ShowDialog();
+            this.Hide();
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {

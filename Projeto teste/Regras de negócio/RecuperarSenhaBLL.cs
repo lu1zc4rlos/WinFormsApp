@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco_de_dados;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Security.Cryptography;
 
 namespace Regras_de_negócio {
     public class RecuperarSenhaBLL {
@@ -64,6 +65,21 @@ namespace Regras_de_negócio {
             }
 
             return _retornarnomedal.RetornoNome(Email);
+        }
+
+        public string GerarCodigoSeguro(int tamanho = 8) {
+           const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+           var bytes = new byte[tamanho];
+           using (var rng = RandomNumberGenerator.Create()) {
+            rng.GetBytes(bytes);
+            }
+
+            var result = new StringBuilder(tamanho);
+            foreach (byte b in bytes) {
+            result.Append(chars[b % chars.Length]);
+            }
+
+             return result.ToString();
         }
     }
 }
