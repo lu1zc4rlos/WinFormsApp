@@ -7,12 +7,14 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Banco_de_dados;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Regras_de_negócio {
     public class RecuperarSenhaBLL {
 
         private RecuperarSenhaDAL _recuperarsenhadal = new RecuperarSenhaDAL();
         private RecuperarSenhaDAL _alterarsenhadal = new RecuperarSenhaDAL();
+        private RecuperarSenhaDAL _retornarnomedal = new RecuperarSenhaDAL();
 
         public class Recuperacao {
             public string Email { get; set; }
@@ -54,6 +56,14 @@ namespace Regras_de_negócio {
         public bool AlterarSenha(string Email, string Senha) {
 
             return _alterarsenhadal.AlterarSenha(Email, Senha);
+        }
+        public string RetornoNome(string Email) {
+
+            if(string.IsNullOrEmpty(Email)) {
+                throw new ArgumentException("O e-mail não pode ser vazio.");
+            }
+
+            return _retornarnomedal.RetornoNome(Email);
         }
     }
 }
