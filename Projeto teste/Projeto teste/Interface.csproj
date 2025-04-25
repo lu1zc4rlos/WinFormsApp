@@ -78,6 +78,12 @@
     <Compile Include="RecuperarSenhaEmail.Designer.cs">
       <DependentUpon>RecuperarSenhaEmail.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrocarSenha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrocarSenha.Designer.cs">
+      <DependentUpon>TrocarSenha.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Cadastro.resx">
       <DependentUpon>Cadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RecuperarSenhaEmail.resx">
       <DependentUpon>RecuperarSenhaEmail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrocarSenha.resx">
+      <DependentUpon>TrocarSenha.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
