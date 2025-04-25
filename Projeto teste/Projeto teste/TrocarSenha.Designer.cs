@@ -115,6 +115,7 @@
             this.Name = "TrocarSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrocarSenha";
+            this.Load += new System.EventHandler(this.TrocarSenha_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

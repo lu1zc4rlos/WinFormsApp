@@ -55,17 +55,17 @@ namespace Projeto_teste {
 
             string email = textBox4.Text;
             string senha = textBox1.Text;
-            string SenhaAlterada = textBox3.Text;
+            string novaSenha = textBox3.Text;
 
             RecuperarSenhaBLL _recuperarsenhabll = new RecuperarSenhaBLL();
             RecuperarSenhaBLL _alterarsenhadal = new RecuperarSenhaBLL();
             RecuperarSenhaBLL _retornarnomedal = new RecuperarSenhaBLL();
 
             try {
-                if (_recuperarsenhabll.RecuperarSenha(email, senha)) {
+                if (_recuperarsenhabll.ValidarEmail(email)) {
                     if (textBox2.Text == textBox3.Text) {
                         label5.Visible = false;
-                        _alterarsenhadal.AlterarSenha(email, SenhaAlterada);
+                        _alterarsenhadal.AlterarSenha(email, novaSenha);
                         MessageBox.Show("Senha Alterada com sucesso!");
                         EmailBLL.EnviarEmailBLL(
                          "Olá, " + _retornarnomedal.RetornoNome(email) + "\r\n\r\n" +
@@ -101,6 +101,10 @@ namespace Projeto_teste {
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e) {
+
+        }
+
+        private void RecuperarSenha_Load(object sender, EventArgs e) {
 
         }
     }

@@ -8,33 +8,31 @@ using System.Threading.Tasks;
 
 namespace Data_Access {
     public class RecuperarSenhaDAL {
-        public bool RecuperarSenha (string Email, string Senha) {
-            string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email AND Senha = @Senha";
+        public bool ValidarEmail(string Email) {
+            string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email";
             using (var conexao = ConexaoDAL.Abrir())
             using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
                 comando.Parameters.AddWithValue("@Email", Email);
-                comando.Parameters.AddWithValue("@Senha", Senha);
                 int count = Convert.ToInt32(comando.ExecuteScalar());
                 return count > 0;
             }
         }
 
-        public bool AlterarSenha(string Email, string Senha) {
+        public bool AlterarSenha(string Email, string novaSenha) {
 
             string query = "UPDATE dados_pessoais SET Senha = @Senha WHERE Email = @Email";
             using (var conexao = ConexaoDAL.Abrir())
             using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
                 comando.Parameters.AddWithValue("@Email", Email);
-                comando.Parameters.AddWithValue("@Senha", Senha);
-                int count = Convert.ToInt32(comando.ExecuteScalar());
-                return count > 0;
+                comando.Parameters.AddWithValue("@Senha", novaSenha);
+                int rowsAffected = comando.ExecuteNonQuery();
+                return rowsAffected > 0;
             }
 
 
         }
 
         public string RetornoNome(string Email) {
-            string nome = "";
 
             using (var conexao = ConexaoDAL.Abrir()) {
                 string query = "SELECT nome FROM dados_pessoais WHERE email = @email";
@@ -43,13 +41,13 @@ namespace Data_Access {
 
                     using (var reader = comando.ExecuteReader()) {
                         if (reader.Read()) {
-                            nome = reader.GetString("nome");
+                            return reader.GetString("nome");
                         }
                     }
                 }
             }
 
-            return nome;
+            return null;
         }
     }
 
