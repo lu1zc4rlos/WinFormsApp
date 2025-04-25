@@ -28,7 +28,7 @@ namespace Regras_de_negócio {
             return Regex.IsMatch(email, padrao);
         }
 
-        public bool RecuperarSenha(string Email, string Senha) {
+        public bool ValidarEmail(string Email) {
 
             // Verifica se o email é vazio ou nulo
             if (string.IsNullOrWhiteSpace(Email)) {
@@ -44,19 +44,12 @@ namespace Regras_de_negócio {
                 throw new Exception(msg);
             }
 
-            // Verifica se a senha é vazia ou nula
-            if (string.IsNullOrWhiteSpace(Senha)) {
-                string msg = "Senha obrigatória";
-                MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                throw new Exception(msg);
-            }
-
-            return _recuperarsenhadal.RecuperarSenha(Email, Senha);
+            return _recuperarsenhadal.ValidarEmail(Email);
         }
 
-        public bool AlterarSenha(string Email, string Senha) {
+        public bool AlterarSenha(string Email, string novaSenha) {
 
-            return _alterarsenhadal.AlterarSenha(Email, Senha);
+            return _alterarsenhadal.AlterarSenha(Email, novaSenha);
         }
         public string RetornoNome(string Email) {
 

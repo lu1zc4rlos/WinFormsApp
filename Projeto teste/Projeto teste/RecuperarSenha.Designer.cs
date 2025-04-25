@@ -169,6 +169,7 @@
             this.Name = "RecuperarSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecuperarSenha";
+            this.Load += new System.EventHandler(this.RecuperarSenha_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

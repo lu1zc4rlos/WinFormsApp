@@ -53,7 +53,7 @@ namespace Projeto_teste {
 
             string email = _referencia.EmailUsuarioPublico;
 
-            string SenhaAlterada = textBox3.Text;
+            string novaSenha = textBox3.Text;
 
 
             RecuperarSenhaBLL _recuperarsenhabll = new RecuperarSenhaBLL();
@@ -62,7 +62,7 @@ namespace Projeto_teste {
 
                 if (textBox2.Text == textBox3.Text) {
                     label5.Visible = false;
-                    _alterarsenhadal.AlterarSenha(email, SenhaAlterada);
+                    _alterarsenhadal.AlterarSenha(email, novaSenha);
                     MessageBox.Show("Senha Alterada com sucesso!");
 
                     EmailBLL.EnviarEmailBLL(
@@ -89,6 +89,10 @@ namespace Projeto_teste {
                 }
 
             
+        }
+
+        private void TrocarSenha_Load(object sender, EventArgs e) {
+
         }
     }
 }
