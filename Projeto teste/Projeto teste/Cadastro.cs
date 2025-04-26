@@ -222,13 +222,14 @@ namespace Projeto_teste {
             novo.Senha = textBox4.Text;
 
             try {
-
+                
                 if (_usuarioBLL.EmailJaCadastrado(novo)) {
                     label6.Text = "Email já cadastrado";
                     label6.ForeColor = Color.Red;
                     label6.Visible = true;
                     _usuarioBLL.Verificacoes(novo);
                 }
+                
                 if (textBox2.Text != novo.Senha) {
                     label8.Text = "Senha diferente";
                     label8.ForeColor = Color.Red;
