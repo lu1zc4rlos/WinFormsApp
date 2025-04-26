@@ -227,14 +227,14 @@ namespace Projeto_teste {
                     label6.Text = "Email já cadastrado";
                     label6.ForeColor = Color.Red;
                     label6.Visible = true;
-                    _usuarioBLL.Verificacoes(novo);
+                    _usuarioBLL.AdicionarUsuario(novo);
                 }
                 
                 if (textBox2.Text != novo.Senha) {
                     label8.Text = "Senha diferente";
                     label8.ForeColor = Color.Red;
                     label8.Visible = true;
-                    _usuarioBLL.Verificacoes(novo);
+                    _usuarioBLL.AdicionarUsuario(novo);
                 }
                 else {
 
@@ -269,7 +269,7 @@ namespace Projeto_teste {
                     label6.Text = "Email já cadastrado";
                     label6.ForeColor = Color.Red;
                     label6.Visible = true;
-                    _usuarioBLL.Verificacoes(novo);
+                    _usuarioBLL.AdicionarUsuario(novo);
                 }
 
 
