@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows.Forms;
 using Data_Access;
 using MySql.Data.MySqlClient;
 using Regras_de_negócio;
