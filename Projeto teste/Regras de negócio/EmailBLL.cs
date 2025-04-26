@@ -1,27 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Drawing;
-using System.Linq;
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+
 
 namespace Regras_de_negócio {
-
     public static class Funcoes {
-
         public static void CriarLabel(Control container, string texto, string nome = "lblStatusEmail") {
-           
             if (container.Controls[nome] == null) {
-                Label lbl = new Label();
-                lbl.Name = nome;
-                lbl.Text = texto;
-                lbl.AutoSize = true;
-                lbl.Font = new Font("Segoe UI", 10, FontStyle.Italic);
-                lbl.ForeColor = Color.Blue;
-                lbl.Location = new Point(10, container.Height - 30); 
+                Label lbl = new Label {
+                    Name = nome,
+                    Text = texto,
+                    AutoSize = true,
+                    Font = new Font("Segoe UI", 10, FontStyle.Italic),
+                    ForeColor = Color.Blue,
+                    Location = new Point(10, container.Height - 30)
+                };
                 container.Controls.Add(lbl);
                 lbl.BringToFront();
             }
@@ -33,24 +29,26 @@ namespace Regras_de_negócio {
             }
         }
     }
+
     public class EmailBLL {
-
         public static void EnviarEmailBLL(string mensagem, string destino, string assunto, Control mostrarMsgAguarde = null) {
+            string emailRemetente = ConfigurationManager.AppSettings["EmailRemetente"];
+            string senhaEmail = ConfigurationManager.AppSettings["SenhaEmail"];
+            string nomeRemetente = ConfigurationManager.AppSettings["NomeRemetente"];
+            string hostSMTP = ConfigurationManager.AppSettings["HostSMTP"];
+            int portaSMTP = int.Parse(ConfigurationManager.AppSettings["PortaSMTP"]);
 
-            using (SmtpClient smtp = new SmtpClient()) {
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
+            try {
+                using (SmtpClient smtp = new SmtpClient(hostSMTP, portaSMTP)) {
+                    smtp.EnableSsl = true;
+                    smtp.Credentials = new NetworkCredential(emailRemetente, senhaEmail);
 
-                smtp.Credentials = new NetworkCredential("luiz.programa.carlos@gmail.com", "iilg xuxm yqbq iqgj");
+                    using (MailMessage msg = new MailMessage()) {
+                        msg.From = new MailAddress(emailRemetente, nomeRemetente);
+                        msg.To.Add(new MailAddress(destino));
+                        msg.Subject = assunto;
+                        msg.Body = mensagem;
 
-                using (MailMessage msg = new MailMessage()) {
-                    msg.From = new MailAddress("luiz.programa.carlos@gmail.com", "AtendeTech");
-                    msg.To.Add(new MailAddress(destino));
-                    msg.Subject = assunto;
-                    msg.Body = mensagem;
-
-                    try {
                         if (mostrarMsgAguarde != null) {
                             Funcoes.CriarLabel(mostrarMsgAguarde, "Aguarde, enviando e-mail...", "Info");
                             mostrarMsgAguarde.Enabled = false;
@@ -60,20 +58,19 @@ namespace Regras_de_negócio {
 
                         smtp.Send(msg);
                     }
-                    catch (Exception ex) {
-                        MessageBox.Show("Erro ao enviar o e-mail:\r\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally {
-                        if (mostrarMsgAguarde != null) {
-                            Funcoes.RemoverLabel(mostrarMsgAguarde);
-                            mostrarMsgAguarde.Enabled = true;
-                            mostrarMsgAguarde.Cursor = Cursors.Default;
-                        }
-                    }
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Erro ao enviar o e-mail:\r\n" + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally {
+                if (mostrarMsgAguarde != null) {
+                    Funcoes.RemoverLabel(mostrarMsgAguarde);
+                    mostrarMsgAguarde.Enabled = true;
+                    mostrarMsgAguarde.Cursor = Cursors.Default;
                 }
             }
         }
-
-
+ 
     }
 }
