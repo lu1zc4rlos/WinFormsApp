@@ -18,60 +18,26 @@ namespace Regras_de_negócio {
             return Regex.IsMatch(email, padrao);
         }
 
-        public bool Verificacoes(Usuario novoUsuario) {
-
-            int validador = 0;
-           
-
-            // Validação de dados
-
-            // Verifica se o nome é vazio ou nulo
+        private void VerificarDadosUsuario(Usuario novoUsuario) {
             if (string.IsNullOrWhiteSpace(novoUsuario.Nome)) {
-                string msg = "Nome de usuário obrigatório";
-                MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                validador = 1;
-                throw new Exception(msg);
-               
-                
+                throw new Exception("Nome de usuário obrigatório.");
             }
 
-            // Verifica se a data de nascimento é válida
             if (novoUsuario.Data_Nascimento == DateTime.MinValue) {
-                string msg = "Data de nascimento obrigatória";
-                MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                validador = 1;
-                throw new Exception(msg);
-                
+                throw new Exception("Data de nascimento obrigatória.");
             }
 
-            // Verifica se o email é vazio ou nulo
             if (string.IsNullOrWhiteSpace(novoUsuario.Email)) {
-                string msg = "Email obrigatório";
-                MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                validador = 1;
-                throw new Exception(msg);
-                
+                throw new Exception("Email obrigatório.");
             }
 
-            // Verifica se o email é válido
             if (!EmailValido(novoUsuario.Email)) {
-                string msg = "Email inválido";
-                MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                validador = 1;
-                throw new Exception(msg);
-               
+                throw new Exception("Email inválido.");
             }
 
-            // Verifica se a senha é vazia ou nula
             if (string.IsNullOrWhiteSpace(novoUsuario.Senha)) {
-                string msg = "Senha obrigatória";
-                MessageBox.Show(msg, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                validador = 1;
-                throw new Exception(msg);
-                
+                throw new Exception("Senha obrigatória.");
             }
-
-            return validador == 0;
         }
 
         public bool EmailJaCadastrado(Usuario novoUsuario) {
@@ -81,17 +47,14 @@ namespace Regras_de_negócio {
 
         }
 
-
         public void AdicionarUsuario(Usuario novoUsuario) {
-            if (!Verificacoes(novoUsuario)) {
-                throw new Exception("Erro na validação dos dados do usuário.");
-            }
+            VerificarDadosUsuario(novoUsuario);
+
             if (EmailJaCadastrado(novoUsuario)) {
                 throw new Exception("Este e-mail já está cadastrado.");
             }
-            
-                _usuariodal.AdicionarUsuario(novoUsuario);
-               
+
+            _usuariodal.AdicionarUsuario(novoUsuario);
         }
 
     }
