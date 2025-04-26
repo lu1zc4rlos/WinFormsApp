@@ -14,7 +14,7 @@ namespace Data_Access {
             if (string.IsNullOrWhiteSpace(Email))
                 throw new ArgumentException("O e-mail não pode estar vazio.");
             if (string.IsNullOrWhiteSpace(Senha))
-                throw new ArgumentException("A senha não pode estar vazio.");
+                throw new ArgumentException("A senha não pode estar vazia.");
 
             try {
                 string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email AND Senha = @Senha";
@@ -31,7 +31,8 @@ namespace Data_Access {
             }
             catch (MySqlException ex) {
 
-                throw new Exception("Erro no banco de dados: " + ex.Message);
+                throw new Exception("Erro no banco de dados", ex);
+
             }
 
         }

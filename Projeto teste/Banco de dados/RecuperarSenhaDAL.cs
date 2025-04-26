@@ -1,53 +1,69 @@
 ﻿using MySql.Data.MySqlClient;
-using Mysqlx.Crud;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data_Access {
     public class RecuperarSenhaDAL {
-        public bool ValidarEmail(string Email) {
-            string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email";
-            using (var conexao = ConexaoDAL.Abrir())
-            using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
-                comando.Parameters.AddWithValue("@Email", Email);
-                int count = Convert.ToInt32(comando.ExecuteScalar());
-                return count > 0;
+        public bool ValidarEmail(string email) {
+
+            try {
+                string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email";
+                using (var conexao = ConexaoDAL.Abrir())
+                using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
+                    comando.Parameters.AddWithValue("@Email", email);
+                    int count = Convert.ToInt32(comando.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+            catch (MySqlException ex) {
+
+                throw new Exception("Erro no banco de dados", ex);
             }
         }
 
-        public bool AlterarSenha(string Email, string novaSenha) {
+        public bool AlterarSenha(string email, string novaSenha) {
 
-            string query = "UPDATE dados_pessoais SET Senha = @Senha WHERE Email = @Email";
-            using (var conexao = ConexaoDAL.Abrir())
-            using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
-                comando.Parameters.AddWithValue("@Email", Email);
-                comando.Parameters.AddWithValue("@Senha", novaSenha);
-                int rowsAffected = comando.ExecuteNonQuery();
-                return rowsAffected > 0;
+            try {
+                string query = "UPDATE dados_pessoais SET Senha = @Senha WHERE Email = @Email";
+                using (var conexao = ConexaoDAL.Abrir())
+                using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
+                    comando.Parameters.AddWithValue("@Email", email);
+
+                    string novaSenhaHash = CriptografiaDAL.GerarHashSenha(novaSenha);
+                    comando.Parameters.AddWithValue("@Senha", novaSenhaHash);
+
+                    int rowsAffected = comando.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
             }
+            catch (MySqlException ex) {
 
+                throw new Exception("Erro no banco de dados", ex);
+            }
 
         }
 
-        public string RetornoNome(string Email) {
+        public string RetornoNome(string email) {
 
-            using (var conexao = ConexaoDAL.Abrir()) {
-                string query = "SELECT nome FROM dados_pessoais WHERE email = @email";
-                using (var comando = new MySqlCommand(query, conexao)) {
-                    comando.Parameters.AddWithValue("@email", Email);
+            try {
+                using (var conexao = ConexaoDAL.Abrir()) {
+                    string query = "SELECT nome FROM dados_pessoais WHERE email = @email";
+                    using (var comando = new MySqlCommand(query, conexao)) {
+                        comando.Parameters.AddWithValue("@email", email);
 
-                    using (var reader = comando.ExecuteReader()) {
-                        if (reader.Read()) {
-                            return reader.GetString("nome");
+                        using (var reader = comando.ExecuteReader()) {
+                            if (reader.Read()) {
+                                return reader.GetString("nome");
+                            }
                         }
                     }
                 }
-            }
 
-            return null;
+                return null;
+            }
+            catch (MySqlException ex) {
+
+                throw new Exception("Erro no banco de dados", ex);
+            }
         }
     }
 

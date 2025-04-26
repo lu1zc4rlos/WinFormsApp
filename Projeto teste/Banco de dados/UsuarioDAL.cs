@@ -27,8 +27,8 @@ namespace Banco_de_dados {
                     comando.ExecuteNonQuery();
                 }
                 catch (MySqlException ex) {
-                    
-                    throw new Exception("Erro no banco de dados: " + ex.Message);
+
+                    throw new Exception("Erro no banco de dados", ex);
                 }
                 catch (Exception ex) {
                     throw new Exception("Erro inesperado: " + ex.Message);
@@ -51,7 +51,7 @@ namespace Banco_de_dados {
             }
             catch (MySqlException ex) {
 
-                throw new Exception("Erro no banco de dados: " + ex.Message);
+                throw new Exception("Erro no banco de dados", ex);
             }
 
         }
