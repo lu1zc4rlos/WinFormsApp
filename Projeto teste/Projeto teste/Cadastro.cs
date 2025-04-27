@@ -266,7 +266,7 @@ namespace Projeto_teste {
                 this.Hide();
                 Exemplo exemplo = new Exemplo();
                 exemplo.ShowDialog();
-                this.Hide();               
+                this.Show();
             }
             catch(Exception ex){
 
@@ -278,7 +278,7 @@ namespace Projeto_teste {
             this.Hide();
             Login login = new Login();
             login.ShowDialog();
-            this.Hide();
+            this.Show();
         }
         private void Cadastro_Load(object sender, EventArgs e) {
             CultureInfo culture = new CultureInfo("pt-BR");

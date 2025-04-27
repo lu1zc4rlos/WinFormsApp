@@ -1,70 +1,68 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Regras_de_negócio;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste {
     public partial class Login : Form {
         public Login() {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e) {
-
+        private void btnNaoCadastrado_Click(object sender, EventArgs e) {
             this.Hide();
-            Cadastro cadastro = new Cadastro();
-            cadastro.ShowDialog();
-            this.Hide();
+            using (Cadastro cadastro = new Cadastro()) {
+                cadastro.ShowDialog();
+            }
+            this.Show();
+            LimparCampos();
         }
-
-        private void button2_Click(object sender, EventArgs e) {
-
-            string email = textBox1.Text;
-            string senha = textBox2.Text;
+        private void btnConfirmar_Click(object sender, EventArgs e) {
+            string email = txtEmail.Text.Trim();
+            string senha = txtSenha.Text.Trim();
 
             LoginBLL loginBLL = new LoginBLL();
 
             try {
                 if (loginBLL.ValidarLogin(email, senha)) {
-
                     this.Hide();
-                    Exemplo exemplo = new Exemplo();
-                    exemplo.ShowDialog();
-                    this.Hide();
+                    using (Exemplo exemplo = new Exemplo()) {
+                        exemplo.ShowDialog();
+                    }
+                    this.Show();
+                    LimparCampos();
                 }
                 else {
-                    MessageBox.Show("Email ou senha invalidos!");
+                    MessageBox.Show("E-mail ou senha inválidos!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             catch (Exception ex) {
-                MessageBox.Show("Erro" + ex.Message);
+                MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e) {
-            textBox2.PasswordChar = checkBox1.Checked ? '\0' : '*';
+        private void cbMostarSenha_CheckedChanged(object sender, EventArgs e) {
+            txtSenha.PasswordChar = cbMostarSenha.Checked ? '\0' : '*';
         }
-
+        private void btnRecuperrarSenha_Click(object sender, EventArgs e) {
+            this.Hide();
+            using (RecuperarSenha recuperarSenha = new RecuperarSenha()) {
+                recuperarSenha.ShowDialog();
+            }
+            this.Show();
+            LimparCampos();
+        }
+        private void LimparCampos() {
+            txtEmail.Clear();
+            txtSenha.Clear();
+            cbMostarSenha.Checked = false;
+        }
+        private void txtSenha_TextChanged(object sender, EventArgs e) {
+        }
+        private void lblEmail_Click(object sender, EventArgs e) {
+        }
+        private void lblSenha_Click(object sender, EventArgs e) {
+        }
         private void Login_Load(object sender, EventArgs e) {
-            
         }
-
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e) {
-            this.Hide();
-            RecuperarSenha recuperarsenha = new RecuperarSenha();
-            recuperarsenha.ShowDialog();
-            this.Hide();
+        private void txtEmail_TextChanged(object sender, EventArgs e) {
         }
     }
 }
