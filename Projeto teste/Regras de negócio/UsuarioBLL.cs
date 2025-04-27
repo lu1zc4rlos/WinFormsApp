@@ -50,10 +50,6 @@ namespace Regras_de_negócio {
         public void AdicionarUsuario(Usuario novoUsuario) {
             VerificarDadosUsuario(novoUsuario);
 
-            if (EmailJaCadastrado(novoUsuario)) {
-                throw new Exception("Este e-mail já está cadastrado.");
-            }
-
             _usuariodal.AdicionarUsuario(novoUsuario);
         }
 

@@ -16,22 +16,22 @@
             base.Dispose(disposing);
         }
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label lblDataNascimento;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblConfirmarSenha;
+        private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label lblEmailCadastrado;
+        private System.Windows.Forms.DateTimePicker atpDataNascimento;
+        private System.Windows.Forms.CheckBox cbMostrarSenha;
+        private System.Windows.Forms.TextBox txtSenha;
+        private System.Windows.Forms.Label lblSenha;
+        private System.Windows.Forms.Label lblSenhaDiferente;
+        private System.Windows.Forms.Button btnVoltarLogin;
+        private System.Windows.Forms.TextBox txtConfirmarSenha;
     }
 }
 
