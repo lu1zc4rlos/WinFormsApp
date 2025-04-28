@@ -23,123 +23,123 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblSenhaAtual = new System.Windows.Forms.Label();
+            this.txtSenhaAtual = new System.Windows.Forms.TextBox();
+            this.txtSenhaNova = new System.Windows.Forms.TextBox();
+            this.lblSenhaNova = new System.Windows.Forms.Label();
+            this.txtSenhaNovamente = new System.Windows.Forms.TextBox();
+            this.lblSenhaNovamente = new System.Windows.Forms.Label();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.btnOutraForma = new System.Windows.Forms.Button();
+            this.cbMostrarSenha = new System.Windows.Forms.CheckBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEamail = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // lblSenhaAtual
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(53, 138);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Digite a senha atual:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblSenhaAtual.AutoSize = true;
+            this.lblSenhaAtual.Location = new System.Drawing.Point(53, 138);
+            this.lblSenhaAtual.Name = "lblSenhaAtual";
+            this.lblSenhaAtual.Size = new System.Drawing.Size(128, 16);
+            this.lblSenhaAtual.TabIndex = 0;
+            this.lblSenhaAtual.Text = "Digite a senha atual:";
+            this.lblSenhaAtual.Click += new System.EventHandler(this.label1_Click);
             // 
-            // textBox1
+            // txtSenhaAtual
             // 
-            this.textBox1.Location = new System.Drawing.Point(187, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(232, 22);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtSenhaAtual.Location = new System.Drawing.Point(187, 132);
+            this.txtSenhaAtual.Name = "txtSenhaAtual";
+            this.txtSenhaAtual.PasswordChar = '*';
+            this.txtSenhaAtual.Size = new System.Drawing.Size(232, 22);
+            this.txtSenhaAtual.TabIndex = 1;
+            this.txtSenhaAtual.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // txtSenhaNova
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 166);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(232, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtSenhaNova.Location = new System.Drawing.Point(186, 166);
+            this.txtSenhaNova.Name = "txtSenhaNova";
+            this.txtSenhaNova.PasswordChar = '*';
+            this.txtSenhaNova.Size = new System.Drawing.Size(232, 22);
+            this.txtSenhaNova.TabIndex = 3;
+            this.txtSenhaNova.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // label2
+            // lblSenhaNova
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(52, 172);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Digite a senha nova:";
+            this.lblSenhaNova.AutoSize = true;
+            this.lblSenhaNova.Location = new System.Drawing.Point(52, 172);
+            this.lblSenhaNova.Name = "lblSenhaNova";
+            this.lblSenhaNova.Size = new System.Drawing.Size(129, 16);
+            this.lblSenhaNova.TabIndex = 2;
+            this.lblSenhaNova.Text = "Digite a senha nova:";
             // 
-            // textBox3
+            // txtSenhaNovamente
             // 
-            this.textBox3.Location = new System.Drawing.Point(225, 205);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(232, 22);
-            this.textBox3.TabIndex = 5;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtSenhaNovamente.Location = new System.Drawing.Point(225, 205);
+            this.txtSenhaNovamente.Name = "txtSenhaNovamente";
+            this.txtSenhaNovamente.PasswordChar = '*';
+            this.txtSenhaNovamente.Size = new System.Drawing.Size(232, 22);
+            this.txtSenhaNovamente.TabIndex = 5;
+            this.txtSenhaNovamente.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // label3
+            // lblSenhaNovamente
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(53, 208);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 16);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Digite novamente a senha:";
+            this.lblSenhaNovamente.AutoSize = true;
+            this.lblSenhaNovamente.Location = new System.Drawing.Point(53, 208);
+            this.lblSenhaNovamente.Name = "lblSenhaNovamente";
+            this.lblSenhaNovamente.Size = new System.Drawing.Size(166, 16);
+            this.lblSenhaNovamente.TabIndex = 4;
+            this.lblSenhaNovamente.Text = "Digite novamente a senha:";
             // 
-            // button1
+            // btnConfirmar
             // 
-            this.button1.Location = new System.Drawing.Point(265, 272);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnConfirmar.Location = new System.Drawing.Point(265, 272);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.TabIndex = 6;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnOutraForma
             // 
-            this.button2.Location = new System.Drawing.Point(56, 272);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(173, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Tentar de outra forma";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnOutraForma.Location = new System.Drawing.Point(56, 272);
+            this.btnOutraForma.Name = "btnOutraForma";
+            this.btnOutraForma.Size = new System.Drawing.Size(173, 23);
+            this.btnOutraForma.TabIndex = 7;
+            this.btnOutraForma.Text = "Tentar de outra forma";
+            this.btnOutraForma.UseVisualStyleBackColor = true;
+            this.btnOutraForma.Click += new System.EventHandler(this.button2_Click);
             // 
-            // checkBox1
+            // cbMostrarSenha
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(378, 272);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 20);
-            this.checkBox1.TabIndex = 8;
-            this.checkBox1.Text = "Mostrar senha";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbMostrarSenha.AutoSize = true;
+            this.cbMostrarSenha.Location = new System.Drawing.Point(378, 272);
+            this.cbMostrarSenha.Name = "cbMostrarSenha";
+            this.cbMostrarSenha.Size = new System.Drawing.Size(114, 20);
+            this.cbMostrarSenha.TabIndex = 8;
+            this.cbMostrarSenha.Text = "Mostrar senha";
+            this.cbMostrarSenha.UseVisualStyleBackColor = true;
+            this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(210, 94);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(232, 22);
-            this.textBox4.TabIndex = 10;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.txtEmail.Location = new System.Drawing.Point(210, 94);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(232, 22);
+            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // label4
+            // lblEamail
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(53, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(151, 16);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Digite e-mail do usuário:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.lblEamail.AutoSize = true;
+            this.lblEamail.Location = new System.Drawing.Point(53, 97);
+            this.lblEamail.Name = "lblEamail";
+            this.lblEamail.Size = new System.Drawing.Size(151, 16);
+            this.lblEamail.TabIndex = 9;
+            this.lblEamail.Text = "Digite e-mail do usuário:";
+            this.lblEamail.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -155,17 +155,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 379);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEamail);
+            this.Controls.Add(this.cbMostrarSenha);
+            this.Controls.Add(this.btnOutraForma);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.txtSenhaNovamente);
+            this.Controls.Add(this.lblSenhaNovamente);
+            this.Controls.Add(this.txtSenhaNova);
+            this.Controls.Add(this.lblSenhaNova);
+            this.Controls.Add(this.txtSenhaAtual);
+            this.Controls.Add(this.lblSenhaAtual);
             this.Name = "RecuperarSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecuperarSenha";
@@ -177,17 +177,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblSenhaAtual;
+        private System.Windows.Forms.TextBox txtSenhaAtual;
+        private System.Windows.Forms.TextBox txtSenhaNova;
+        private System.Windows.Forms.Label lblSenhaNova;
+        private System.Windows.Forms.TextBox txtSenhaNovamente;
+        private System.Windows.Forms.Label lblSenhaNovamente;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.Button btnOutraForma;
+        private System.Windows.Forms.CheckBox cbMostrarSenha;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEamail;
         private System.Windows.Forms.Label label5;
     }
 }
