@@ -23,95 +23,95 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.lblErroSenha = new System.Windows.Forms.Label();
+            this.txtSenhaNovamente = new System.Windows.Forms.TextBox();
+            this.lblSenhaNovamente = new System.Windows.Forms.Label();
+            this.txtSenhaNova = new System.Windows.Forms.TextBox();
+            this.lblSenhaNova = new System.Windows.Forms.Label();
+            this.cbMostrarSenha = new System.Windows.Forms.CheckBox();
+            this.btnConfirmar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label5
+            // lblErroSenha
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(473, 174);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 16);
-            this.label5.TabIndex = 16;
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            this.lblErroSenha.AutoSize = true;
+            this.lblErroSenha.Location = new System.Drawing.Point(443, 136);
+            this.lblErroSenha.Name = "lblErroSenha";
+            this.lblErroSenha.Size = new System.Drawing.Size(0, 16);
+            this.lblErroSenha.TabIndex = 16;
+            this.lblErroSenha.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox3
+            // txtSenhaNovamente
             // 
-            this.textBox3.Location = new System.Drawing.Point(200, 140);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(232, 22);
-            this.textBox3.TabIndex = 15;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtSenhaNovamente.Location = new System.Drawing.Point(189, 133);
+            this.txtSenhaNovamente.Name = "txtSenhaNovamente";
+            this.txtSenhaNovamente.PasswordChar = '*';
+            this.txtSenhaNovamente.Size = new System.Drawing.Size(232, 22);
+            this.txtSenhaNovamente.TabIndex = 15;
+            this.txtSenhaNovamente.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // label3
+            // lblSenhaNovamente
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 143);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(166, 16);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "Digite novamente a senha:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            this.lblSenhaNovamente.AutoSize = true;
+            this.lblSenhaNovamente.Location = new System.Drawing.Point(17, 136);
+            this.lblSenhaNovamente.Name = "lblSenhaNovamente";
+            this.lblSenhaNovamente.Size = new System.Drawing.Size(166, 16);
+            this.lblSenhaNovamente.TabIndex = 14;
+            this.lblSenhaNovamente.Text = "Digite novamente a senha:";
+            this.lblSenhaNovamente.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox2
+            // txtSenhaNova
             // 
-            this.textBox2.Location = new System.Drawing.Point(162, 104);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(232, 22);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtSenhaNova.Location = new System.Drawing.Point(151, 97);
+            this.txtSenhaNova.Name = "txtSenhaNova";
+            this.txtSenhaNova.PasswordChar = '*';
+            this.txtSenhaNova.Size = new System.Drawing.Size(232, 22);
+            this.txtSenhaNova.TabIndex = 13;
+            this.txtSenhaNova.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // label2
+            // lblSenhaNova
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 107);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 16);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Digite a senha nova:";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
+            this.lblSenhaNova.AutoSize = true;
+            this.lblSenhaNova.Location = new System.Drawing.Point(16, 100);
+            this.lblSenhaNova.Name = "lblSenhaNova";
+            this.lblSenhaNova.Size = new System.Drawing.Size(129, 16);
+            this.lblSenhaNova.TabIndex = 12;
+            this.lblSenhaNova.Text = "Digite a senha nova:";
+            this.lblSenhaNova.Click += new System.EventHandler(this.label2_Click);
             // 
-            // checkBox1
+            // cbMostrarSenha
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(400, 107);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(114, 20);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Mostrar senha";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            this.cbMostrarSenha.AutoSize = true;
+            this.cbMostrarSenha.Location = new System.Drawing.Point(389, 100);
+            this.cbMostrarSenha.Name = "cbMostrarSenha";
+            this.cbMostrarSenha.Size = new System.Drawing.Size(114, 20);
+            this.cbMostrarSenha.TabIndex = 17;
+            this.cbMostrarSenha.Text = "Mostrar senha";
+            this.cbMostrarSenha.UseVisualStyleBackColor = true;
+            this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // button1
+            // btnConfirmar
             // 
-            this.button1.Location = new System.Drawing.Point(244, 196);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 18;
-            this.button1.Text = "Confirmar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnConfirmar.Location = new System.Drawing.Point(233, 189);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.TabIndex = 18;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.button1_Click);
             // 
             // TrocarSenha
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 318);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(563, 318);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.cbMostrarSenha);
+            this.Controls.Add(this.lblErroSenha);
+            this.Controls.Add(this.txtSenhaNovamente);
+            this.Controls.Add(this.lblSenhaNovamente);
+            this.Controls.Add(this.txtSenhaNova);
+            this.Controls.Add(this.lblSenhaNova);
             this.Name = "TrocarSenha";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TrocarSenha";
@@ -123,12 +123,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblErroSenha;
+        private System.Windows.Forms.TextBox txtSenhaNovamente;
+        private System.Windows.Forms.Label lblSenhaNovamente;
+        private System.Windows.Forms.TextBox txtSenhaNova;
+        private System.Windows.Forms.Label lblSenhaNova;
+        private System.Windows.Forms.CheckBox cbMostrarSenha;
+        private System.Windows.Forms.Button btnConfirmar;
     }
 }

@@ -1,98 +1,77 @@
 ﻿using Regras_de_negócio;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste {
     public partial class TrocarSenha : Form {
 
         private RecuperarSenhaEmail _referencia;
-
+        private RecuperarSenhaBLL _recuperarSenhaBLL = new RecuperarSenhaBLL();
         public TrocarSenha(RecuperarSenhaEmail tela) {
             InitializeComponent();
             _referencia = tela;
         }
-
         public TrocarSenha() {
             InitializeComponent();
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e) {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e) {
-        }
-
-        private void label2_Click(object sender, EventArgs e) {
-
-        }
-
+        }   
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
-            textBox2.PasswordChar = checkBox1.Checked ? '\0' : '*';
-            textBox3.PasswordChar = checkBox1.Checked ? '\0' : '*';
+            char passwordChar = cbMostrarSenha.Checked ? '\0' : '*';
+            txtSenhaNova.PasswordChar = passwordChar;
+            txtSenhaNovamente.PasswordChar = passwordChar;
         }
-
         private void button1_Click(object sender, EventArgs e) {
 
             string email = _referencia.EmailUsuarioPublico;
 
-            string novaSenha = textBox3.Text;
+            string novaSenha = txtSenhaNovamente.Text;
 
+            if (txtSenhaNova.Text == txtSenhaNovamente.Text) {
+                lblErroSenha.Visible = false;
+                _recuperarSenhaBLL.AlterarSenha(email, novaSenha);
+                MessageBox.Show("Senha Alterada com sucesso!");
 
-            RecuperarSenhaBLL _recuperarsenhabll = new RecuperarSenhaBLL();
-            RecuperarSenhaBLL _alterarsenhadal = new RecuperarSenhaBLL();
-            RecuperarSenhaBLL _retornarnomedal = new RecuperarSenhaBLL();
+                if (string.IsNullOrWhiteSpace(txtSenhaNova.Text) || string.IsNullOrWhiteSpace(txtSenhaNovamente.Text)) {
+                    lblErroSenha.Text = "Preencha todos os campos.";
+                    lblErroSenha.ForeColor = Color.Red;
+                    lblErroSenha.Visible = true;
+                    return;
+                }
+                if (txtSenhaNova.Text != txtSenhaNovamente.Text) {
+                    lblErroSenha.Text = "As senhas não coincidem.";
+                    lblErroSenha.ForeColor = Color.Red;
+                    lblErroSenha.Visible = true;
+                    return;
+                }
+                try {
+                    _recuperarSenhaBLL.AlterarSenha(email, novaSenha);
 
-                if (textBox2.Text == textBox3.Text) {
-                    label5.Visible = false;
-                    _alterarsenhadal.AlterarSenha(email, novaSenha);
-                    MessageBox.Show("Senha Alterada com sucesso!");
+                    MessageBox.Show("Senha alterada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     EmailBLL.EnviarEmailBLL(
-                     "Olá, " + _retornarnomedal.RetornoNome(email) + "\r\n\r\n" +
-                     "Informamos que sua senha foi alterada com sucesso.\r\n\r\n" +
-                     "Se você realizou essa alteração, pode desconsiderar esta mensagem.\r\n\r\n" +
-                     "Caso não tenha solicitado essa mudança, recomendamos que entre em contato imediatamente com nossa equipe de suporte para garantir a segurança da sua conta.\r\n\r\n" +
-                     "Atenciosamente,\r\nEquipe AtendeTech\r\nsuporte@atendetech.com.br",
-                     email,
-                     "Alteração de senha realizada com sucesso",
-                     button1
+                         "Olá, " + _recuperarSenhaBLL.RetornoNome(email) + "\r\n\r\n" +
+                         "Informamos que sua senha foi alterada com sucesso.\r\n\r\n" +
+                         "Se você realizou essa alteração, pode desconsiderar esta mensagem.\r\n\r\n" +
+                         "Caso não tenha solicitado essa mudança, recomendamos que entre em contato imediatamente com nossa equipe de suporte para garantir a segurança da sua conta.\r\n\r\n" +
+                         "Atenciosamente,\r\nEquipe AtendeTech\r\nsuporte@atendetech.com.br",
+                         email,
+                         "Alteração de senha realizada com sucesso",
+                         btnConfirmar
                     );
-
-
-                    this.Hide();
+                    this.Close();
                     Exemplo exemplo = new Exemplo();
                     exemplo.ShowDialog();
-                    this.Hide();
                 }
-                else {
-                    label5.Text = "Senha diferente";
-                    label5.ForeColor = Color.Red;
-                    label5.Visible = true;
+                catch (Exception ex) {
+                    MessageBox.Show("Erro ao alterar a senha: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-            
+            }
         }
-
-        private void TrocarSenha_Load(object sender, EventArgs e) {
-
-        }
+        private void TrocarSenha_Load(object sender, EventArgs e) {}
+        private void textBox2_TextChanged(object sender, EventArgs e) {}
+        private void textBox3_TextChanged(object sender, EventArgs e) {}
+        private void label3_Click(object sender, EventArgs e) {}
+        private void label5_Click(object sender, EventArgs e) {}
+        private void label2_Click(object sender, EventArgs e) {}
     }
 }
