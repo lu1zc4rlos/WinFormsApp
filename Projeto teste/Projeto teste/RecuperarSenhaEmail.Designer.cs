@@ -23,103 +23,105 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnEnviarCodigo = new System.Windows.Forms.Button();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.btnTrocarSenha = new System.Windows.Forms.Button();
+            this.btnAcessarPrograma = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnEnviarCodigo
             // 
-            this.button1.Location = new System.Drawing.Point(167, 88);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Enviar código";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnEnviarCodigo.Location = new System.Drawing.Point(167, 88);
+            this.btnEnviarCodigo.Name = "btnEnviarCodigo";
+            this.btnEnviarCodigo.Size = new System.Drawing.Size(107, 23);
+            this.btnEnviarCodigo.TabIndex = 0;
+            this.btnEnviarCodigo.Text = "Enviar código";
+            this.btnEnviarCodigo.UseVisualStyleBackColor = true;
+            this.btnEnviarCodigo.Click += new System.EventHandler(this.btnEnviarCodigo_Click);
             // 
-            // label1
+            // lblCodigo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(85, 134);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Código:";
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(85, 134);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(54, 16);
+            this.lblCodigo.TabIndex = 1;
+            this.lblCodigo.Text = "Código:";
+            this.lblCodigo.Click += new System.EventHandler(this.lblCodigo_Click);
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(145, 60);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 22);
-            this.textBox2.TabIndex = 5;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtEmail.Location = new System.Drawing.Point(145, 60);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(161, 22);
+            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
-            // label2
+            // lblEmail
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(85, 63);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "E-mail:";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(85, 63);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(48, 16);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "E-mail:";
+            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
             // 
-            // button2
+            // btnConfirmar
             // 
-            this.button2.Location = new System.Drawing.Point(180, 159);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Confirmar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.btnConfirmar.Location = new System.Drawing.Point(180, 159);
+            this.btnConfirmar.Name = "btnConfirmar";
+            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
+            this.btnConfirmar.TabIndex = 6;
+            this.btnConfirmar.Text = "Confirmar";
+            this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click_1);
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(145, 131);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(161, 22);
-            this.textBox1.TabIndex = 7;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtCodigo.Location = new System.Drawing.Point(145, 131);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(161, 22);
+            this.txtCodigo.TabIndex = 7;
+            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
-            // button3
+            // btnTrocarSenha
             // 
-            this.button3.Location = new System.Drawing.Point(70, 218);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 23);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Trocar Senha";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnTrocarSenha.Location = new System.Drawing.Point(70, 218);
+            this.btnTrocarSenha.Name = "btnTrocarSenha";
+            this.btnTrocarSenha.Size = new System.Drawing.Size(114, 23);
+            this.btnTrocarSenha.TabIndex = 8;
+            this.btnTrocarSenha.Text = "Trocar Senha";
+            this.btnTrocarSenha.UseVisualStyleBackColor = true;
+            this.btnTrocarSenha.Click += new System.EventHandler(this.btnTrocarSenha_Click);
             // 
-            // button4
+            // btnAcessarPrograma
             // 
-            this.button4.Location = new System.Drawing.Point(243, 218);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(138, 23);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Acessar programa";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnAcessarPrograma.Location = new System.Drawing.Point(243, 218);
+            this.btnAcessarPrograma.Name = "btnAcessarPrograma";
+            this.btnAcessarPrograma.Size = new System.Drawing.Size(138, 23);
+            this.btnAcessarPrograma.TabIndex = 9;
+            this.btnAcessarPrograma.Text = "Acessar programa";
+            this.btnAcessarPrograma.UseVisualStyleBackColor = true;
+            this.btnAcessarPrograma.Click += new System.EventHandler(this.btnAcessarPrograma_Click);
             // 
             // RecuperarSenhaEmail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 262);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAcessarPrograma);
+            this.Controls.Add(this.btnTrocarSenha);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.btnConfirmar);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.lblEmail);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.btnEnviarCodigo);
             this.Name = "RecuperarSenhaEmail";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RecuperarSenhaEmail";
@@ -131,13 +133,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnEnviarCodigo;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Button btnConfirmar;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Button btnTrocarSenha;
+        private System.Windows.Forms.Button btnAcessarPrograma;
     }
 }

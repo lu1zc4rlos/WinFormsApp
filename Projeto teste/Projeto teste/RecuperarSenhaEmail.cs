@@ -1,111 +1,89 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Regras_de_negócio;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste {
-
     public partial class RecuperarSenhaEmail : Form {
 
+        private readonly RecuperarSenhaBLL recuperarSenhaBLL = new RecuperarSenhaBLL();
         private string codigoGerado;
-        private string EmailUsuario;
-
+        private string emailUsuario;
         public string EmailUsuarioPublico {
-            get { return EmailUsuario; }
-            set { EmailUsuario = value; }
+            get { return emailUsuario; }
+            set { emailUsuario = value; }
         }
-
         public string CodigoGerado() {
             RecuperarSenhaBLL _codigo = new RecuperarSenhaBLL();
             string codigo = _codigo.GerarCodigoSeguro();
 
             return codigo;
-
         }
         public RecuperarSenhaEmail() {
             InitializeComponent();
         }
-        private void button1_Click(object sender, EventArgs e) {
+        private void btnEnviarCodigo_Click(object sender, EventArgs e) {
 
-            RecuperarSenhaBLL _retornarnomedal = new RecuperarSenhaBLL();
-            EmailUsuario = textBox2.Text;
-            codigoGerado = CodigoGerado();
+            emailUsuario = txtEmail.Text.Trim();
 
-            EmailBLL.EnviarEmailBLL(
-               "Olá, " + _retornarnomedal.RetornoNome(EmailUsuario) + "\r\n\r\n" +
-               "Recebemos uma solicitação para redefinir sua senha de acesso ao sistema AtendeTech.\r\n\r\n" +
-               "Para confirmar essa solicitação, utilize o código abaixo dentro do aplicativo:\r\n\r\n" +
-               "CÓDIGO DE VERIFICAÇÃO: " + codigoGerado + "\r\n\r\n" +
-               "Se você não solicitou essa redefinição, por favor ignore esta mensagem ou entre em contato com nossa equipe de suporte.\r\n\r\n" +
-               "Atenciosamente,\r\nEquipe AtendeTech\r\nsuporte@atendetech.com.br",
-               EmailUsuario,
-               "Código para redefinição de senha",
-               button1
-            );
+            if (string.IsNullOrEmpty(emailUsuario)) {
+                MessageBox.Show("Por favor, informe o seu e-mail.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            codigoGerado = recuperarSenhaBLL.GerarCodigoSeguro();
+
+            try {
+                EmailBLL.EnviarEmailBLL(
+                   "Olá, " + recuperarSenhaBLL.RetornoNome(emailUsuario) + "\r\n\r\n" +
+                   "Recebemos uma solicitação para redefinir sua senha de acesso ao sistema AtendeTech.\r\n\r\n" +
+                   "Para confirmar essa solicitação, utilize o código abaixo dentro do aplicativo:\r\n\r\n" +
+                   "CÓDIGO DE VERIFICAÇÃO: " + codigoGerado + "\r\n\r\n" +
+                   "Se você não solicitou essa redefinição, por favor ignore esta mensagem ou entre em contato com nossa equipe de suporte.\r\n\r\n" +
+                   "Atenciosamente,\r\nEquipe AtendeTech\r\nsuporte@atendetech.com.br",
+                   emailUsuario,
+                   "Código para redefinição de senha",
+                   btnEnviarCodigo
+                );
+                MessageBox.Show("Código de recuperação enviado com sucesso para o e-mail informado!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtEmail.Enabled = false;
+            }
+            catch (Exception ex) {
+                MessageBox.Show("Erro ao enviar o e-mail: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e) {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e) {
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e, string codigo) {
-
-        }
-
-        private void button2_Click_1(object sender, EventArgs e) {
-            if (codigoGerado == textBox1.Text) {
-
-                MessageBox.Show("Código verificado com sucesso!\n" +
-                    "Escolha o que deseja fazer");
-                button3.Visible = true;
-                button4.Visible = true;
-
+        private void btnConfirmar_Click_1(object sender, EventArgs e) {
+            if (string.IsNullOrEmpty(txtCodigo.Text)) {
+                MessageBox.Show("Por favor, insira o código de verificação.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (codigoGerado == txtCodigo.Text.Trim()) {
+                MessageBox.Show("Código verificado com sucesso!\nEscolha o que deseja fazer.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnTrocarSenha.Visible = true;
+                btnAcessarPrograma.Visible = true;
             }
             else {
-                MessageBox.Show("Código invalido!");
+                MessageBox.Show("Código inválido. Verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void btnTrocarSenha_Click(object sender, EventArgs e) {
 
-        private void textBox1_TextChanged(object sender, EventArgs e) {
-
+            var telaTrocarSenha = new TrocarSenha(this);
+            this.Hide();
+            telaTrocarSenha.ShowDialog();
+            this.Close();
         }
+        private void btnAcessarPrograma_Click(object sender, EventArgs e) {
 
-        private void button3_Click(object sender, EventArgs e) {
-
-            RecuperarSenhaEmail telaOriginal = new RecuperarSenhaEmail();
-            telaOriginal.EmailUsuarioPublico = textBox2.Text;
-
-            var telaNova = new TrocarSenha(telaOriginal);
             this.Hide();
-            telaNova.ShowDialog();
-            this.Hide();
-
-        }
-
-        private void button4_Click(object sender, EventArgs e) {
-          
-            this.Hide();
-            Exemplo exemplo = new Exemplo();
+            var exemplo = new Exemplo();
             exemplo.ShowDialog();
-            this.Hide();
+            this.Close();
         }
-
-        private void RecuperarSenhaEmail_Load(object sender, EventArgs e) {
-            button3.Visible = false;
-            button4.Visible = false;
-        }
+        private void RecuperarSenhaEmail_Load(object sender, EventArgs e) {}
+        private void txtEmail_TextChanged(object sender, EventArgs e) {}
+        private void button2_Click(object sender, EventArgs e) {}
+        private void txtCodigo_TextChanged(object sender, EventArgs e) {}
+        private void lblEmail_Click(object sender, EventArgs e) {}
+        private void lblCodigo_Click(object sender, EventArgs e) {}
     }
-     
 }
