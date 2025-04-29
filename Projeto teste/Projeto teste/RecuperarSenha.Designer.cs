@@ -63,7 +63,7 @@
             this.txtSenhaNova.PasswordChar = '*';
             this.txtSenhaNova.Size = new System.Drawing.Size(232, 22);
             this.txtSenhaNova.TabIndex = 3;
-            this.txtSenhaNova.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtSenhaNova.TextChanged += new System.EventHandler(this.txtSenhaNova_TextChanged);
             // 
             // lblSenhaNova
             // 

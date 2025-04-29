@@ -25,9 +25,15 @@ namespace Projeto_teste {
             string novaSenha = txtSenhaNova.Text;
 
             RecuperarSenhaBLL _recuperarSenhaBLL = new RecuperarSenhaBLL();
+            RecuperarSenhaBLL _requisitosSenhaBLL = new RecuperarSenhaBLL();
 
             try {
                 if (_recuperarSenhaBLL.ValidarEmail(email)) {
+                    if (_requisitosSenhaBLL.ValidarSenha(novaSenha)) {
+                        MessageBox.Show("Senha inválida! A senha deve ter:\n- Pelo menos 8 caracteres" +
+                        "\n- Uma letra maiúscula\n- Um número\n- Um caractere especial.");
+                        return;
+                    }
                     if (txtSenhaNova.Text == txtSenhaNovamente.Text) {
                         label5.Visible = false;
 
@@ -64,7 +70,7 @@ namespace Projeto_teste {
                 MessageBox.Show("Erro: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void textBox2_TextChanged(object sender, EventArgs e) {}
+        private void txtSenhaNova_TextChanged(object sender, EventArgs e) {}
         private void RecuperarSenha_Load(object sender, EventArgs e) {}
         private void textBox3_TextChanged(object sender, EventArgs e) {}
         private void textBox1_TextChanged(object sender, EventArgs e) {}

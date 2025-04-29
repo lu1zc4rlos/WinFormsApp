@@ -3,6 +3,7 @@ using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Security.Cryptography;
+using System.Linq;
 
 namespace Regras_de_negócio {
     public class RecuperarSenhaBLL {
@@ -13,24 +14,20 @@ namespace Regras_de_negócio {
             public string Email { get; set; }
             public string Senha { get; set; }
         }
-
         private bool EmailValido(string email) {
             string padrao = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(email, padrao);
         }
-
         public bool ValidarEmail(string email) {
             if (string.IsNullOrWhiteSpace(email)) {
                 throw new ArgumentException("Email obrigatório.");
             }
-
             if (!EmailValido(email)) {
                 throw new FormatException("Formato de email inválido.");
             }
 
             return _recuperarSenhaDAL.ValidarEmail(email);
         }
-
         public bool AlterarSenha(string email, string novaSenha) {
             if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(novaSenha)) {
                 throw new ArgumentException("Email e nova senha são obrigatórios.");
@@ -38,7 +35,6 @@ namespace Regras_de_negócio {
 
             return _recuperarSenhaDAL.AlterarSenha(email, novaSenha);
         }
-
         public string RetornoNome(string email) {
             if (string.IsNullOrWhiteSpace(email)) {
                 throw new ArgumentException("O e-mail não pode ser vazio.");
@@ -46,7 +42,6 @@ namespace Regras_de_negócio {
 
             return _recuperarSenhaDAL.RetornoNome(email);
         }
-
         public string GerarCodigoSeguro(int tamanho = 8) {
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var bytes = new byte[tamanho];
@@ -61,6 +56,22 @@ namespace Regras_de_negócio {
             }
 
             return result.ToString();
+        }
+        public bool ValidarSenha(string senha) {
+
+            if (senha.Length < 8)
+                return true;
+
+            if (!senha.Any(char.IsUpper))
+                return true;
+
+            if (!senha.Any(char.IsDigit))
+                return true;
+
+            if (!senha.Any(ch => "!@#$%^&*()-_=+[{]}\\|;:'\",<.>/?".Contains(ch)))
+                return true;
+
+            return false;
         }
     }
 }

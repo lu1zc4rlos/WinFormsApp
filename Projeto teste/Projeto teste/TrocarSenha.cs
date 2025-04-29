@@ -25,9 +25,16 @@ namespace Projeto_teste {
             string email = _referencia.EmailUsuarioPublico;
 
             string novaSenha = txtSenhaNovamente.Text;
-
+            if (txtSenhaNova.Text != txtSenhaNovamente.Text) {
+                lblErroSenha.Visible = true;
+            }
             if (txtSenhaNova.Text == txtSenhaNovamente.Text) {
                 lblErroSenha.Visible = false;
+                if (_recuperarSenhaBLL.ValidarSenha(novaSenha)) {
+                    MessageBox.Show("Senha inválida! A senha deve ter:\n- Pelo menos 8 caracteres" +
+                    "\n- Uma letra maiúscula\n- Um número\n- Um caractere especial.");
+                    return;
+                }
                 _recuperarSenhaBLL.AlterarSenha(email, novaSenha);
                 MessageBox.Show("Senha Alterada com sucesso!");
 

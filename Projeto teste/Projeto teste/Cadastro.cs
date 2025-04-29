@@ -1,18 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Globalization;
-using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Regras_de_negócio;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste {
     public partial class Cadastro : Form {
@@ -211,6 +204,7 @@ namespace Projeto_teste {
         }
 
         private UsuarioBLL _usuarioBLL = new UsuarioBLL();
+        private RecuperarSenhaBLL _requisitosSenhaBLL = new RecuperarSenhaBLL ();
 
         private void btnConfirmar_Click(object sender, EventArgs e) {
             DateTime Data = atpDataNascimento.Value.Date;
@@ -218,7 +212,7 @@ namespace Projeto_teste {
             Usuario novoUsuario = new Usuario() {
                 Nome = txtNome.Text,
                 Data_Nascimento = Data,
-                Email = txtEmail.Text,
+                Email = txtEmail.Text.Trim(),
                 Senha = txtConfirmarSenha.Text,
             };
 
@@ -233,13 +227,17 @@ namespace Projeto_teste {
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (_requisitosSenhaBLL.ValidarSenha(txtConfirmarSenha.Text)) {
+                MessageBox.Show("Senha inválida! A senha deve ter:\n- Pelo menos 8 caracteres" +
+                "\n- Uma letra maiúscula\n- Um número\n- Um caractere especial.");
+                return;
+            }
             if (txtSenha.Text != txtConfirmarSenha.Text) {
                 lblSenhaDiferente.Text = "As senhas não coincidem.";
                 lblSenhaDiferente.ForeColor = Color.Red;
                 lblSenhaDiferente.Visible = true;
                 return;
             }
-
             try {
 
                 if (_usuarioBLL.EmailJaCadastrado(novoUsuario)) {
@@ -251,6 +249,10 @@ namespace Projeto_teste {
 
                 _usuarioBLL.AdicionarUsuario(novoUsuario);
 
+                if (!EmailBLL.EmailValido(novoUsuario.Email)) {
+                    MessageBox.Show("E-mail inválido. Verifique e tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 EmailBLL.EnviarEmailBLL("Olá, " + novoUsuario.Nome + "\r\n\r\n" +
                     "Seja bem-vindo ao AtendeTech, o seu novo assistente virtual de ajuda e suporte técnico.\r\n\r\n" +
                     "Estamos muito contentes em tê-lo como usuário da nossa plataforma. O AtendeTech foi desenvolvido para tornar seu atendimento mais rápido, eficiente e acessível, sempre que você precisar de suporte técnico.\r\n\r\n" +
@@ -266,7 +268,7 @@ namespace Projeto_teste {
                 this.Hide();
                 Exemplo exemplo = new Exemplo();
                 exemplo.ShowDialog();
-                this.Show();
+                this.Close();
             }
             catch(Exception ex){
 
@@ -278,7 +280,7 @@ namespace Projeto_teste {
             this.Hide();
             Login login = new Login();
             login.ShowDialog();
-            this.Show();
+            this.Close();
         }
         private void Cadastro_Load(object sender, EventArgs e) {
             CultureInfo culture = new CultureInfo("pt-BR");
@@ -296,12 +298,11 @@ namespace Projeto_teste {
             txtConfirmarSenha.PasswordChar = cbMostrarSenha.Checked ? '\0' : '*';
             txtSenha.PasswordChar = cbMostrarSenha.Checked ? '\0' : '*';
         }
+        private void txtConfirmarSenha_TextChanged(object sender, EventArgs e) {}
         private void textBox1_TextChanged(object sender, EventArgs e) {}
         private void label6_Click(object sender, EventArgs e) {}
         private void textBox2_TextChanged(object sender, EventArgs e) {}
         private void textBox4_TextChanged(object sender, EventArgs e) {}
-        private void txtConfirmarSenha_TextChanged(object sender, EventArgs e) {
-        }
     }
 
     [Serializable]

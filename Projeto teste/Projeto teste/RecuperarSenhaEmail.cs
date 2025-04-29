@@ -20,6 +20,8 @@ namespace Projeto_teste {
         }
         public RecuperarSenhaEmail() {
             InitializeComponent();
+            btnTrocarSenha.Visible = false;
+            btnAcessarPrograma.Visible = false;
         }
         private void btnEnviarCodigo_Click(object sender, EventArgs e) {
 

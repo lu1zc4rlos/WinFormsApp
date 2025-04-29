@@ -35,10 +35,11 @@
             // lblErroSenha
             // 
             this.lblErroSenha.AutoSize = true;
-            this.lblErroSenha.Location = new System.Drawing.Point(443, 136);
+            this.lblErroSenha.Location = new System.Drawing.Point(427, 139);
             this.lblErroSenha.Name = "lblErroSenha";
-            this.lblErroSenha.Size = new System.Drawing.Size(0, 16);
+            this.lblErroSenha.Size = new System.Drawing.Size(118, 16);
             this.lblErroSenha.TabIndex = 16;
+            this.lblErroSenha.Text = "Senhas diferentes ";
             this.lblErroSenha.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtSenhaNovamente

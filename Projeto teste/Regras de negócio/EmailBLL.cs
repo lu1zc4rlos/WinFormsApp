@@ -22,15 +22,22 @@ namespace Regras_de_negócio {
                 lbl.BringToFront();
             }
         }
-
         public static void RemoverLabel(Control container, string nome = "lblStatusEmail") {
             if (container.Controls[nome] != null) {
                 container.Controls.RemoveByKey(nome);
             }
         }
     }
-
     public class EmailBLL {
+        public static bool EmailValido(string email) {
+            try {
+                var addr = new MailAddress(email.Trim());
+                return addr.Address == email.Trim();
+            }
+            catch {
+                return false;
+            }
+        }
         public static void EnviarEmailBLL(string mensagem, string destino, string assunto, Control mostrarMsgAguarde = null) {
             string emailRemetente = ConfigurationManager.AppSettings["EmailRemetente"];
             string senhaEmail = ConfigurationManager.AppSettings["SenhaEmail"];
