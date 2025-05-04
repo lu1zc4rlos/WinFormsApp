@@ -66,7 +66,7 @@ namespace Projeto_teste {
                          btnConfirmar
                     );
                     this.Close();
-                    Exemplo exemplo = new Exemplo();
+                    ChatBot exemplo = new ChatBot();
                     exemplo.ShowDialog();
                 }
                 catch (Exception ex) {

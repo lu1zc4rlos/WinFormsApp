@@ -53,7 +53,7 @@ namespace Projeto_teste {
                         );
 
                         this.Hide();
-                        Exemplo exemplo = new Exemplo();
+                        ChatBot exemplo = new ChatBot();
                         exemplo.ShowDialog();
                     }
                     else { 

@@ -77,7 +77,7 @@ namespace Projeto_teste {
         private void btnAcessarPrograma_Click(object sender, EventArgs e) {
 
             this.Hide();
-            var exemplo = new Exemplo();
+            var exemplo = new ChatBot();
             exemplo.ShowDialog();
             this.Close();
         }

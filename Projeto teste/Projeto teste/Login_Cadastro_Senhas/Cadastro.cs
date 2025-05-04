@@ -266,7 +266,7 @@ namespace Projeto_teste {
                 MessageBox.Show("Usuário adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
-                Exemplo exemplo = new Exemplo();
+                ChatBot exemplo = new ChatBot();
                 exemplo.ShowDialog();
                 this.Close();
             }

@@ -24,7 +24,7 @@ namespace Projeto_teste {
             try {
                 if (loginBLL.ValidarLogin(email, senha)) {
                     this.Hide();
-                    using (Exemplo exemplo = new Exemplo()) {
+                    using (ChatBot exemplo = new ChatBot()) {
                         exemplo.ShowDialog();
                     }
                     this.Show();
