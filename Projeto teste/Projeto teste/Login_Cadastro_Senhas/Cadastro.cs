@@ -266,8 +266,8 @@ namespace Projeto_teste {
                 MessageBox.Show("Usuário adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
-                Exemplo exemplo = new Exemplo();
-                exemplo.ShowDialog();
+                Projeto_teste.Home.Home home = new Projeto_teste.Home.Home();
+                home.ShowDialog();
                 this.Close();
             }
             catch(Exception ex){

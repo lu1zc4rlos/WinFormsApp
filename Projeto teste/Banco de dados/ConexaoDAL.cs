@@ -1,11 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Npgsql;
 
-namespace Data_Access {
+namespace Datai_Accesso {
     public class ConexaoDAL {
 
-            private static string _ConexaoComBanco = "Server=localhost;Uid=root;Pwd=120920;Database=usuarios";
-            public static MySqlConnection Abrir() {
-                var Conexao = new MySqlConnection(_ConexaoComBanco);
+            private static string _ConexaoComBanco = "Host=localhost;Username=postgres;Password=pim;Database=sistema_usuarios";
+            public static NpgsqlConnection Abrir() {
+                var Conexao = new NpgsqlConnection(_ConexaoComBanco);
                 Conexao.Open();
                 return Conexao;
 

@@ -2,7 +2,7 @@
 using System.Text;
 using System.Security.Cryptography;
 
-namespace Data_Access {
+namespace Datai_Accesso {
     public class CriptografiaDAL {
         public static string GerarHashSenha(string senha) {
             using (var sha256 = SHA256.Create()) {

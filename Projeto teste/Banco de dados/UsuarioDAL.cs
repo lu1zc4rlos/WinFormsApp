@@ -1,6 +1,6 @@
 ﻿using System;
-using Data_Access;
-using MySql.Data.MySqlClient;
+using Datai_Accesso;
+using Npgsql;
 using Regras_de_negócio;
 
 
@@ -13,7 +13,7 @@ namespace Banco_de_dados {
             string CadastrarUser = "insert into dados_pessoais (Nome, Data_Nascimento, Email, Senha) values(@Nome,@Data_Nascimento,@Email,@Senha)";
 
             using (var conexao = ConexaoDAL.Abrir())
-            using (MySqlCommand comando = new MySqlCommand(CadastrarUser, conexao)) {
+            using (NpgsqlCommand comando = new NpgsqlCommand(CadastrarUser, conexao)) {
 
                 try {
                     comando.Parameters.AddWithValue("@Nome", usuario.Nome);
@@ -25,7 +25,7 @@ namespace Banco_de_dados {
 
                     comando.ExecuteNonQuery();
                 }
-                catch (MySqlException ex) {
+                catch (NpgsqlException ex) {
 
                     throw new Exception("Erro no banco de dados", ex);
                 }
@@ -42,13 +42,13 @@ namespace Banco_de_dados {
             try {
                 string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email";
                 using (var conexao = ConexaoDAL.Abrir())
-                using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
+                using (NpgsqlCommand comando = new NpgsqlCommand(query, conexao)) {
                     comando.Parameters.AddWithValue("@Email", usuario.Email);
                     int count = Convert.ToInt32(comando.ExecuteScalar());
                     return count > 0;
                 }
             }
-            catch (MySqlException ex) {
+            catch (NpgsqlException ex) {
 
                 throw new Exception("Erro no banco de dados", ex);
             }

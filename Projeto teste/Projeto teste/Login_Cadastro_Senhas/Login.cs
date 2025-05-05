@@ -24,10 +24,10 @@ namespace Projeto_teste {
             try {
                 if (loginBLL.ValidarLogin(email, senha)) {
                     this.Hide();
-                    using (Exemplo exemplo = new Exemplo()) {
-                        exemplo.ShowDialog();
+                    using (Projeto_teste.Home.Home home = new Projeto_teste.Home.Home()) {
+                        home.ShowDialog();
                     }
-                    this.Show();
+                    this.Hide();
                     LimparCampos();
                 }
                 else {
