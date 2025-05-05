@@ -17,12 +17,20 @@ namespace Regras_de_negócio {
             }
 
             using (var client = new HttpClient()) {
-                // Adiciona o cabeçalho Authorization
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
 
                 var requestBody = new {
                     model = "gpt-3.5-turbo",
                     messages = new[] {
+                        new {
+                            role = "system",
+                            content = "Você é o OmegaTech, um assistente técnico da empresa Omega Solutions." +
+                                      " Seu objetivo é ajudar usuários com dúvidas e problemas na área de TI," +
+                                      " como redes, hardware, software, banco de dados, sistemas operacionais e programação." +
+                                      " Responda com clareza, objetividade e profissionalismo, usando linguagem acessível." +
+                                      " Use exemplos práticos sempre que possível. Nunca responda perguntas fora do escopo da área de TI." +
+                                      " Se a pergunta não for relacionada a TI, diga educadamente que não pode ajudar."
+                        },
                         new { role = "user", content = mensagem }
                     }
                 };
