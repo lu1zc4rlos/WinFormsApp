@@ -11,7 +11,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\Entidades\Entidades.csproj" />
-		<ProjectReference Include="..\Regras de negócio\Regras De Negocio.csproj" />
+		<ProjectReference Include="..\Regras de negócio\BLL.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
