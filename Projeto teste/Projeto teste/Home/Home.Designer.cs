@@ -28,129 +28,131 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
-            this.pn_title = new System.Windows.Forms.Panel();
-            this.lbl_titulo = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            this.lbl_omega = new System.Windows.Forms.Label();
-            this.btn_sidebar = new System.Windows.Forms.PictureBox();
-            this.sideBar = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_chamados = new System.Windows.Forms.Button();
-            this.btn_chatbot = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.SideBarTransition = new System.Windows.Forms.Timer(this.components);
-            this.pn_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_sidebar)).BeginInit();
-            this.sideBar.SuspendLayout();
-            this.SuspendLayout();
+            pn_title = new System.Windows.Forms.Panel();
+            lbl_titulo = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            lbl_omega = new System.Windows.Forms.Label();
+            btn_sidebar = new System.Windows.Forms.PictureBox();
+            sideBar = new System.Windows.Forms.FlowLayoutPanel();
+            btn_chamados = new System.Windows.Forms.Button();
+            btn_chatbot = new System.Windows.Forms.Button();
+            backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            SideBarTransition = new System.Windows.Forms.Timer(components);
+            pn_title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)btn_sidebar).BeginInit();
+            sideBar.SuspendLayout();
+            SuspendLayout();
             // 
             // pn_title
             // 
-            resources.ApplyResources(this.pn_title, "pn_title");
-            this.pn_title.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pn_title.Controls.Add(this.lbl_titulo);
-            this.pn_title.Controls.Add(this.pictureBox2);
-            this.pn_title.Controls.Add(this.nightControlBox1);
-            this.pn_title.Controls.Add(this.lbl_omega);
-            this.pn_title.Controls.Add(this.btn_sidebar);
-            this.pn_title.Name = "pn_title";
+            resources.ApplyResources(pn_title, "pn_title");
+            pn_title.BackColor = System.Drawing.Color.WhiteSmoke;
+            pn_title.Controls.Add(lbl_titulo);
+            pn_title.Controls.Add(pictureBox2);
+            pn_title.Controls.Add(nightControlBox1);
+            pn_title.Controls.Add(lbl_omega);
+            pn_title.Controls.Add(btn_sidebar);
+            pn_title.Name = "pn_title";
             // 
             // lbl_titulo
             // 
-            resources.ApplyResources(this.lbl_titulo, "lbl_titulo");
-            this.lbl_titulo.Name = "lbl_titulo";
+            resources.ApplyResources(lbl_titulo, "lbl_titulo");
+            lbl_titulo.Name = "lbl_titulo";
             // 
             // pictureBox2
             // 
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
+            resources.ApplyResources(pictureBox2, "pictureBox2");
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.TabStop = false;
             // 
             // nightControlBox1
             // 
-            resources.ApplyResources(this.nightControlBox1, "nightControlBox1");
-            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
-            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMinimizeButton = true;
-            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Name = "nightControlBox1";
+            resources.ApplyResources(nightControlBox1, "nightControlBox1");
+            nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            nightControlBox1.DefaultLocation = true;
+            nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMaximizeButton = true;
+            nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMinimizeButton = true;
+            nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.Name = "nightControlBox1";
             // 
             // lbl_omega
             // 
-            resources.ApplyResources(this.lbl_omega, "lbl_omega");
-            this.lbl_omega.Name = "lbl_omega";
+            resources.ApplyResources(lbl_omega, "lbl_omega");
+            lbl_omega.Name = "lbl_omega";
             // 
             // btn_sidebar
             // 
-            resources.ApplyResources(this.btn_sidebar, "btn_sidebar");
-            this.btn_sidebar.Name = "btn_sidebar";
-            this.btn_sidebar.TabStop = false;
-            this.btn_sidebar.Click += new System.EventHandler(this.btn_sidebar_Click);
+            resources.ApplyResources(btn_sidebar, "btn_sidebar");
+            btn_sidebar.Name = "btn_sidebar";
+            btn_sidebar.TabStop = false;
+            btn_sidebar.Click += btn_sidebar_Click;
+            btn_sidebar.TabIndex = 0;
+
             // 
             // sideBar
             // 
-            resources.ApplyResources(this.sideBar, "sideBar");
-            this.sideBar.BackColor = System.Drawing.Color.Black;
-            this.sideBar.Controls.Add(this.btn_chamados);
-            this.sideBar.Controls.Add(this.btn_chatbot);
-            this.sideBar.Name = "sideBar";
+            resources.ApplyResources(sideBar, "sideBar");
+            sideBar.BackColor = System.Drawing.Color.Black;
+            sideBar.Controls.Add(btn_chamados);
+            sideBar.Controls.Add(btn_chatbot);
+            sideBar.Name = "sideBar";
             // 
             // btn_chamados
             // 
-            this.btn_chamados.BackColor = System.Drawing.Color.Black;
-            this.btn_chamados.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_chamados, "btn_chamados");
-            this.btn_chamados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_chamados.Name = "btn_chamados";
-            this.btn_chamados.UseVisualStyleBackColor = false;
-            this.btn_chamados.Click += new System.EventHandler(this.btn_chamados_Click);
+            btn_chamados.BackColor = System.Drawing.Color.Black;
+            btn_chamados.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btn_chamados, "btn_chamados");
+            btn_chamados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            btn_chamados.Name = "btn_chamados";
+            btn_chamados.UseVisualStyleBackColor = false;
+            btn_chamados.Click += btn_chamados_Click;
             // 
             // btn_chatbot
             // 
-            this.btn_chatbot.BackColor = System.Drawing.Color.Black;
-            this.btn_chatbot.FlatAppearance.BorderSize = 0;
-            resources.ApplyResources(this.btn_chatbot, "btn_chatbot");
-            this.btn_chatbot.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_chatbot.Name = "btn_chatbot";
-            this.btn_chatbot.UseVisualStyleBackColor = false;
-            this.btn_chatbot.Click += new System.EventHandler(this.btn_chatbot_Click);
+            btn_chatbot.BackColor = System.Drawing.Color.Black;
+            btn_chatbot.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(btn_chatbot, "btn_chatbot");
+            btn_chatbot.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            btn_chatbot.Name = "btn_chatbot";
+            btn_chatbot.UseVisualStyleBackColor = false;
+            btn_chatbot.Click += btn_chatbot_Click;
             // 
             // SideBarTransition
             // 
-            this.SideBarTransition.Interval = 20;
-            this.SideBarTransition.Tick += new System.EventHandler(this.SideBarTransition_Tick);
+            SideBarTransition.Interval = 20;
+            SideBarTransition.Tick += SideBarTransition_Tick;
             // 
             // Home
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.Controls.Add(this.pn_title);
-            this.Controls.Add(this.sideBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Home";
-            this.Load += new System.EventHandler(this.Home_Load);
-            this.pn_title.ResumeLayout(false);
-            this.pn_title.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btn_sidebar)).EndInit();
-            this.sideBar.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.WhiteSmoke;
+            Controls.Add(pn_title);
+            Controls.Add(sideBar);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Name = "Home";
+            Load += Home_Load;
+            pn_title.ResumeLayout(false);
+            pn_title.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)btn_sidebar).EndInit();
+            sideBar.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 

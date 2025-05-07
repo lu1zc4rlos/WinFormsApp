@@ -22,112 +22,113 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            this.btnEnviarCodigo = new System.Windows.Forms.Button();
-            this.lblCodigo = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.btnTrocarSenha = new System.Windows.Forms.Button();
-            this.btnAcessarPrograma = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+        private void InitializeComponent()
+        {
+            btnEnviarCodigo = new System.Windows.Forms.Button();
+            lblCodigo = new System.Windows.Forms.Label();
+            txtEmail = new System.Windows.Forms.TextBox();
+            lblEmail = new System.Windows.Forms.Label();
+            btnConfirmar = new System.Windows.Forms.Button();
+            txtCodigo = new System.Windows.Forms.TextBox();
+            btnTrocarSenha = new System.Windows.Forms.Button();
+            btnAcessarPrograma = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // btnEnviarCodigo
             // 
-            this.btnEnviarCodigo.Location = new System.Drawing.Point(167, 88);
-            this.btnEnviarCodigo.Name = "btnEnviarCodigo";
-            this.btnEnviarCodigo.Size = new System.Drawing.Size(107, 23);
-            this.btnEnviarCodigo.TabIndex = 0;
-            this.btnEnviarCodigo.Text = "Enviar código";
-            this.btnEnviarCodigo.UseVisualStyleBackColor = true;
-            this.btnEnviarCodigo.Click += new System.EventHandler(this.btnEnviarCodigo_Click);
+            btnEnviarCodigo.Location = new System.Drawing.Point(146, 82);
+            btnEnviarCodigo.Name = "btnEnviarCodigo";
+            btnEnviarCodigo.Size = new System.Drawing.Size(94, 22);
+            btnEnviarCodigo.TabIndex = 1;
+            btnEnviarCodigo.Text = "Enviar código";
+            btnEnviarCodigo.UseVisualStyleBackColor = true;
+            btnEnviarCodigo.Click += btnEnviarCodigo_Click;
             // 
             // lblCodigo
             // 
-            this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(85, 134);
-            this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(54, 16);
-            this.lblCodigo.TabIndex = 1;
-            this.lblCodigo.Text = "Código:";
-            this.lblCodigo.Click += new System.EventHandler(this.lblCodigo_Click);
+            lblCodigo.AutoSize = true;
+            lblCodigo.Location = new System.Drawing.Point(74, 126);
+            lblCodigo.Name = "lblCodigo";
+            lblCodigo.Size = new System.Drawing.Size(49, 15);
+            lblCodigo.TabIndex = 1;
+            lblCodigo.Text = "Código:";
+            lblCodigo.Click += lblCodigo_Click;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(145, 60);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(161, 22);
-            this.txtEmail.TabIndex = 5;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            txtEmail.Location = new System.Drawing.Point(127, 56);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new System.Drawing.Size(141, 23);
+            txtEmail.TabIndex = 0;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // lblEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(85, 63);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 16);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "E-mail:";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new System.Drawing.Point(74, 59);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new System.Drawing.Size(44, 15);
+            lblEmail.TabIndex = 4;
+            lblEmail.Text = "E-mail:";
+            lblEmail.Click += lblEmail_Click;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(180, 159);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
-            this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click_1);
+            btnConfirmar.Location = new System.Drawing.Point(158, 149);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new System.Drawing.Size(66, 22);
+            btnConfirmar.TabIndex = 3;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click_1;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(145, 131);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(161, 22);
-            this.txtCodigo.TabIndex = 7;
-            this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
+            txtCodigo.Location = new System.Drawing.Point(127, 123);
+            txtCodigo.Name = "txtCodigo";
+            txtCodigo.Size = new System.Drawing.Size(141, 23);
+            txtCodigo.TabIndex = 2;
+            txtCodigo.TextChanged += txtCodigo_TextChanged;
             // 
             // btnTrocarSenha
             // 
-            this.btnTrocarSenha.Location = new System.Drawing.Point(70, 218);
-            this.btnTrocarSenha.Name = "btnTrocarSenha";
-            this.btnTrocarSenha.Size = new System.Drawing.Size(114, 23);
-            this.btnTrocarSenha.TabIndex = 8;
-            this.btnTrocarSenha.Text = "Trocar Senha";
-            this.btnTrocarSenha.UseVisualStyleBackColor = true;
-            this.btnTrocarSenha.Click += new System.EventHandler(this.btnTrocarSenha_Click);
+            btnTrocarSenha.Location = new System.Drawing.Point(61, 204);
+            btnTrocarSenha.Name = "btnTrocarSenha";
+            btnTrocarSenha.Size = new System.Drawing.Size(100, 22);
+            btnTrocarSenha.TabIndex = 4;
+            btnTrocarSenha.Text = "Trocar Senha";
+            btnTrocarSenha.UseVisualStyleBackColor = true;
+            btnTrocarSenha.Click += btnTrocarSenha_Click;
             // 
             // btnAcessarPrograma
             // 
-            this.btnAcessarPrograma.Location = new System.Drawing.Point(243, 218);
-            this.btnAcessarPrograma.Name = "btnAcessarPrograma";
-            this.btnAcessarPrograma.Size = new System.Drawing.Size(138, 23);
-            this.btnAcessarPrograma.TabIndex = 9;
-            this.btnAcessarPrograma.Text = "Acessar programa";
-            this.btnAcessarPrograma.UseVisualStyleBackColor = true;
-            this.btnAcessarPrograma.Click += new System.EventHandler(this.btnAcessarPrograma_Click);
+            btnAcessarPrograma.Location = new System.Drawing.Point(213, 204);
+            btnAcessarPrograma.Name = "btnAcessarPrograma";
+            btnAcessarPrograma.Size = new System.Drawing.Size(121, 22);
+            btnAcessarPrograma.TabIndex = 5;
+            btnAcessarPrograma.Text = "Acessar programa";
+            btnAcessarPrograma.UseVisualStyleBackColor = true;
+            btnAcessarPrograma.Click += btnAcessarPrograma_Click;
             // 
             // RecuperarSenhaEmail
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(430, 262);
-            this.Controls.Add(this.btnAcessarPrograma);
-            this.Controls.Add(this.btnTrocarSenha);
-            this.Controls.Add(this.txtCodigo);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblCodigo);
-            this.Controls.Add(this.btnEnviarCodigo);
-            this.Name = "RecuperarSenhaEmail";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "RecuperarSenhaEmail";
-            this.Load += new System.EventHandler(this.RecuperarSenhaEmail_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(376, 246);
+            Controls.Add(btnAcessarPrograma);
+            Controls.Add(btnTrocarSenha);
+            Controls.Add(txtCodigo);
+            Controls.Add(btnConfirmar);
+            Controls.Add(txtEmail);
+            Controls.Add(lblEmail);
+            Controls.Add(lblCodigo);
+            Controls.Add(btnEnviarCodigo);
+            Name = "RecuperarSenhaEmail";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "RecuperarSenhaEmail";
+            Load += RecuperarSenhaEmail_Load;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

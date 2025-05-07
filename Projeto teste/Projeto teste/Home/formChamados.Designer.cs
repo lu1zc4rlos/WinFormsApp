@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formChamados));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             pn_title = new System.Windows.Forms.Panel();
             pic_home = new System.Windows.Forms.PictureBox();
             lbl_titulo = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@
             pn_title.Location = new System.Drawing.Point(0, 0);
             pn_title.Name = "pn_title";
             pn_title.Size = new System.Drawing.Size(875, 74);
-            pn_title.TabIndex = 2;
+            pn_title.TabIndex = 21;
             // 
             // pic_home
             // 
@@ -72,7 +72,7 @@
             pic_home.Name = "pic_home";
             pic_home.Size = new System.Drawing.Size(32, 37);
             pic_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pic_home.TabIndex = 3;
+            pic_home.TabIndex = 0;
             pic_home.TabStop = false;
             pic_home.Click += pic_home_Click;
             // 
@@ -85,7 +85,7 @@
             lbl_titulo.Location = new System.Drawing.Point(390, 18);
             lbl_titulo.Name = "lbl_titulo";
             lbl_titulo.Size = new System.Drawing.Size(138, 30);
-            lbl_titulo.TabIndex = 0;
+            lbl_titulo.TabIndex = 22;
             lbl_titulo.Text = "CHAMADOS";
             lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -97,7 +97,7 @@
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(50, 50);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            pictureBox2.TabIndex = 2;
+            pictureBox2.TabIndex = 23;
             pictureBox2.TabStop = false;
             // 
             // nightControlBox2
@@ -122,7 +122,7 @@
             nightControlBox2.MinimizeHoverForeColor = System.Drawing.Color.White;
             nightControlBox2.Name = "nightControlBox2";
             nightControlBox2.Size = new System.Drawing.Size(139, 31);
-            nightControlBox2.TabIndex = 1;
+            nightControlBox2.TabIndex = 24;
             // 
             // lbl_omega
             // 
@@ -132,7 +132,7 @@
             lbl_omega.Location = new System.Drawing.Point(116, 28);
             lbl_omega.Name = "lbl_omega";
             lbl_omega.Size = new System.Drawing.Size(96, 21);
-            lbl_omega.TabIndex = 1;
+            lbl_omega.TabIndex = 20;
             lbl_omega.Text = "OmegaTech\r\n";
             // 
             // dgv_chamados
@@ -143,14 +143,14 @@
             dgv_chamados.AllowUserToResizeRows = false;
             dgv_chamados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dgv_chamados.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dgv_chamados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dgv_chamados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgv_chamados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgv_chamados.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] { coluna_ID, coluna_Tipo, coluna_desc, coluna_prio });
             dgv_chamados.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -160,13 +160,13 @@
             dgv_chamados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dgv_chamados.RowHeadersVisible = false;
             dgv_chamados.Size = new System.Drawing.Size(875, 478);
-            dgv_chamados.TabIndex = 3;
+            dgv_chamados.TabIndex = 1;
             // 
             // coluna_ID
             // 
             coluna_ID.DataPropertyName = "id";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            coluna_ID.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            coluna_ID.DefaultCellStyle = dataGridViewCellStyle2;
             coluna_ID.FillWeight = 30F;
             coluna_ID.HeaderText = "ID";
             coluna_ID.Name = "coluna_ID";
@@ -204,10 +204,11 @@
             panel1.Location = new System.Drawing.Point(0, 552);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(875, 48);
-            panel1.TabIndex = 4;
+            panel1.TabIndex = 25;
             // 
             // btn_attchamados
             // 
+            btn_attchamados.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btn_attchamados.Customization = "7e3t//Ly8v/r6+v/5ubm/+vr6//f39//p6en/zw8PP8UFBT/gICA/w==";
             btn_attchamados.Font = new System.Drawing.Font("Segoe UI", 9F);
             btn_attchamados.Image = null;
@@ -215,7 +216,7 @@
             btn_attchamados.Name = "btn_attchamados";
             btn_attchamados.NoRounding = false;
             btn_attchamados.Size = new System.Drawing.Size(145, 31);
-            btn_attchamados.TabIndex = 0;
+            btn_attchamados.TabIndex = 2;
             btn_attchamados.Text = "Atualizar Chamados";
             btn_attchamados.Transparent = false;
             btn_attchamados.Click += btn_attchamados_Click;

@@ -12,194 +12,195 @@ namespace Projeto_teste {
         public Cadastro() {
             InitializeComponent();
         }
-        private void InitializeComponent() {
-            this.lblNome = new System.Windows.Forms.Label();
-            this.txtNome = new System.Windows.Forms.TextBox();
-            this.lblDataNascimento = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.lblConfirmarSenha = new System.Windows.Forms.Label();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lblEmailCadastrado = new System.Windows.Forms.Label();
-            this.atpDataNascimento = new System.Windows.Forms.DateTimePicker();
-            this.cbMostrarSenha = new System.Windows.Forms.CheckBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.lblSenhaDiferente = new System.Windows.Forms.Label();
-            this.btnVoltarLogin = new System.Windows.Forms.Button();
-            this.txtConfirmarSenha = new System.Windows.Forms.TextBox();
-            this.SuspendLayout();
+        private void InitializeComponent()
+        {
+            lblNome = new Label();
+            txtNome = new TextBox();
+            lblDataNascimento = new Label();
+            txtEmail = new TextBox();
+            lblEmail = new Label();
+            lblConfirmarSenha = new Label();
+            btnConfirmar = new Button();
+            label5 = new Label();
+            lblEmailCadastrado = new Label();
+            atpDataNascimento = new DateTimePicker();
+            cbMostrarSenha = new CheckBox();
+            txtSenha = new TextBox();
+            lblSenha = new Label();
+            lblSenhaDiferente = new Label();
+            btnVoltarLogin = new Button();
+            txtConfirmarSenha = new TextBox();
+            SuspendLayout();
             // 
             // lblNome
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(137, 118);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(47, 16);
-            this.lblNome.TabIndex = 0;
-            this.lblNome.Text = "Nome:";
+            lblNome.AutoSize = true;
+            lblNome.Location = new Point(137, 118);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(43, 15);
+            lblNome.TabIndex = 0;
+            lblNome.Text = "Nome:";
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(190, 115);
-            this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(205, 22);
-            this.txtNome.TabIndex = 1;
-            this.txtNome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            txtNome.Location = new Point(190, 115);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(205, 23);
+            txtNome.TabIndex = 0;
+            txtNome.TextChanged += textBox1_TextChanged;
             // 
             // lblDataNascimento
             // 
-            this.lblDataNascimento.AutoSize = true;
-            this.lblDataNascimento.Location = new System.Drawing.Point(137, 162);
-            this.lblDataNascimento.Name = "lblDataNascimento";
-            this.lblDataNascimento.Size = new System.Drawing.Size(133, 16);
-            this.lblDataNascimento.TabIndex = 2;
-            this.lblDataNascimento.Text = "Data de Nascimento:";
+            lblDataNascimento.AutoSize = true;
+            lblDataNascimento.Location = new Point(137, 162);
+            lblDataNascimento.Name = "lblDataNascimento";
+            lblDataNascimento.Size = new Size(117, 15);
+            lblDataNascimento.TabIndex = 2;
+            lblDataNascimento.Text = "Data de Nascimento:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(190, 204);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(205, 22);
-            this.txtEmail.TabIndex = 5;
+            txtEmail.Location = new Point(190, 204);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(205, 23);
+            txtEmail.TabIndex = 2;
             // 
             // lblEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(137, 210);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 16);
-            this.lblEmail.TabIndex = 4;
-            this.lblEmail.Text = "Email:";
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(137, 210);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(39, 15);
+            lblEmail.TabIndex = 4;
+            lblEmail.Text = "Email:";
             // 
             // lblConfirmarSenha
             // 
-            this.lblConfirmarSenha.AutoSize = true;
-            this.lblConfirmarSenha.Location = new System.Drawing.Point(137, 290);
-            this.lblConfirmarSenha.Name = "lblConfirmarSenha";
-            this.lblConfirmarSenha.Size = new System.Drawing.Size(110, 16);
-            this.lblConfirmarSenha.TabIndex = 6;
-            this.lblConfirmarSenha.Text = "Confirmar senha: ";
+            lblConfirmarSenha.AutoSize = true;
+            lblConfirmarSenha.Location = new Point(137, 290);
+            lblConfirmarSenha.Name = "lblConfirmarSenha";
+            lblConfirmarSenha.Size = new Size(101, 15);
+            lblConfirmarSenha.TabIndex = 6;
+            lblConfirmarSenha.Text = "Confirmar senha: ";
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(226, 330);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(75, 36);
-            this.btnConfirmar.TabIndex = 8;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            btnConfirmar.Location = new Point(226, 330);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new Size(75, 36);
+            btnConfirmar.TabIndex = 6;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(209, 61);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(112, 16);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Tela de Cadastro";
+            label5.AutoSize = true;
+            label5.Location = new Point(209, 61);
+            label5.Name = "label5";
+            label5.Size = new Size(93, 15);
+            label5.TabIndex = 9;
+            label5.Text = "Tela de Cadastro";
             // 
             // lblEmailCadastrado
             // 
-            this.lblEmailCadastrado.AutoSize = true;
-            this.lblEmailCadastrado.BackColor = System.Drawing.Color.Transparent;
-            this.lblEmailCadastrado.ForeColor = System.Drawing.Color.Red;
-            this.lblEmailCadastrado.Location = new System.Drawing.Point(411, 210);
-            this.lblEmailCadastrado.Name = "lblEmailCadastrado";
-            this.lblEmailCadastrado.Size = new System.Drawing.Size(0, 16);
-            this.lblEmailCadastrado.TabIndex = 10;
-            this.lblEmailCadastrado.Click += new System.EventHandler(this.label6_Click);
+            lblEmailCadastrado.AutoSize = true;
+            lblEmailCadastrado.BackColor = Color.Transparent;
+            lblEmailCadastrado.ForeColor = Color.Red;
+            lblEmailCadastrado.Location = new Point(411, 210);
+            lblEmailCadastrado.Name = "lblEmailCadastrado";
+            lblEmailCadastrado.Size = new Size(0, 15);
+            lblEmailCadastrado.TabIndex = 10;
+            lblEmailCadastrado.Click += label6_Click;
             // 
             // atpDataNascimento
             // 
-            this.atpDataNascimento.Location = new System.Drawing.Point(256, 156);
-            this.atpDataNascimento.Name = "atpDataNascimento";
-            this.atpDataNascimento.Size = new System.Drawing.Size(103, 22);
-            this.atpDataNascimento.TabIndex = 11;
-            this.atpDataNascimento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            atpDataNascimento.Location = new Point(256, 156);
+            atpDataNascimento.Name = "atpDataNascimento";
+            atpDataNascimento.Size = new Size(103, 23);
+            atpDataNascimento.TabIndex = 1;
+            atpDataNascimento.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // cbMostrarSenha
             // 
-            this.cbMostrarSenha.AutoSize = true;
-            this.cbMostrarSenha.Location = new System.Drawing.Point(351, 247);
-            this.cbMostrarSenha.Name = "cbMostrarSenha";
-            this.cbMostrarSenha.Size = new System.Drawing.Size(114, 20);
-            this.cbMostrarSenha.TabIndex = 12;
-            this.cbMostrarSenha.Text = "Mostrar senha";
-            this.cbMostrarSenha.UseVisualStyleBackColor = true;
-            this.cbMostrarSenha.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            cbMostrarSenha.AutoSize = true;
+            cbMostrarSenha.Location = new Point(351, 247);
+            cbMostrarSenha.Name = "cbMostrarSenha";
+            cbMostrarSenha.Size = new Size(101, 19);
+            cbMostrarSenha.TabIndex = 4;
+            cbMostrarSenha.Text = "Mostrar senha";
+            cbMostrarSenha.UseVisualStyleBackColor = true;
+            cbMostrarSenha.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(190, 245);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(155, 22);
-            this.txtSenha.TabIndex = 14;
-            this.txtSenha.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            txtSenha.Location = new Point(190, 245);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
+            txtSenha.Size = new Size(155, 23);
+            txtSenha.TabIndex = 3;
+            txtSenha.TextChanged += textBox2_TextChanged;
             // 
             // lblSenha
             // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(137, 251);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(49, 16);
-            this.lblSenha.TabIndex = 13;
-            this.lblSenha.Text = "Senha:";
+            lblSenha.AutoSize = true;
+            lblSenha.Location = new Point(137, 251);
+            lblSenha.Name = "lblSenha";
+            lblSenha.Size = new Size(42, 15);
+            lblSenha.TabIndex = 13;
+            lblSenha.Text = "Senha:";
             // 
             // lblSenhaDiferente
             // 
-            this.lblSenhaDiferente.AutoSize = true;
-            this.lblSenhaDiferente.Location = new System.Drawing.Point(395, 293);
-            this.lblSenhaDiferente.Name = "lblSenhaDiferente";
-            this.lblSenhaDiferente.Size = new System.Drawing.Size(0, 16);
-            this.lblSenhaDiferente.TabIndex = 15;
+            lblSenhaDiferente.AutoSize = true;
+            lblSenhaDiferente.Location = new Point(395, 293);
+            lblSenhaDiferente.Name = "lblSenhaDiferente";
+            lblSenhaDiferente.Size = new Size(0, 15);
+            lblSenhaDiferente.TabIndex = 15;
             // 
             // btnVoltarLogin
             // 
-            this.btnVoltarLogin.Location = new System.Drawing.Point(360, 377);
-            this.btnVoltarLogin.Name = "btnVoltarLogin";
-            this.btnVoltarLogin.Size = new System.Drawing.Size(168, 35);
-            this.btnVoltarLogin.TabIndex = 16;
-            this.btnVoltarLogin.Text = "Voltar para tela de login";
-            this.btnVoltarLogin.UseVisualStyleBackColor = true;
-            this.btnVoltarLogin.Click += new System.EventHandler(this.button2_Click);
+            btnVoltarLogin.Location = new Point(360, 377);
+            btnVoltarLogin.Name = "btnVoltarLogin";
+            btnVoltarLogin.Size = new Size(168, 35);
+            btnVoltarLogin.TabIndex = 7;
+            btnVoltarLogin.Text = "Voltar para tela de login";
+            btnVoltarLogin.UseVisualStyleBackColor = true;
+            btnVoltarLogin.Click += button2_Click;
             // 
             // txtConfirmarSenha
             // 
-            this.txtConfirmarSenha.Location = new System.Drawing.Point(212, 284);
-            this.txtConfirmarSenha.Name = "txtConfirmarSenha";
-            this.txtConfirmarSenha.PasswordChar = '*';
-            this.txtConfirmarSenha.Size = new System.Drawing.Size(177, 22);
-            this.txtConfirmarSenha.TabIndex = 17;
-            this.txtConfirmarSenha.TextChanged += new System.EventHandler(this.txtConfirmarSenha_TextChanged);
+            txtConfirmarSenha.Location = new Point(234, 285);
+            txtConfirmarSenha.Name = "txtConfirmarSenha";
+            txtConfirmarSenha.PasswordChar = '*';
+            txtConfirmarSenha.Size = new Size(177, 23);
+            txtConfirmarSenha.TabIndex = 5;
+            txtConfirmarSenha.TextChanged += txtConfirmarSenha_TextChanged;
             // 
             // Cadastro
             // 
-            this.ClientSize = new System.Drawing.Size(555, 424);
-            this.Controls.Add(this.txtConfirmarSenha);
-            this.Controls.Add(this.btnVoltarLogin);
-            this.Controls.Add(this.lblSenhaDiferente);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.cbMostrarSenha);
-            this.Controls.Add(this.atpDataNascimento);
-            this.Controls.Add(this.lblEmailCadastrado);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.lblConfirmarSenha);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblDataNascimento);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.lblNome);
-            this.Name = "Cadastro";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.Cadastro_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            ClientSize = new Size(555, 424);
+            Controls.Add(txtConfirmarSenha);
+            Controls.Add(btnVoltarLogin);
+            Controls.Add(lblSenhaDiferente);
+            Controls.Add(txtSenha);
+            Controls.Add(lblSenha);
+            Controls.Add(cbMostrarSenha);
+            Controls.Add(atpDataNascimento);
+            Controls.Add(lblEmailCadastrado);
+            Controls.Add(label5);
+            Controls.Add(btnConfirmar);
+            Controls.Add(lblConfirmarSenha);
+            Controls.Add(txtEmail);
+            Controls.Add(lblEmail);
+            Controls.Add(lblDataNascimento);
+            Controls.Add(txtNome);
+            Controls.Add(lblNome);
+            Name = "Cadastro";
+            StartPosition = FormStartPosition.CenterScreen;
+            Load += Cadastro_Load;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
