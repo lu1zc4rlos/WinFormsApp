@@ -29,144 +29,181 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formOmegaHelp));
-            this.nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
-            this.pn_title = new System.Windows.Forms.Panel();
-            this.pic_home = new System.Windows.Forms.PictureBox();
-            this.lbl_titulo = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.nightControlBox2 = new ReaLTaiizor.Controls.NightControlBox();
-            this.lbl_omega = new System.Windows.Forms.Label();
-            this.pn_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_home)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.SuspendLayout();
+            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            pn_title = new System.Windows.Forms.Panel();
+            pic_home = new System.Windows.Forms.PictureBox();
+            lbl_titulo = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            nightControlBox2 = new ReaLTaiizor.Controls.NightControlBox();
+            lbl_omega = new System.Windows.Forms.Label();
+            txtEnviarMensagem = new System.Windows.Forms.TextBox();
+            btnEnviar = new System.Windows.Forms.Button();
+            flowLayoutPanelChat = new System.Windows.Forms.FlowLayoutPanel();
+            pn_title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_home).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            SuspendLayout();
             // 
             // nightControlBox1
             // 
-            this.nightControlBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nightControlBox1.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox1.DefaultLocation = true;
-            this.nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMaximizeButton = true;
-            this.nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.EnableMinimizeButton = true;
-            this.nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox1.Location = new System.Drawing.Point(879, 0);
-            this.nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox1.Name = "nightControlBox1";
-            this.nightControlBox1.Size = new System.Drawing.Size(139, 31);
-            this.nightControlBox1.TabIndex = 2;
+            nightControlBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            nightControlBox1.DefaultLocation = true;
+            nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMaximizeButton = true;
+            nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMinimizeButton = true;
+            nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.Location = new System.Drawing.Point(879, 0);
+            nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.Name = "nightControlBox1";
+            nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            nightControlBox1.TabIndex = 2;
             // 
             // pn_title
             // 
-            this.pn_title.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pn_title.Controls.Add(this.pic_home);
-            this.pn_title.Controls.Add(this.lbl_titulo);
-            this.pn_title.Controls.Add(this.pictureBox2);
-            this.pn_title.Controls.Add(this.nightControlBox2);
-            this.pn_title.Controls.Add(this.lbl_omega);
-            this.pn_title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pn_title.Location = new System.Drawing.Point(0, 0);
-            this.pn_title.Name = "pn_title";
-            this.pn_title.Size = new System.Drawing.Size(1000, 79);
-            this.pn_title.TabIndex = 3;
+            pn_title.BackColor = System.Drawing.Color.WhiteSmoke;
+            pn_title.Controls.Add(pic_home);
+            pn_title.Controls.Add(lbl_titulo);
+            pn_title.Controls.Add(pictureBox2);
+            pn_title.Controls.Add(nightControlBox2);
+            pn_title.Controls.Add(lbl_omega);
+            pn_title.Dock = System.Windows.Forms.DockStyle.Top;
+            pn_title.Location = new System.Drawing.Point(0, 0);
+            pn_title.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pn_title.Name = "pn_title";
+            pn_title.Size = new System.Drawing.Size(1000, 99);
+            pn_title.TabIndex = 3;
             // 
             // pic_home
             // 
-            this.pic_home.Image = ((System.Drawing.Image)(resources.GetObject("pic_home.Image")));
-            this.pic_home.Location = new System.Drawing.Point(12, 17);
-            this.pic_home.Name = "pic_home";
-            this.pic_home.Size = new System.Drawing.Size(37, 39);
-            this.pic_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pic_home.TabIndex = 3;
-            this.pic_home.TabStop = false;
-            this.pic_home.Click += new System.EventHandler(this.pic_home_Click);
+            pic_home.Image = (System.Drawing.Image)resources.GetObject("pic_home.Image");
+            pic_home.Location = new System.Drawing.Point(12, 21);
+            pic_home.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pic_home.Name = "pic_home";
+            pic_home.Size = new System.Drawing.Size(37, 49);
+            pic_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pic_home.TabIndex = 3;
+            pic_home.TabStop = false;
+            pic_home.Click += pic_home_Click;
             // 
             // lbl_titulo
             // 
-            this.lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            this.lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_titulo.Location = new System.Drawing.Point(446, 19);
-            this.lbl_titulo.Name = "lbl_titulo";
-            this.lbl_titulo.Size = new System.Drawing.Size(162, 37);
-            this.lbl_titulo.TabIndex = 0;
-            this.lbl_titulo.Text = "OmegaHelp";
-            this.lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            lbl_titulo.AutoSize = true;
+            lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            lbl_titulo.Location = new System.Drawing.Point(446, 24);
+            lbl_titulo.Name = "lbl_titulo";
+            lbl_titulo.Size = new System.Drawing.Size(162, 37);
+            lbl_titulo.TabIndex = 0;
+            lbl_titulo.Text = "OmegaHelp";
+            lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pictureBox2.Location = new System.Drawing.Point(68, 2);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            pictureBox2.Location = new System.Drawing.Point(68, 2);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(50, 50);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
             // 
             // nightControlBox2
             // 
-            this.nightControlBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.nightControlBox2.BackColor = System.Drawing.Color.Transparent;
-            this.nightControlBox2.CloseHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(80)))), ((int)(((byte)(80)))));
-            this.nightControlBox2.CloseHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.nightControlBox2.DefaultLocation = true;
-            this.nightControlBox2.DisableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox2.DisableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.nightControlBox2.EnableCloseColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox2.EnableMaximizeButton = true;
-            this.nightControlBox2.EnableMaximizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox2.EnableMinimizeButton = true;
-            this.nightControlBox2.EnableMinimizeColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(160)))), ((int)(((byte)(160)))));
-            this.nightControlBox2.Location = new System.Drawing.Point(858, 3);
-            this.nightControlBox2.MaximizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox2.MaximizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox2.MinimizeHoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.nightControlBox2.MinimizeHoverForeColor = System.Drawing.Color.White;
-            this.nightControlBox2.Name = "nightControlBox2";
-            this.nightControlBox2.Size = new System.Drawing.Size(139, 31);
-            this.nightControlBox2.TabIndex = 1;
+            nightControlBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            nightControlBox2.BackColor = System.Drawing.Color.Transparent;
+            nightControlBox2.CloseHoverColor = System.Drawing.Color.FromArgb(199, 80, 80);
+            nightControlBox2.CloseHoverForeColor = System.Drawing.Color.White;
+            nightControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            nightControlBox2.DefaultLocation = true;
+            nightControlBox2.DisableMaximizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox2.DisableMinimizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox2.EnableCloseColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox2.EnableMaximizeButton = true;
+            nightControlBox2.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox2.EnableMinimizeButton = true;
+            nightControlBox2.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox2.Location = new System.Drawing.Point(861, 0);
+            nightControlBox2.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox2.MaximizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox2.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox2.MinimizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox2.Name = "nightControlBox2";
+            nightControlBox2.Size = new System.Drawing.Size(139, 31);
+            nightControlBox2.TabIndex = 1;
             // 
             // lbl_omega
             // 
-            this.lbl_omega.AutoSize = true;
-            this.lbl_omega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
-            this.lbl_omega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.lbl_omega.Location = new System.Drawing.Point(132, 30);
-            this.lbl_omega.Name = "lbl_omega";
-            this.lbl_omega.Size = new System.Drawing.Size(119, 28);
-            this.lbl_omega.TabIndex = 1;
-            this.lbl_omega.Text = "OmegaTech\r\n";
+            lbl_omega.AutoSize = true;
+            lbl_omega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            lbl_omega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            lbl_omega.Location = new System.Drawing.Point(132, 38);
+            lbl_omega.Name = "lbl_omega";
+            lbl_omega.Size = new System.Drawing.Size(119, 28);
+            lbl_omega.TabIndex = 1;
+            lbl_omega.Text = "OmegaTech\r\n";
+            // 
+            // txtEnviarMensagem
+            // 
+            txtEnviarMensagem.Location = new System.Drawing.Point(12, 761);
+            txtEnviarMensagem.Multiline = true;
+            txtEnviarMensagem.Name = "txtEnviarMensagem";
+            txtEnviarMensagem.Size = new System.Drawing.Size(869, 28);
+            txtEnviarMensagem.TabIndex = 4;
+            // 
+            // btnEnviar
+            // 
+            btnEnviar.Location = new System.Drawing.Point(887, 760);
+            btnEnviar.Name = "btnEnviar";
+            btnEnviar.Size = new System.Drawing.Size(94, 29);
+            btnEnviar.TabIndex = 5;
+            btnEnviar.Text = "Enviar";
+            btnEnviar.UseVisualStyleBackColor = true;
+            btnEnviar.Click += btnEnviar_Click;
+            // 
+            // flowLayoutPanelChat
+            // 
+            flowLayoutPanelChat.AutoScroll = true;
+            flowLayoutPanelChat.Location = new System.Drawing.Point(12, 106);
+            flowLayoutPanelChat.Name = "flowLayoutPanelChat";
+            flowLayoutPanelChat.Size = new System.Drawing.Size(969, 648);
+            flowLayoutPanelChat.TabIndex = 6;
             // 
             // formOmegaHelp
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gray;
-            this.ClientSize = new System.Drawing.Size(1000, 640);
-            this.Controls.Add(this.pn_title);
-            this.Controls.Add(this.nightControlBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "formOmegaHelp";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "OmegaHelp";
-            this.Load += new System.EventHandler(this.formOmegaHelp_Load);
-            this.pn_title.ResumeLayout(false);
-            this.pn_title.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_home)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.Gray;
+            ClientSize = new System.Drawing.Size(1000, 800);
+            Controls.Add(flowLayoutPanelChat);
+            Controls.Add(btnEnviar);
+            Controls.Add(txtEnviarMensagem);
+            Controls.Add(pn_title);
+            Controls.Add(nightControlBox1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "formOmegaHelp";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "OmegaHelp";
+            Load += formOmegaHelp_Load;
+            pn_title.ResumeLayout(false);
+            pn_title.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_home).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -178,5 +215,8 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox2;
         private System.Windows.Forms.Label lbl_omega;
+        private System.Windows.Forms.TextBox txtEnviarMensagem;
+        private System.Windows.Forms.Button btnEnviar;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelChat;
     }
 }
