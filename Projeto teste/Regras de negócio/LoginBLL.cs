@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using Data_Access;
+using Datai_Accesso;
 
 namespace Regras_de_negócio {
     public class LoginBLL {

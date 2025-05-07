@@ -1,20 +1,21 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using Npgsql;
 using System;
 
-namespace Data_Access {
+namespace Datai_Accesso {
     public class RecuperarSenhaDAL {
         public bool ValidarEmail(string email) {
 
             try {
                 string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email";
                 using (var conexao = ConexaoDAL.Abrir())
-                using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
+                using (NpgsqlCommand comando = new NpgsqlCommand(query, conexao)) {
                     comando.Parameters.AddWithValue("@Email", email);
                     int count = Convert.ToInt32(comando.ExecuteScalar());
                     return count > 0;
                 }
             }
-            catch (MySqlException ex) {
+            catch (NpgsqlException ex) {
 
                 throw new Exception("Erro no banco de dados", ex);
             }
@@ -25,7 +26,7 @@ namespace Data_Access {
             try {
                 string query = "UPDATE dados_pessoais SET Senha = @Senha WHERE Email = @Email";
                 using (var conexao = ConexaoDAL.Abrir())
-                using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
+                using (NpgsqlCommand comando = new NpgsqlCommand(query, conexao)) {
                     comando.Parameters.AddWithValue("@Email", email);
 
                     string novaSenhaHash = CriptografiaDAL.GerarHashSenha(novaSenha);
@@ -35,7 +36,7 @@ namespace Data_Access {
                     return rowsAffected > 0;
                 }
             }
-            catch (MySqlException ex) {
+            catch (NpgsqlException ex) {
 
                 throw new Exception("Erro no banco de dados", ex);
             }
@@ -47,12 +48,12 @@ namespace Data_Access {
             try {
                 using (var conexao = ConexaoDAL.Abrir()) {
                     string query = "SELECT nome FROM dados_pessoais WHERE email = @email";
-                    using (var comando = new MySqlCommand(query, conexao)) {
+                    using (var comando = new NpgsqlCommand(query, conexao)) {
                         comando.Parameters.AddWithValue("@email", email);
 
                         using (var reader = comando.ExecuteReader()) {
                             if (reader.Read()) {
-                                return reader.GetString("nome");
+                               // return reader.GetString("nome");
                             }
                         }
                     }
@@ -60,7 +61,7 @@ namespace Data_Access {
 
                 return null;
             }
-            catch (MySqlException ex) {
+            catch (NpgsqlException ex) {
 
                 throw new Exception("Erro no banco de dados", ex);
             }

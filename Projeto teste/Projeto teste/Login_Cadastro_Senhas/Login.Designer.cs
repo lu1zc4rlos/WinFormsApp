@@ -22,125 +22,126 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
-            this.lblTelaLogin = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtSenha = new System.Windows.Forms.TextBox();
-            this.lblSenha = new System.Windows.Forms.Label();
-            this.btnNaoCadastrado = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.cbMostarSenha = new System.Windows.Forms.CheckBox();
-            this.btnRecuperrarSenha = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+        private void InitializeComponent()
+        {
+            lblTelaLogin = new System.Windows.Forms.Label();
+            lblEmail = new System.Windows.Forms.Label();
+            txtEmail = new System.Windows.Forms.TextBox();
+            txtSenha = new System.Windows.Forms.TextBox();
+            lblSenha = new System.Windows.Forms.Label();
+            btnNaoCadastrado = new System.Windows.Forms.Button();
+            btnConfirmar = new System.Windows.Forms.Button();
+            cbMostarSenha = new System.Windows.Forms.CheckBox();
+            btnRecuperrarSenha = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // lblTelaLogin
             // 
-            this.lblTelaLogin.AutoSize = true;
-            this.lblTelaLogin.Location = new System.Drawing.Point(198, 54);
-            this.lblTelaLogin.Name = "lblTelaLogin";
-            this.lblTelaLogin.Size = new System.Drawing.Size(90, 16);
-            this.lblTelaLogin.TabIndex = 0;
-            this.lblTelaLogin.Text = "Tela de Login";
+            lblTelaLogin.AutoSize = true;
+            lblTelaLogin.Location = new System.Drawing.Point(173, 51);
+            lblTelaLogin.Name = "lblTelaLogin";
+            lblTelaLogin.Size = new System.Drawing.Size(76, 15);
+            lblTelaLogin.TabIndex = 0;
+            lblTelaLogin.Text = "Tela de Login";
             // 
             // lblEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(81, 98);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(45, 16);
-            this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "E-mail";
-            this.lblEmail.Click += new System.EventHandler(this.lblEmail_Click);
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new System.Drawing.Point(71, 92);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new System.Drawing.Size(41, 15);
+            lblEmail.TabIndex = 1;
+            lblEmail.Text = "E-mail";
+            lblEmail.Click += lblEmail_Click;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(131, 95);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(260, 22);
-            this.txtEmail.TabIndex = 2;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
+            txtEmail.Location = new System.Drawing.Point(115, 89);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new System.Drawing.Size(228, 23);
+            txtEmail.TabIndex = 0;
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(131, 136);
-            this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(141, 22);
-            this.txtSenha.TabIndex = 4;
-            this.txtSenha.TextChanged += new System.EventHandler(this.txtSenha_TextChanged);
+            txtSenha.Location = new System.Drawing.Point(115, 128);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
+            txtSenha.Size = new System.Drawing.Size(124, 23);
+            txtSenha.TabIndex = 1;
+            txtSenha.TextChanged += txtSenha_TextChanged;
             // 
             // lblSenha
             // 
-            this.lblSenha.AutoSize = true;
-            this.lblSenha.Location = new System.Drawing.Point(76, 142);
-            this.lblSenha.Name = "lblSenha";
-            this.lblSenha.Size = new System.Drawing.Size(49, 16);
-            this.lblSenha.TabIndex = 3;
-            this.lblSenha.Text = "Senha:";
-            this.lblSenha.Click += new System.EventHandler(this.lblSenha_Click);
+            lblSenha.AutoSize = true;
+            lblSenha.Location = new System.Drawing.Point(66, 133);
+            lblSenha.Name = "lblSenha";
+            lblSenha.Size = new System.Drawing.Size(42, 15);
+            lblSenha.TabIndex = 3;
+            lblSenha.Text = "Senha:";
+            lblSenha.Click += lblSenha_Click;
             // 
             // btnNaoCadastrado
             // 
-            this.btnNaoCadastrado.Location = new System.Drawing.Point(326, 244);
-            this.btnNaoCadastrado.Name = "btnNaoCadastrado";
-            this.btnNaoCadastrado.Size = new System.Drawing.Size(172, 34);
-            this.btnNaoCadastrado.TabIndex = 5;
-            this.btnNaoCadastrado.Text = "Não possui cadastro";
-            this.btnNaoCadastrado.UseVisualStyleBackColor = true;
-            this.btnNaoCadastrado.Click += new System.EventHandler(this.btnNaoCadastrado_Click);
+            btnNaoCadastrado.Location = new System.Drawing.Point(285, 229);
+            btnNaoCadastrado.Name = "btnNaoCadastrado";
+            btnNaoCadastrado.Size = new System.Drawing.Size(150, 32);
+            btnNaoCadastrado.TabIndex = 5;
+            btnNaoCadastrado.Text = "Não possui cadastro";
+            btnNaoCadastrado.UseVisualStyleBackColor = true;
+            btnNaoCadastrado.Click += btnNaoCadastrado_Click;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(150, 177);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(97, 32);
-            this.btnConfirmar.TabIndex = 6;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            btnConfirmar.Location = new System.Drawing.Point(131, 166);
+            btnConfirmar.Name = "btnConfirmar";
+            btnConfirmar.Size = new System.Drawing.Size(85, 30);
+            btnConfirmar.TabIndex = 3;
+            btnConfirmar.Text = "Confirmar";
+            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.Click += btnConfirmar_Click;
             // 
             // cbMostarSenha
             // 
-            this.cbMostarSenha.AutoSize = true;
-            this.cbMostarSenha.Location = new System.Drawing.Point(296, 138);
-            this.cbMostarSenha.Name = "cbMostarSenha";
-            this.cbMostarSenha.Size = new System.Drawing.Size(114, 20);
-            this.cbMostarSenha.TabIndex = 7;
-            this.cbMostarSenha.Text = "Mostrar senha";
-            this.cbMostarSenha.UseVisualStyleBackColor = true;
-            this.cbMostarSenha.CheckedChanged += new System.EventHandler(this.cbMostarSenha_CheckedChanged);
+            cbMostarSenha.AutoSize = true;
+            cbMostarSenha.Location = new System.Drawing.Point(259, 129);
+            cbMostarSenha.Name = "cbMostarSenha";
+            cbMostarSenha.Size = new System.Drawing.Size(101, 19);
+            cbMostarSenha.TabIndex = 2;
+            cbMostarSenha.Text = "Mostrar senha";
+            cbMostarSenha.UseVisualStyleBackColor = true;
+            cbMostarSenha.CheckedChanged += cbMostarSenha_CheckedChanged;
             // 
             // btnRecuperrarSenha
             // 
-            this.btnRecuperrarSenha.Location = new System.Drawing.Point(175, 244);
-            this.btnRecuperrarSenha.Name = "btnRecuperrarSenha";
-            this.btnRecuperrarSenha.Size = new System.Drawing.Size(145, 34);
-            this.btnRecuperrarSenha.TabIndex = 8;
-            this.btnRecuperrarSenha.Text = "Recuperar senha";
-            this.btnRecuperrarSenha.UseVisualStyleBackColor = true;
-            this.btnRecuperrarSenha.Click += new System.EventHandler(this.btnRecuperrarSenha_Click);
+            btnRecuperrarSenha.Location = new System.Drawing.Point(153, 229);
+            btnRecuperrarSenha.Name = "btnRecuperrarSenha";
+            btnRecuperrarSenha.Size = new System.Drawing.Size(127, 32);
+            btnRecuperrarSenha.TabIndex = 4;
+            btnRecuperrarSenha.Text = "Recuperar senha";
+            btnRecuperrarSenha.UseVisualStyleBackColor = true;
+            btnRecuperrarSenha.Click += btnRecuperrarSenha_Click;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(519, 290);
-            this.Controls.Add(this.btnRecuperrarSenha);
-            this.Controls.Add(this.cbMostarSenha);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.btnNaoCadastrado);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.lblSenha);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.lblTelaLogin);
-            this.Name = "Login";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FluxoCondicional";
-            this.Load += new System.EventHandler(this.Login_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(454, 272);
+            Controls.Add(btnRecuperrarSenha);
+            Controls.Add(cbMostarSenha);
+            Controls.Add(btnConfirmar);
+            Controls.Add(btnNaoCadastrado);
+            Controls.Add(txtSenha);
+            Controls.Add(lblSenha);
+            Controls.Add(txtEmail);
+            Controls.Add(lblEmail);
+            Controls.Add(lblTelaLogin);
+            Name = "Login";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "FluxoCondicional";
+            Load += Login_Load;
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

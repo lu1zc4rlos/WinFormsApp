@@ -1,22 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net8.0-windows</TargetFramework>
-		<OutputType>WinExe</OutputType>
-		<RootNamespace>ProjetoTeste</RootNamespace>
-		<AssemblyName>ProjetoTeste</AssemblyName>
+		<OutputType>Library</OutputType>
+		<RootNamespace>RegrasDeNegocio</RootNamespace>
 		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
-		<NoWarn>$(NoWarn);CA1416</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\Banco De Dados\BancoDeDados.csproj" />
 		<ProjectReference Include="..\Entidades\Entidades.csproj" />
-		<ProjectReference Include="..\Regras de negócio\Regras De Negocio.csproj" />
 	</ItemGroup>
 	<ItemGroup>
 		<PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+		<PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
 		<PackageReference Include="Npgsql" Version="9.0.3" />
-		<PackageReference Include="ReaLTaiizor" Version="3.8.1.2" />
 		<PackageReference Include="System.Configuration.ConfigurationManager" Version="9.0.4" />
 		<PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
 	</ItemGroup>

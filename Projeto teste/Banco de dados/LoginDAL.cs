@@ -1,7 +1,8 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+using Npgsql;
 using System;
 
-namespace Data_Access {
+namespace Datai_Accesso {
     public class LoginDAL {
         public bool VerificarLogin(string Email, string Senha) {
 
@@ -14,7 +15,7 @@ namespace Data_Access {
             try {
                 string query = "SELECT COUNT(*) FROM dados_pessoais WHERE Email = @Email AND Senha = @Senha";
                 using (var conexao = ConexaoDAL.Abrir())
-                using (MySqlCommand comando = new MySqlCommand(query, conexao)) {
+                using (NpgsqlCommand comando = new NpgsqlCommand(query, conexao)) {
                     comando.Parameters.AddWithValue("@Email", Email);
 
                     string senhaHash = CriptografiaDAL.GerarHashSenha(Senha);
@@ -24,7 +25,7 @@ namespace Data_Access {
                     return count > 0;
                 }
             }
-            catch (MySqlException ex) {
+            catch (NpgsqlException ex) {
 
                 throw new Exception("Erro no banco de dados", ex);
 
