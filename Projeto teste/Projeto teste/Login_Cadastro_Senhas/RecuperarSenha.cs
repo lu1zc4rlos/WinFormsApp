@@ -53,8 +53,8 @@ namespace Projeto_teste {
                         );
 
                         this.Hide();
-                        Exemplo exemplo = new Exemplo();
-                        exemplo.ShowDialog();
+                        Home.Home home = new Home.Home();
+                        home.ShowDialog();
                     }
                     else { 
                         label5.Text = "Senha diferente";

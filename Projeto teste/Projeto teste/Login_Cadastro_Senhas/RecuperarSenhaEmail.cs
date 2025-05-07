@@ -77,8 +77,8 @@ namespace Projeto_teste {
         private void btnAcessarPrograma_Click(object sender, EventArgs e) {
 
             this.Hide();
-            var exemplo = new Exemplo();
-            exemplo.ShowDialog();
+            Home.Home home = new Home.Home();
+            home.ShowDialog();
             this.Close();
         }
         private void RecuperarSenhaEmail_Load(object sender, EventArgs e) {}

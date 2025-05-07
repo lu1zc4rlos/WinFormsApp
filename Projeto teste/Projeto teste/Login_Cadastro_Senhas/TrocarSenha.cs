@@ -66,7 +66,7 @@ namespace Projeto_teste {
                          btnConfirmar
                     );
                     this.Close();
-                    Exemplo exemplo = new Exemplo();
+                    Home.Home exemplo = new Home.Home();
                     exemplo.ShowDialog();
                 }
                 catch (Exception ex) {

@@ -59,7 +59,7 @@
             nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new System.Drawing.Point(752, 0);
+            nightControlBox1.Location = new System.Drawing.Point(879, 0);
             nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
@@ -78,16 +78,18 @@
             pn_title.Controls.Add(lbl_omega);
             pn_title.Dock = System.Windows.Forms.DockStyle.Top;
             pn_title.Location = new System.Drawing.Point(0, 0);
+            pn_title.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pn_title.Name = "pn_title";
-            pn_title.Size = new System.Drawing.Size(875, 74);
+            pn_title.Size = new System.Drawing.Size(1000, 99);
             pn_title.TabIndex = 3;
             // 
             // pic_home
             // 
             pic_home.Image = (System.Drawing.Image)resources.GetObject("pic_home.Image");
-            pic_home.Location = new System.Drawing.Point(10, 16);
+            pic_home.Location = new System.Drawing.Point(11, 21);
+            pic_home.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pic_home.Name = "pic_home";
-            pic_home.Size = new System.Drawing.Size(32, 37);
+            pic_home.Size = new System.Drawing.Size(37, 49);
             pic_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pic_home.TabIndex = 0;
             pic_home.TabStop = false;
@@ -99,9 +101,9 @@
             lbl_titulo.AutoSize = true;
             lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
             lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lbl_titulo.Location = new System.Drawing.Point(390, 18);
+            lbl_titulo.Location = new System.Drawing.Point(446, 24);
             lbl_titulo.Name = "lbl_titulo";
-            lbl_titulo.Size = new System.Drawing.Size(132, 30);
+            lbl_titulo.Size = new System.Drawing.Size(162, 37);
             lbl_titulo.TabIndex = 0;
             lbl_titulo.Text = "OmegaHelp";
             lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -110,7 +112,8 @@
             // 
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            pictureBox2.Location = new System.Drawing.Point(60, 2);
+            pictureBox2.Location = new System.Drawing.Point(69, 3);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(50, 50);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -132,7 +135,7 @@
             nightControlBox2.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
             nightControlBox2.EnableMinimizeButton = true;
             nightControlBox2.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
-            nightControlBox2.Location = new System.Drawing.Point(736, 0);
+            nightControlBox2.Location = new System.Drawing.Point(861, 0);
             nightControlBox2.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
             nightControlBox2.MaximizeHoverForeColor = System.Drawing.Color.White;
             nightControlBox2.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
@@ -146,29 +149,27 @@
             lbl_omega.AutoSize = true;
             lbl_omega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             lbl_omega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lbl_omega.Location = new System.Drawing.Point(116, 28);
+            lbl_omega.Location = new System.Drawing.Point(133, 37);
             lbl_omega.Name = "lbl_omega";
-            lbl_omega.Size = new System.Drawing.Size(96, 21);
+            lbl_omega.Size = new System.Drawing.Size(119, 28);
             lbl_omega.TabIndex = 1;
             lbl_omega.Text = "OmegaTech\r\n";
             // 
             // txtEnviarMensagem
             // 
             txtEnviarMensagem.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            txtEnviarMensagem.Location = new System.Drawing.Point(10, 571);
-            txtEnviarMensagem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            txtEnviarMensagem.Location = new System.Drawing.Point(11, 761);
             txtEnviarMensagem.Multiline = true;
             txtEnviarMensagem.Name = "txtEnviarMensagem";
-            txtEnviarMensagem.Size = new System.Drawing.Size(761, 22);
+            txtEnviarMensagem.Size = new System.Drawing.Size(869, 28);
             txtEnviarMensagem.TabIndex = 1;
             // 
             // btnEnviar
             // 
             btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnEnviar.Location = new System.Drawing.Point(776, 570);
-            btnEnviar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            btnEnviar.Location = new System.Drawing.Point(887, 760);
             btnEnviar.Name = "btnEnviar";
-            btnEnviar.Size = new System.Drawing.Size(82, 22);
+            btnEnviar.Size = new System.Drawing.Size(94, 29);
             btnEnviar.TabIndex = 2;
             btnEnviar.Text = "Enviar";
             btnEnviar.UseVisualStyleBackColor = true;
@@ -176,25 +177,26 @@
             // 
             // flowLayoutPanelChat
             // 
+            flowLayoutPanelChat.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             flowLayoutPanelChat.AutoScroll = true;
-            flowLayoutPanelChat.Location = new System.Drawing.Point(10, 80);
-            flowLayoutPanelChat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            flowLayoutPanelChat.Location = new System.Drawing.Point(11, 107);
             flowLayoutPanelChat.Name = "flowLayoutPanelChat";
-            flowLayoutPanelChat.Size = new System.Drawing.Size(848, 486);
+            flowLayoutPanelChat.Size = new System.Drawing.Size(969, 648);
             flowLayoutPanelChat.TabIndex = 6;
             // 
             // formOmegaHelp
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.Color.Gray;
-            ClientSize = new System.Drawing.Size(875, 600);
+            ClientSize = new System.Drawing.Size(1000, 800);
             Controls.Add(flowLayoutPanelChat);
             Controls.Add(btnEnviar);
             Controls.Add(txtEnviarMensagem);
             Controls.Add(pn_title);
             Controls.Add(nightControlBox1);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             Name = "formOmegaHelp";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "OmegaHelp";
