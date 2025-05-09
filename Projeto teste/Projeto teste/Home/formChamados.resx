@@ -130,29 +130,20 @@
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
-        RU5ErkJggg==
+        DAAACwwBP0AiyAAAAxtJREFUaEPt2VmITmEcx/GxZst2ZV+ilCXlBoUryi4lskTJmuTScseFkBvbtYQo
+        cUEiXFmzZUkule1C9uy7708zNU2/877P2Z4mvb/61DQz5///n5n3Pe95nlNXy3+cPliEfbiAR3iDn/X0
+        tb6nn+l3FqI3mkXaYyWu4Df+pKRjLmMFVCt6WmMdXsINmMULrIVqR8lw3Icbpgh3MRSlZh4+ww1QpE+Y
+        g1KyHL/gGpdBF4hlKDSzocKuYWMfcRKrMBYD0QEd67/W91bjFPRXdzUaU89ZKCRDoAFdowavsR4aOjQ6
+        uQ3QZdnVbPABg5ErrXATrkGDw+iKrOmGI3C1G1xDS2SO3heusOgzYBtaIG9UQ//RSu/BJciUNngGV1Q2
+        o+hsgeslj5HpM2YBXEE5D73sio5ePmfgespcpM45uGL6HOmBstILX+B66yRTpTu+wxXbjbKjm0rX+xu6
+        IDj63HCFdF3vi7LTH0lv/JkIzg64ItcRK7fgZtiK4JxG7iI5sx1uBt05BOchXJHJiJWpcDM8QHB0y+GK
+        jECsjISbQWug4CRd/sq87DZNT7gZdPkPTtKdblvEinq5GX4gOO/hinRCrHSGm+EdgvMcroh2SmKlH9wM
+        TxCcpFv30YiVMXAz3EBwDsEV0covVtbAzXAAwdkEV2Q/YkW93AwbEZxxcEW0LI1x5dJa6BXcDFr3B0cL
+        mKQr1wyUHd0Yut5vkXpxlfQ+0fq57FyF630QqTMBrpikupVOmelwPWU8MuUeXEGt5bX4KjraUXkK11Oz
+        ZM4UuKJyArm2aJpEtY7D9RLNkitn4QrLHhSVXXA9JPVa3UWbAdrydw1kJ/L8Z7SnlbSIEvXWDIVkIpI2
+        I+QYsjyoaYejcDVFPSeh0GhDotLJaFU5CqEZhjtwtURLifkoJdNQadNZ2zVLUS2L8RWuhuhWvcxL/L8M
+        gJ4quQHkNqpFv+OOFT0NG4QoqbRHq5dLtVR6Sal2YdFTWtckRN4TqeYSguMKhCr7RCQ47uBQtRNJITju
+        4FDN6kT0hnIFqtHjuJD7r71wx4e4iFpqiZO6ur+MRgkepPLLFQAAAABJRU5ErkJggg==
 </value>
   </data>
   <metadata name="coluna_ID.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -165,6 +156,9 @@
     <value>True</value>
   </metadata>
   <metadata name="coluna_prio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="stts_coluna.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
 </root>

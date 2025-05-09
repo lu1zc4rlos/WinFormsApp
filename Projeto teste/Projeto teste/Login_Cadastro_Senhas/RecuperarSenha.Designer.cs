@@ -24,6 +24,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RecuperarSenha));
             lblSenhaAtual = new System.Windows.Forms.Label();
             txtSenhaAtual = new System.Windows.Forms.TextBox();
             txtSenhaNova = new System.Windows.Forms.TextBox();
@@ -36,108 +37,142 @@
             txtEmail = new System.Windows.Forms.TextBox();
             lblEamail = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
+            pn_title = new System.Windows.Forms.Panel();
+            lbl_titulo = new System.Windows.Forms.Label();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
+            lbl_omega = new System.Windows.Forms.Label();
+            panel1 = new System.Windows.Forms.Panel();
+            panel2 = new System.Windows.Forms.Panel();
+            pn_title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblSenhaAtual
             // 
             lblSenhaAtual.AutoSize = true;
-            lblSenhaAtual.Location = new System.Drawing.Point(46, 129);
+            lblSenhaAtual.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            lblSenhaAtual.ForeColor = System.Drawing.Color.White;
+            lblSenhaAtual.Location = new System.Drawing.Point(237, 239);
             lblSenhaAtual.Name = "lblSenhaAtual";
-            lblSenhaAtual.Size = new System.Drawing.Size(113, 15);
+            lblSenhaAtual.Size = new System.Drawing.Size(131, 17);
             lblSenhaAtual.TabIndex = 0;
             lblSenhaAtual.Text = "Digite a senha atual:";
             lblSenhaAtual.Click += label1_Click;
             // 
             // txtSenhaAtual
             // 
-            txtSenhaAtual.Location = new System.Drawing.Point(164, 124);
+            txtSenhaAtual.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtSenhaAtual.Location = new System.Drawing.Point(399, 236);
             txtSenhaAtual.Name = "txtSenhaAtual";
             txtSenhaAtual.PasswordChar = '*';
-            txtSenhaAtual.Size = new System.Drawing.Size(204, 23);
+            txtSenhaAtual.Size = new System.Drawing.Size(272, 18);
             txtSenhaAtual.TabIndex = 1;
             txtSenhaAtual.TextChanged += textBox1_TextChanged;
             // 
             // txtSenhaNova
             // 
-            txtSenhaNova.Location = new System.Drawing.Point(163, 156);
+            txtSenhaNova.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtSenhaNova.Location = new System.Drawing.Point(398, 272);
             txtSenhaNova.Name = "txtSenhaNova";
             txtSenhaNova.PasswordChar = '*';
-            txtSenhaNova.Size = new System.Drawing.Size(204, 23);
+            txtSenhaNova.Size = new System.Drawing.Size(272, 18);
             txtSenhaNova.TabIndex = 2;
             txtSenhaNova.TextChanged += txtSenhaNova_TextChanged;
             // 
             // lblSenhaNova
             // 
             lblSenhaNova.AutoSize = true;
-            lblSenhaNova.Location = new System.Drawing.Point(46, 161);
+            lblSenhaNova.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            lblSenhaNova.ForeColor = System.Drawing.Color.White;
+            lblSenhaNova.Location = new System.Drawing.Point(237, 276);
             lblSenhaNova.Name = "lblSenhaNova";
-            lblSenhaNova.Size = new System.Drawing.Size(113, 15);
+            lblSenhaNova.Size = new System.Drawing.Size(131, 17);
             lblSenhaNova.TabIndex = 2;
             lblSenhaNova.Text = "Digite a senha nova:";
             // 
             // txtSenhaNovamente
             // 
-            txtSenhaNovamente.Location = new System.Drawing.Point(197, 192);
+            txtSenhaNovamente.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtSenhaNovamente.Location = new System.Drawing.Point(437, 318);
             txtSenhaNovamente.Name = "txtSenhaNovamente";
             txtSenhaNovamente.PasswordChar = '*';
-            txtSenhaNovamente.Size = new System.Drawing.Size(204, 23);
+            txtSenhaNovamente.Size = new System.Drawing.Size(233, 18);
             txtSenhaNovamente.TabIndex = 3;
             txtSenhaNovamente.TextChanged += textBox3_TextChanged;
             // 
             // lblSenhaNovamente
             // 
             lblSenhaNovamente.AutoSize = true;
-            lblSenhaNovamente.Location = new System.Drawing.Point(46, 195);
+            lblSenhaNovamente.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblSenhaNovamente.ForeColor = System.Drawing.Color.White;
+            lblSenhaNovamente.Location = new System.Drawing.Point(237, 314);
             lblSenhaNovamente.Name = "lblSenhaNovamente";
-            lblSenhaNovamente.Size = new System.Drawing.Size(147, 15);
+            lblSenhaNovamente.Size = new System.Drawing.Size(170, 17);
             lblSenhaNovamente.TabIndex = 4;
             lblSenhaNovamente.Text = "Digite novamente a senha:";
             // 
             // btnConfirmar
             // 
-            btnConfirmar.Location = new System.Drawing.Point(232, 255);
+            btnConfirmar.BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
+            btnConfirmar.FlatAppearance.BorderSize = 0;
+            btnConfirmar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(65, 67, 115);
+            btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnConfirmar.ForeColor = System.Drawing.Color.White;
+            btnConfirmar.Location = new System.Drawing.Point(41, 276);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new System.Drawing.Size(66, 22);
+            btnConfirmar.Size = new System.Drawing.Size(86, 33);
             btnConfirmar.TabIndex = 5;
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.UseVisualStyleBackColor = false;
             btnConfirmar.Click += button1_Click;
             // 
             // btnOutraForma
             // 
-            btnOutraForma.Location = new System.Drawing.Point(49, 255);
+            btnOutraForma.BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
+            btnOutraForma.FlatAppearance.BorderSize = 0;
+            btnOutraForma.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(65, 67, 115);
+            btnOutraForma.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnOutraForma.ForeColor = System.Drawing.Color.White;
+            btnOutraForma.Location = new System.Drawing.Point(498, 410);
             btnOutraForma.Name = "btnOutraForma";
-            btnOutraForma.Size = new System.Drawing.Size(151, 22);
+            btnOutraForma.Size = new System.Drawing.Size(173, 33);
             btnOutraForma.TabIndex = 6;
             btnOutraForma.Text = "Tentar de outra forma";
-            btnOutraForma.UseVisualStyleBackColor = true;
+            btnOutraForma.UseVisualStyleBackColor = false;
             btnOutraForma.Click += button2_Click;
             // 
             // cbMostrarSenha
             // 
             cbMostrarSenha.AutoSize = true;
-            cbMostrarSenha.Location = new System.Drawing.Point(331, 255);
+            cbMostrarSenha.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            cbMostrarSenha.ForeColor = System.Drawing.Color.White;
+            cbMostrarSenha.Location = new System.Drawing.Point(449, 342);
             cbMostrarSenha.Name = "cbMostrarSenha";
-            cbMostrarSenha.Size = new System.Drawing.Size(101, 19);
+            cbMostrarSenha.Size = new System.Drawing.Size(121, 21);
             cbMostrarSenha.TabIndex = 4;
-            cbMostrarSenha.Text = "Mostrar senha";
+            cbMostrarSenha.Text = "Mostrar senhas";
             cbMostrarSenha.UseVisualStyleBackColor = true;
             cbMostrarSenha.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new System.Drawing.Point(184, 88);
+            txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txtEmail.Location = new System.Drawing.Point(422, 195);
             txtEmail.Name = "txtEmail";
-            txtEmail.Size = new System.Drawing.Size(204, 23);
+            txtEmail.Size = new System.Drawing.Size(249, 18);
             txtEmail.TabIndex = 0;
             txtEmail.TextChanged += textBox4_TextChanged;
             // 
             // lblEamail
             // 
             lblEamail.AutoSize = true;
-            lblEamail.Location = new System.Drawing.Point(46, 91);
+            lblEamail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            lblEamail.ForeColor = System.Drawing.Color.White;
+            lblEamail.Location = new System.Drawing.Point(237, 196);
             lblEamail.Name = "lblEamail";
-            lblEamail.Size = new System.Drawing.Size(137, 15);
+            lblEamail.Size = new System.Drawing.Size(156, 17);
             lblEamail.TabIndex = 9;
             lblEamail.Text = "Digite e-mail do usuário:";
             lblEamail.Click += label4_Click;
@@ -145,32 +180,131 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new System.Drawing.Point(405, 198);
+            label5.Location = new System.Drawing.Point(647, 318);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(0, 15);
+            label5.Size = new System.Drawing.Size(0, 17);
             label5.TabIndex = 11;
+            // 
+            // pn_title
+            // 
+            pn_title.BackColor = System.Drawing.Color.FromArgb(255, 204, 128);
+            pn_title.Controls.Add(lbl_titulo);
+            pn_title.Controls.Add(pictureBox2);
+            pn_title.Controls.Add(nightControlBox1);
+            pn_title.Controls.Add(lbl_omega);
+            pn_title.Dock = System.Windows.Forms.DockStyle.Top;
+            pn_title.Location = new System.Drawing.Point(0, 0);
+            pn_title.Name = "pn_title";
+            pn_title.Size = new System.Drawing.Size(875, 84);
+            pn_title.TabIndex = 18;
+            // 
+            // lbl_titulo
+            // 
+            lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lbl_titulo.AutoSize = true;
+            lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            lbl_titulo.ForeColor = System.Drawing.Color.Black;
+            lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            lbl_titulo.Location = new System.Drawing.Point(370, 34);
+            lbl_titulo.Name = "lbl_titulo";
+            lbl_titulo.Size = new System.Drawing.Size(176, 30);
+            lbl_titulo.TabIndex = 0;
+            lbl_titulo.Text = "TROCAR SENHA";
+            lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            pictureBox2.Location = new System.Drawing.Point(35, 14);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(50, 50);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            // 
+            // nightControlBox1
+            // 
+            nightControlBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            nightControlBox1.DefaultLocation = true;
+            nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMaximizeButton = true;
+            nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMinimizeButton = true;
+            nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.Location = new System.Drawing.Point(736, 0);
+            nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.Name = "nightControlBox1";
+            nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            nightControlBox1.TabIndex = 1;
+            // 
+            // lbl_omega
+            // 
+            lbl_omega.AutoSize = true;
+            lbl_omega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            lbl_omega.ForeColor = System.Drawing.Color.Black;
+            lbl_omega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            lbl_omega.Location = new System.Drawing.Point(99, 46);
+            lbl_omega.Name = "lbl_omega";
+            lbl_omega.Size = new System.Drawing.Size(96, 21);
+            lbl_omega.TabIndex = 1;
+            lbl_omega.Text = "OmegaTech\r\n";
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(btnConfirmar);
+            panel1.Location = new System.Drawing.Point(205, 134);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(499, 357);
+            panel1.TabIndex = 19;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = System.Drawing.Color.FromArgb(255, 224, 192);
+            panel2.Location = new System.Drawing.Point(194, 119);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(523, 386);
+            panel2.TabIndex = 20;
             // 
             // RecuperarSenha
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(521, 355);
+            BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
+            ClientSize = new System.Drawing.Size(875, 600);
+            Controls.Add(pn_title);
             Controls.Add(label5);
             Controls.Add(txtEmail);
             Controls.Add(lblEamail);
             Controls.Add(cbMostrarSenha);
             Controls.Add(btnOutraForma);
-            Controls.Add(btnConfirmar);
             Controls.Add(txtSenhaNovamente);
             Controls.Add(lblSenhaNovamente);
             Controls.Add(txtSenhaNova);
             Controls.Add(lblSenhaNova);
             Controls.Add(txtSenhaAtual);
             Controls.Add(lblSenhaAtual);
+            Controls.Add(panel1);
+            Controls.Add(panel2);
+            Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "RecuperarSenha";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "RecuperarSenha";
             Load += RecuperarSenha_Load;
+            pn_title.ResumeLayout(false);
+            pn_title.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
 
@@ -190,5 +324,12 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEamail;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel pn_title;
+        private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
+        private System.Windows.Forms.Label lbl_omega;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

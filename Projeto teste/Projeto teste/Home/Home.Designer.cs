@@ -31,8 +31,8 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             pn_title = new System.Windows.Forms.Panel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
             lbl_titulo = new System.Windows.Forms.Label();
-            pictureBox2 = new System.Windows.Forms.PictureBox();
             nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             lbl_omega = new System.Windows.Forms.Label();
             btn_sidebar = new System.Windows.Forms.PictureBox();
@@ -42,7 +42,7 @@
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             SideBarTransition = new System.Windows.Forms.Timer(components);
             pn_title.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btn_sidebar).BeginInit();
             sideBar.SuspendLayout();
             SuspendLayout();
@@ -50,24 +50,24 @@
             // pn_title
             // 
             resources.ApplyResources(pn_title, "pn_title");
-            pn_title.BackColor = System.Drawing.Color.WhiteSmoke;
+            pn_title.BackColor = System.Drawing.Color.FromArgb(255, 204, 128);
+            pn_title.Controls.Add(pictureBox1);
             pn_title.Controls.Add(lbl_titulo);
-            pn_title.Controls.Add(pictureBox2);
             pn_title.Controls.Add(nightControlBox1);
             pn_title.Controls.Add(lbl_omega);
             pn_title.Controls.Add(btn_sidebar);
             pn_title.Name = "pn_title";
             // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
             // lbl_titulo
             // 
             resources.ApplyResources(lbl_titulo, "lbl_titulo");
             lbl_titulo.Name = "lbl_titulo";
-            // 
-            // pictureBox2
-            // 
-            resources.ApplyResources(pictureBox2, "pictureBox2");
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.TabStop = false;
             // 
             // nightControlBox1
             // 
@@ -101,33 +101,31 @@
             btn_sidebar.Name = "btn_sidebar";
             btn_sidebar.TabStop = false;
             btn_sidebar.Click += btn_sidebar_Click;
-            btn_sidebar.TabIndex = 0;
-
             // 
             // sideBar
             // 
             resources.ApplyResources(sideBar, "sideBar");
-            sideBar.BackColor = System.Drawing.Color.Black;
+            sideBar.BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
             sideBar.Controls.Add(btn_chamados);
             sideBar.Controls.Add(btn_chatbot);
             sideBar.Name = "sideBar";
             // 
             // btn_chamados
             // 
-            btn_chamados.BackColor = System.Drawing.Color.Black;
+            btn_chamados.BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
             btn_chamados.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(btn_chamados, "btn_chamados");
-            btn_chamados.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            btn_chamados.ForeColor = System.Drawing.Color.White;
             btn_chamados.Name = "btn_chamados";
             btn_chamados.UseVisualStyleBackColor = false;
             btn_chamados.Click += btn_chamados_Click;
             // 
             // btn_chatbot
             // 
-            btn_chatbot.BackColor = System.Drawing.Color.Black;
+            btn_chatbot.BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
             btn_chatbot.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(btn_chatbot, "btn_chatbot");
-            btn_chatbot.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            btn_chatbot.ForeColor = System.Drawing.Color.White;
             btn_chatbot.Name = "btn_chatbot";
             btn_chatbot.UseVisualStyleBackColor = false;
             btn_chatbot.Click += btn_chatbot_Click;
@@ -141,7 +139,7 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.WhiteSmoke;
+            BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
             Controls.Add(pn_title);
             Controls.Add(sideBar);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -149,7 +147,7 @@
             Load += Home_Load;
             pn_title.ResumeLayout(false);
             pn_title.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)btn_sidebar).EndInit();
             sideBar.ResumeLayout(false);
             ResumeLayout(false);
@@ -163,11 +161,11 @@
         private System.Windows.Forms.Label lbl_omega;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
         private System.Windows.Forms.FlowLayoutPanel sideBar;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btn_chamados;
         private System.Windows.Forms.Button btn_chatbot;
         private System.Windows.Forms.Timer SideBarTransition;
         private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

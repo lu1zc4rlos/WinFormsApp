@@ -99,7 +99,6 @@ namespace Projeto_teste.Home
             {
                 Chamados = new formChamados();
                 Chamados.FormClosed += chamados_FormClosed;
-                //Chamados.MdiParent = this;
                 this.Hide();
                 Chamados.Show();
                 Chamados.FormClosed += (s, args) => Application.Exit();

@@ -19,7 +19,8 @@ namespace Projeto_teste.Home
             lbl.MaximumSize = new Size(flowLayoutPanelChat.Width - 100, 0);
             lbl.AutoSize = true;
             lbl.Padding = new Padding(10);
-            lbl.BackColor = ehUsuario ? Color.LightGreen : Color.LightGray;
+            lbl.BackColor = ehUsuario ? Color.FromArgb(60, 62, 110) : Color.Bisque;
+            lbl.ForeColor = ehUsuario ? Color.White : Color.Black;
             lbl.Margin = new Padding(5);
 
             FlowLayoutPanel linha = new FlowLayoutPanel();
