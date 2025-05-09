@@ -10,7 +10,14 @@ namespace Projeto_teste.Home
         public formOmegaHelp()
         {
             InitializeComponent();
+            this.AcceptButton = btnEnviar;
         }
+
+        private void TxtEnviarMensagem_KeyDown(object sender, KeyEventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         private void AdicionarMensagem(string mensagem, bool ehUsuario)
         {
             Label lbl = new Label();
@@ -77,5 +84,6 @@ namespace Projeto_teste.Home
             home.Show();
             this.Hide();
         }
+        private void pn_title_Paint(object sender, PaintEventArgs e){}
     }
 }
