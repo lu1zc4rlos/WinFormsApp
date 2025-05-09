@@ -3,7 +3,7 @@
 namespace Datai_Accesso {
     public class ConexaoDAL {
 
-            private static string _ConexaoComBanco = "Host=26.64.207.115;Username=postgres;Password=pim;Database=Omega_DB";
+            private static string _ConexaoComBanco = "Host=localhost;Username=postgres;Password=120920;Database=sistema_usuarios";
             public static NpgsqlConnection Abrir() {
                 var Conexao = new NpgsqlConnection(_ConexaoComBanco);
                 Conexao.Open();
