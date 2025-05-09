@@ -40,6 +40,7 @@ namespace Projeto_teste {
             panel2 = new Panel();
             pn_title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblNome
@@ -106,17 +107,19 @@ namespace Projeto_teste {
             // 
             // btnConfirmar
             // 
-            btnConfirmar.FlatAppearance.BorderColor = Color.FromArgb(192, 192, 255);
-            btnConfirmar.FlatAppearance.BorderSize = 20;
-            btnConfirmar.FlatAppearance.MouseOverBackColor = Color.Red;
-            btnConfirmar.FlatStyle = FlatStyle.System;
-            btnConfirmar.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnConfirmar.Location = new Point(334, 380);
+            btnConfirmar.BackColor = Color.FromArgb(60, 62, 110);
+            btnConfirmar.FlatAppearance.BorderColor = Color.White;
+            btnConfirmar.FlatAppearance.BorderSize = 0;
+            btnConfirmar.FlatAppearance.MouseOverBackColor = Color.FromArgb(65, 67, 115);
+            btnConfirmar.FlatStyle = FlatStyle.Flat;
+            btnConfirmar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnConfirmar.ForeColor = Color.White;
+            btnConfirmar.Location = new Point(113, 268);
             btnConfirmar.Name = "btnConfirmar";
-            btnConfirmar.Size = new Size(75, 36);
+            btnConfirmar.Size = new Size(94, 30);
             btnConfirmar.TabIndex = 6;
             btnConfirmar.Text = "Confirmar";
-            btnConfirmar.UseVisualStyleBackColor = true;
+            btnConfirmar.UseVisualStyleBackColor = false;
             btnConfirmar.Click += btnConfirmar_Click;
             // 
             // label5
@@ -193,13 +196,18 @@ namespace Projeto_teste {
             // 
             // btnVoltarLogin
             // 
-            btnVoltarLogin.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnVoltarLogin.BackColor = Color.FromArgb(60, 62, 110);
+            btnVoltarLogin.FlatAppearance.BorderSize = 0;
+            btnVoltarLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(65, 67, 115);
+            btnVoltarLogin.FlatStyle = FlatStyle.Flat;
+            btnVoltarLogin.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnVoltarLogin.ForeColor = Color.White;
             btnVoltarLogin.Location = new Point(466, 380);
             btnVoltarLogin.Name = "btnVoltarLogin";
-            btnVoltarLogin.Size = new Size(168, 35);
+            btnVoltarLogin.Size = new Size(168, 30);
             btnVoltarLogin.TabIndex = 7;
             btnVoltarLogin.Text = "Voltar para tela de login";
-            btnVoltarLogin.UseVisualStyleBackColor = true;
+            btnVoltarLogin.UseVisualStyleBackColor = false;
             btnVoltarLogin.Click += button2_Click;
             // 
             // txtConfirmarSenha
@@ -222,7 +230,7 @@ namespace Projeto_teste {
             pn_title.Dock = DockStyle.Top;
             pn_title.Location = new Point(0, 0);
             pn_title.Name = "pn_title";
-            pn_title.Size = new Size(859, 74);
+            pn_title.Size = new Size(875, 74);
             pn_title.TabIndex = 16;
             // 
             // lbl_titulo
@@ -232,7 +240,7 @@ namespace Projeto_teste {
             lbl_titulo.Font = new Font("Segoe UI Semibold", 16F, FontStyle.Bold);
             lbl_titulo.ForeColor = Color.Black;
             lbl_titulo.ImeMode = ImeMode.NoControl;
-            lbl_titulo.Location = new Point(400, 21);
+            lbl_titulo.Location = new Point(408, 21);
             lbl_titulo.Name = "lbl_titulo";
             lbl_titulo.Size = new Size(128, 30);
             lbl_titulo.TabIndex = 0;
@@ -265,7 +273,7 @@ namespace Projeto_teste {
             nightControlBox1.EnableMaximizeColor = Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new Point(719, 0);
+            nightControlBox1.Location = new Point(732, 5);
             nightControlBox1.MaximizeHoverColor = Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = Color.White;
             nightControlBox1.MinimizeHoverColor = Color.FromArgb(15, 255, 255, 255);
@@ -288,6 +296,7 @@ namespace Projeto_teste {
             // 
             // panel1
             // 
+            panel1.Controls.Add(btnConfirmar);
             panel1.Location = new Point(209, 114);
             panel1.Name = "panel1";
             panel1.Size = new Size(485, 357);
@@ -296,15 +305,15 @@ namespace Projeto_teste {
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(255, 224, 192);
-            panel2.Location = new Point(194, 99);
+            panel2.Location = new Point(198, 102);
             panel2.Name = "panel2";
-            panel2.Size = new Size(514, 387);
+            panel2.Size = new Size(509, 380);
             panel2.TabIndex = 18;
             // 
             // Cadastro
             // 
             BackColor = Color.FromArgb(40, 42, 90);
-            ClientSize = new Size(859, 561);
+            ClientSize = new Size(875, 600);
             Controls.Add(pn_title);
             Controls.Add(txtConfirmarSenha);
             Controls.Add(btnVoltarLogin);
@@ -315,7 +324,6 @@ namespace Projeto_teste {
             Controls.Add(atpDataNascimento);
             Controls.Add(lblEmailCadastrado);
             Controls.Add(label5);
-            Controls.Add(btnConfirmar);
             Controls.Add(lblConfirmarSenha);
             Controls.Add(txtEmail);
             Controls.Add(lblEmail);
@@ -331,6 +339,7 @@ namespace Projeto_teste {
             pn_title.ResumeLayout(false);
             pn_title.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
 

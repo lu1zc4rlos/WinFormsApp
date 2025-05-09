@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Datai_Accesso;
 using Npgsql;
 
 
@@ -38,14 +39,12 @@ namespace Projeto_teste.Home
 
         private void CarregarChamados()
         {
-            string connString = "Host=localhost;Port=5432;Username=postgres;Password=pim;Database=sistema_usuarios";
 
-            using (var conn = new NpgsqlConnection(connString))
+            using (var conexao = ConexaoDAL.Abrir())
             {
-                conn.Open();
-                string query = "SELECT id, tipo, descricao, prioridade FROM chamados";
+                string query = "SELECT id_ticket, tipo, descricao, prioridade, status FROM ticket";
 
-                using (var da = new NpgsqlDataAdapter(query, conn))
+                using (var da = new NpgsqlDataAdapter(query, conexao))
                 {
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -55,9 +54,11 @@ namespace Projeto_teste.Home
             }
         }
 
-        private void btn_attchamados_Click(object sender, EventArgs e)
+        private void btnCarregar_Click(object sender, EventArgs e)
         {
             CarregarChamados();
         }
+
+
     }
 }
