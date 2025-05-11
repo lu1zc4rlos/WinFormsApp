@@ -347,6 +347,7 @@ namespace Projeto_teste {
 
         private UsuarioBLL _usuarioBLL = new UsuarioBLL();
         private RecuperarSenhaBLL _requisitosSenhaBLL = new RecuperarSenhaBLL ();
+        LoginBLL loginBLL = new LoginBLL();
 
         private void btnConfirmar_Click(object sender, EventArgs e) {
             DateTime Data = atpDataNascimento.Value.Date;
@@ -408,7 +409,8 @@ namespace Projeto_teste {
                 MessageBox.Show("Usuário adicionado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
-                Projeto_teste.Home.Home home = new Projeto_teste.Home.Home();
+                Usuario usuario = loginBLL.ObterUsuarioPorEmail(novoUsuario.Email);
+                Projeto_teste.Home.Home home = new Projeto_teste.Home.Home(usuario);
                 home.ShowDialog();
                 this.Close();
             }

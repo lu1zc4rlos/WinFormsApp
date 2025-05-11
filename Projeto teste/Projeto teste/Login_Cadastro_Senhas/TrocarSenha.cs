@@ -1,4 +1,5 @@
-﻿using Regras_de_negócio;
+﻿using Datai_Accesso;
+using Regras_de_negócio;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -8,6 +9,8 @@ namespace Projeto_teste {
 
         private RecuperarSenhaEmail _referencia;
         private RecuperarSenhaBLL _recuperarSenhaBLL = new RecuperarSenhaBLL();
+        LoginBLL loginBLL = new LoginBLL();
+
         public TrocarSenha(RecuperarSenhaEmail tela) {
             InitializeComponent();
             _referencia = tela;
@@ -66,7 +69,8 @@ namespace Projeto_teste {
                          btnConfirmar
                     );
                     this.Close();
-                    Home.Home exemplo = new Home.Home();
+                    Usuario usuario = loginBLL.ObterUsuarioPorEmail(email);
+                    Home.Home exemplo = new Home.Home(usuario);
                     exemplo.ShowDialog();
                 }
                 catch (Exception ex) {

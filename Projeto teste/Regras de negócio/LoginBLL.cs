@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using Banco_de_dados;
 using Datai_Accesso;
 
 namespace Regras_de_negócio {
@@ -33,5 +34,12 @@ namespace Regras_de_negócio {
 
             return _logindal.VerificarLogin(email,senha);
         }
+        private UsuarioDAL usuarioDAL = new UsuarioDAL();
+        public Usuario ObterUsuarioPorEmail(string email)
+        {
+           
+            return usuarioDAL.BuscarPorEmail(email);
+        }
+
     }
 }
