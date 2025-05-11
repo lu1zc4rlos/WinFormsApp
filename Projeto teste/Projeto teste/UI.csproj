@@ -10,6 +10,7 @@
 		<NoWarn>$(NoWarn);CA1416</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>
+		<ProjectReference Include="..\Banco de dados\DAL.csproj" />
 		<ProjectReference Include="..\Entidades\Entidades.csproj" />
 		<ProjectReference Include="..\Regras de negócio\BLL.csproj" />
 	</ItemGroup>

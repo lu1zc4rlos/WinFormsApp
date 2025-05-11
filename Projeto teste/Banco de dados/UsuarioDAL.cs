@@ -54,6 +54,32 @@ namespace Banco_de_dados {
             }
 
         }
+        public Usuario BuscarUsuarioPorId(int id)
+        {
+            Usuario usuario = null;
+            string query = "SELECT idusuario, nome, email FROM dados_pessoais WHERE idusuario = @id";
+
+            using (var conexao = ConexaoDAL.Abrir())
+            using (var comando = new NpgsqlCommand(query, conexao))
+            {
+                comando.Parameters.AddWithValue("@id", id);
+
+                using (var reader = comando.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        usuario = new Usuario
+                        {
+                            Id = reader.GetInt32(0),
+                            Nome = reader.GetString(1),
+                            Email = reader.GetString(2)
+                        };
+                    }
+                }
+            }
+            return usuario;
+        }
+
 
     }
 }
