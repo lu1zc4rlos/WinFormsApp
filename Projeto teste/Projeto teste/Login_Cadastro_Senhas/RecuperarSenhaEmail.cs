@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using Regras_de_negócio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste {
     public partial class RecuperarSenhaEmail : Form {
@@ -74,10 +75,12 @@ namespace Projeto_teste {
             telaTrocarSenha.ShowDialog();
             this.Close();
         }
+        LoginBLL loginBLL = new LoginBLL();
         private void btnAcessarPrograma_Click(object sender, EventArgs e) {
 
             this.Hide();
-            Home.Home home = new Home.Home();
+            Usuario usuario = loginBLL.ObterUsuarioPorEmail(EmailUsuarioPublico);
+            Home.Home home = new Home.Home(usuario);
             home.ShowDialog();
             this.Close();
         }

@@ -3,66 +3,92 @@ using System.Windows.Forms;
 using Regras_de_negócio;
 
 namespace Projeto_teste {
-    public partial class Login : Form {
-        public Login() {
+    public partial class Login : Form
+    {
+        public Login()
+        {
             InitializeComponent();
         }
-        private void btnNaoCadastrado_Click(object sender, EventArgs e) {
+        private void btnNaoCadastrado_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            using (Cadastro cadastro = new Cadastro()) {
+            using (Cadastro cadastro = new Cadastro())
+            {
                 cadastro.ShowDialog();
             }
             this.Show();
             LimparCampos();
         }
-        private void btnConfirmar_Click(object sender, EventArgs e) {
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
             string email = txtEmail.Text.Trim();
             string senha = txtSenha.Text.Trim();
 
             LoginBLL loginBLL = new LoginBLL();
 
-            try {
-                if (loginBLL.ValidarLogin(email, senha)) {
+            try
+            {
+                Usuario usuario = loginBLL.ObterUsuarioPorEmail(email);
+
+                if (usuario != null)
+                {
                     this.Hide();
-                    using (Projeto_teste.Home.Home home = new Projeto_teste.Home.Home()) {
+                    using (Projeto_teste.Home.Home home = new Projeto_teste.Home.Home(usuario))
+                    {
                         home.ShowDialog();
                     }
                     this.Hide();
                     LimparCampos();
                 }
-                else {
+                else
+                {
                     MessageBox.Show("E-mail ou senha inválidos!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
                 MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        private void cbMostarSenha_CheckedChanged(object sender, EventArgs e) {
+        private void cbMostarSenha_CheckedChanged(object sender, EventArgs e)
+        {
             txtSenha.PasswordChar = cbMostarSenha.Checked ? '\0' : '*';
         }
-        private void btnRecuperrarSenha_Click(object sender, EventArgs e) {
+        private void btnRecuperrarSenha_Click(object sender, EventArgs e)
+        {
             this.Hide();
-            using (RecuperarSenha recuperarSenha = new RecuperarSenha()) {
+            using (RecuperarSenha recuperarSenha = new RecuperarSenha())
+            {
                 recuperarSenha.ShowDialog();
             }
             this.Show();
             LimparCampos();
         }
-        private void LimparCampos() {
+        private void LimparCampos()
+        {
             txtEmail.Clear();
             txtSenha.Clear();
             cbMostarSenha.Checked = false;
         }
-        private void txtSenha_TextChanged(object sender, EventArgs e) {
+        private void txtSenha_TextChanged(object sender, EventArgs e)
+        {
         }
-        private void lblEmail_Click(object sender, EventArgs e) {
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
         }
-        private void lblSenha_Click(object sender, EventArgs e) {
+        private void lblSenha_Click(object sender, EventArgs e)
+        {
         }
-        private void Login_Load(object sender, EventArgs e) {
+        private void Login_Load(object sender, EventArgs e)
+        {
         }
-        private void txtEmail_TextChanged(object sender, EventArgs e) {
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Regras_de_negócio;
+﻿using Datai_Accesso;
+using Regras_de_negócio;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,8 +27,10 @@ namespace Projeto_teste {
 
             RecuperarSenhaBLL _recuperarSenhaBLL = new RecuperarSenhaBLL();
             RecuperarSenhaBLL _requisitosSenhaBLL = new RecuperarSenhaBLL();
+            LoginBLL loginBLL = new LoginBLL();
 
-            try {
+            try
+            {
                 if (_recuperarSenhaBLL.ValidarEmail(email)) {
                     if (_requisitosSenhaBLL.ValidarSenha(novaSenha)) {
                         MessageBox.Show("Senha inválida! A senha deve ter:\n- Pelo menos 8 caracteres" +
@@ -53,7 +56,8 @@ namespace Projeto_teste {
                         );
 
                         this.Hide();
-                        Home.Home home = new Home.Home();
+                        Usuario usuario = loginBLL.ObterUsuarioPorEmail(email);
+                        Home.Home home = new Home.Home(usuario);
                         home.ShowDialog();
                     }
                     else { 

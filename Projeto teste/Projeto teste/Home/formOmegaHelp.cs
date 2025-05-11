@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Datai_Accesso;
 using Regras_de_negócio;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste.Home
 {
     public partial class formOmegaHelp : Form
     {
-        public formOmegaHelp()
+        private Usuario _usuario;
+        public formOmegaHelp(Usuario usuario)
         {
             InitializeComponent();
             this.AcceptButton = btnEnviar;
+            _usuario = usuario;
         }
 
         private void TxtEnviarMensagem_KeyDown(object sender, KeyEventArgs e)
@@ -77,9 +81,11 @@ namespace Projeto_teste.Home
             this.Dock = DockStyle.Fill;
         }
         Home home;
+        private Usuario usuario;
+
         private void pic_home_Click(object sender, EventArgs e)
         {
-            home = new Home();
+            home = new Home(usuario);
             home.FormClosed += (s, args) => Application.Exit();
             home.Show();
             this.Hide();

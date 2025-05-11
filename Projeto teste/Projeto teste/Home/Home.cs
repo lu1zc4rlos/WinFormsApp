@@ -7,19 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Regras_de_negócio;
 
 namespace Projeto_teste.Home
 {
     public partial class Home : Form
     {
-
-        public Home()
+        private Usuario _usuario;
+        public Home(Usuario usuario)
         {
             InitializeComponent();
+            _usuario = usuario;
         }
-
-
 
         //métodos
 
@@ -97,7 +96,7 @@ namespace Projeto_teste.Home
             btn_atual(sender);
             if (Chamados == null)
             {
-                Chamados = new formChamados();
+                Chamados = new formChamados(_usuario);
                 Chamados.FormClosed += chamados_FormClosed;
                 this.Hide();
                 Chamados.Show();
@@ -119,7 +118,7 @@ namespace Projeto_teste.Home
             btn_atual(sender);
             if(OmegaHelp == null)
             {
-                OmegaHelp = new formOmegaHelp();
+                OmegaHelp = new formOmegaHelp(_usuario);
                 OmegaHelp.FormClosed += OmegaHelp_FormClosed;
                 this.Hide();
                 OmegaHelp.Show();
