@@ -65,7 +65,7 @@
             btnTicketsFechados.ForeColor = System.Drawing.SystemColors.ControlLight;
             btnTicketsFechados.Image = (System.Drawing.Image)resources.GetObject("btnTicketsFechados.Image");
             btnTicketsFechados.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            btnTicketsFechados.Location = new System.Drawing.Point(919, 211);
+            btnTicketsFechados.Location = new System.Drawing.Point(975, 211);
             btnTicketsFechados.Name = "btnTicketsFechados";
             btnTicketsFechados.Size = new System.Drawing.Size(150, 121);
             btnTicketsFechados.TabIndex = 1;
@@ -82,7 +82,7 @@
             btnEmAtendimento.ForeColor = System.Drawing.SystemColors.ControlLight;
             btnEmAtendimento.Image = (System.Drawing.Image)resources.GetObject("btnEmAtendimento.Image");
             btnEmAtendimento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            btnEmAtendimento.Location = new System.Drawing.Point(707, 211);
+            btnEmAtendimento.Location = new System.Drawing.Point(746, 211);
             btnEmAtendimento.Name = "btnEmAtendimento";
             btnEmAtendimento.Size = new System.Drawing.Size(150, 121);
             btnEmAtendimento.TabIndex = 2;
@@ -100,7 +100,7 @@
             btnTicketsAbertos.ForeColor = System.Drawing.SystemColors.ControlLight;
             btnTicketsAbertos.Image = (System.Drawing.Image)resources.GetObject("btnTicketsAbertos.Image");
             btnTicketsAbertos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            btnTicketsAbertos.Location = new System.Drawing.Point(495, 211);
+            btnTicketsAbertos.Location = new System.Drawing.Point(519, 211);
             btnTicketsAbertos.Name = "btnTicketsAbertos";
             btnTicketsAbertos.Size = new System.Drawing.Size(150, 121);
             btnTicketsAbertos.TabIndex = 3;
@@ -135,7 +135,7 @@
             flowLayoutPanelCards.AutoScroll = true;
             flowLayoutPanelCards.Location = new System.Drawing.Point(265, 468);
             flowLayoutPanelCards.Name = "flowLayoutPanelCards";
-            flowLayoutPanelCards.Size = new System.Drawing.Size(836, 375);
+            flowLayoutPanelCards.Size = new System.Drawing.Size(893, 375);
             flowLayoutPanelCards.TabIndex = 6;
             flowLayoutPanelCards.Paint += flowLayoutPanelCards_Paint;
             // 
@@ -143,7 +143,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1123, 917);
+            ClientSize = new System.Drawing.Size(1185, 917);
             Controls.Add(flowLayoutPanelCards);
             Controls.Add(lblUltimosTickets);
             Controls.Add(lblDashboardPrincipal);

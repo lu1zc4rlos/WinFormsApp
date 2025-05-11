@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Entidades;
+
 
 namespace ProjetoTeste.Home_Técnico
 {
@@ -33,38 +35,39 @@ namespace ProjetoTeste.Home_Técnico
 
             botao.Region = new Region(path);
         }
-        private List<(string Codigo, string Titulo, string Cliente, string Prioridade, string TempoAberto, string Status)> ObterTicketsDoBanco()
+        private List<Ticket> ObterTicketsDoBanco()
         {
-            return new List<(string, string, string, string, string, string)> {
-                ("#HDN201", "Sistema fora do ar", "João Silva", "Alta", "5 minutos", "Aberto"),
-                ("#HDN202", "Erro ao acessar o sistema", "Maria Oliveira", "Baixa", "10 minutos", "Em atendimento"),
-                ("#HDN203", "Relatório não gera", "Carlos Pereira", "Média", "15 minutos", "Fechado"),
-               ("#HDN204", "Sistema precisa de manutencao", "Augusto Santos", "Média", "2 minutos", "Aberto"),
+            return new List<Ticket> {
+                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Aberto" },
+                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Em andamento" },
+                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Aberto" },
+                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Aberto" },
             };
         }
-        public Panel CriarTicketCard(string codigo, string nome, string cliente, string prioridade, string tempo, string status)
+        public Panel CriarTicketCard(string codigo, string titulo, string cliente, string prioridade, string tempo, string status)
         {
             Panel card = new Panel();
-            card.Width = 700;
+            card.Width = 750;
             card.Height = 80;
-            card.BackColor = Color.FromArgb(245, 245, 255); 
+            card.BackColor = Color.FromArgb(245, 245, 255);
             card.Padding = new Padding(10);
             card.Margin = new Padding(5);
             card.BorderStyle = BorderStyle.FixedSingle;
 
             TableLayoutPanel table = new TableLayoutPanel();
             table.Dock = DockStyle.Fill;
-            table.ColumnCount = 6;
+            table.ColumnCount = 7; // Aumentado para 7 colunas
             table.RowCount = 2;
             table.Padding = new Padding(0);
             table.Margin = new Padding(0);
 
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7)); // Código
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9)); // Nome chamado
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6)); // Cliente
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6)); // Prioridade
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6)); // Há
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12)); // Status
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7));  // Código
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9));  // Nome chamado
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6));  // Cliente
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6));  // Prioridade
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6));  // Há
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6)); // Status
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6)); // Botão
 
             table.Controls.Add(NovaLabel("Código", true), 0, 0);
             table.Controls.Add(NovaLabel("Nome chamado", true), 1, 0);
@@ -72,17 +75,50 @@ namespace ProjetoTeste.Home_Técnico
             table.Controls.Add(NovaLabel("Prioridade", true), 3, 0);
             table.Controls.Add(NovaLabel("Há", true), 4, 0);
             table.Controls.Add(NovaLabel("Status", true), 5, 0);
+            table.Controls.Add(NovaLabel("Ação", true), 6, 0);
 
             table.Controls.Add(NovaLabel(codigo), 0, 1);
-            table.Controls.Add(NovaLabel(nome, false, Color.DeepPink), 1, 1);
+            table.Controls.Add(NovaLabel(titulo, false, Color.DeepPink), 1, 1);
             table.Controls.Add(NovaLabel(cliente), 2, 1);
             table.Controls.Add(NovaLabel(prioridade), 3, 1);
             table.Controls.Add(NovaLabel(tempo), 4, 1);
             table.Controls.Add(NovaLabel(status), 5, 1);
 
+            // 🔘 Botão de atualização de status
+            Button btnAtualizar = new Button();
+            btnAtualizar.AutoSize = true;
+            btnAtualizar.Text = status == "Aberto" ? "Iniciar" :
+                                status == "Em andamento" ? "Concluir" : "";
+            btnAtualizar.Enabled = status != "Concluído";
+
+            btnAtualizar.Click += (s, e) =>
+            {
+                string novoStatus = status == "Aberto" ? "Em andamento" :
+                                    status == "Em andamento" ? "Concluído" : status;
+
+               // AtualizarStatus(codigo, novoStatus);
+                CarregarTickets(); // Atualiza os cards na tela
+            };
+
+            table.Controls.Add(btnAtualizar, 6, 1);
+
             card.Controls.Add(table);
             return card;
         }
+        private void CarregarTickets()
+        {
+            flowLayoutPanelCards.Controls.Clear();
+           
+            List<Ticket> tickets = ObterTicketsDoBanco(); // Exemplo de função fictícia
+
+            foreach (var ticket in tickets)
+            {
+                Panel card = CriarTicketCard(ticket.Codigo, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
+                flowLayoutPanelCards.Controls.Add(card);
+            }
+        }
+
+
         private Label NovaLabel(string texto, bool negrito = false, Color? cor = null)
         {
             return new Label
@@ -103,7 +139,7 @@ namespace ProjetoTeste.Home_Técnico
 
             foreach (var ticket in listaTickets)
             {
-                var card = CriarTicketCard(ticket.Codigo, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.TempoAberto, ticket.Status);
+                var card = CriarTicketCard(ticket.Codigo, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
                 flowLayoutPanelCards.Controls.Add(card);
             }
         }

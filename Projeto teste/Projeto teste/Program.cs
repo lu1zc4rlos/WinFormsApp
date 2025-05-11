@@ -13,9 +13,9 @@ namespace Projeto_teste {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
 
-            //Application.Run(new ProjetoTeste.Home_Técnico.HomeTecnico());
+            Application.Run(new ProjetoTeste.Home_Técnico.HomeTecnico());
         }
     }
 }
