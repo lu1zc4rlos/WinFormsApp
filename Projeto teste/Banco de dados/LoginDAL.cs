@@ -4,6 +4,8 @@ using System;
 
 namespace Datai_Accesso {
     public class LoginDAL {
+
+
         public bool VerificarLogin(string Email, string Senha) {
 
 

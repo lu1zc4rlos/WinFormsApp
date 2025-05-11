@@ -50,9 +50,10 @@
             coluna_prio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             stts_coluna = new System.Windows.Forms.DataGridViewTextBoxColumn();
             panel1 = new System.Windows.Forms.Panel();
-            btnCarregar = new System.Windows.Forms.Button();
-            button1 = new System.Windows.Forms.Button();
             button2 = new System.Windows.Forms.Button();
+            btn_addchamado = new System.Windows.Forms.Button();
+            btnCarregar = new System.Windows.Forms.Button();
+            txtIdTicket = new System.Windows.Forms.TextBox();
             pn_title.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pic_home).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -262,14 +263,49 @@
             // panel1
             // 
             panel1.BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
+            panel1.Controls.Add(txtIdTicket);
             panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btn_addchamado);
             panel1.Controls.Add(btnCarregar);
             panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             panel1.Location = new System.Drawing.Point(0, 552);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(875, 48);
             panel1.TabIndex = 25;
+            // 
+            // button2
+            // 
+            button2.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
+            button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(45, 47, 95);
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            button2.ForeColor = System.Drawing.Color.White;
+            button2.Location = new System.Drawing.Point(579, 6);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(126, 30);
+            button2.TabIndex = 9;
+            button2.Text = "Excluir chamado";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // btn_addchamado
+            // 
+            btn_addchamado.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
+            btn_addchamado.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            btn_addchamado.FlatAppearance.BorderSize = 0;
+            btn_addchamado.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(45, 47, 95);
+            btn_addchamado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_addchamado.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btn_addchamado.ForeColor = System.Drawing.Color.White;
+            btn_addchamado.Location = new System.Drawing.Point(723, 6);
+            btn_addchamado.Name = "btn_addchamado";
+            btn_addchamado.Size = new System.Drawing.Size(140, 30);
+            btn_addchamado.TabIndex = 8;
+            btn_addchamado.Text = "Adicionar Chamado";
+            btn_addchamado.UseVisualStyleBackColor = false;
+            btn_addchamado.Click += btn_addchamado_Click;
             // 
             // btnCarregar
             // 
@@ -288,37 +324,12 @@
             btnCarregar.UseVisualStyleBackColor = false;
             btnCarregar.Click += btnCarregar_Click;
             // 
-            // button1
+            // txtIdTicket
             // 
-            button1.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
-            button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(45, 47, 95);
-            button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(723, 6);
-            button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(140, 30);
-            button1.TabIndex = 8;
-            button1.Text = "Adicionar Chamado";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
-            button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(45, 47, 95);
-            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button2.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            button2.ForeColor = System.Drawing.Color.White;
-            button2.Location = new System.Drawing.Point(579, 6);
-            button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(126, 30);
-            button2.TabIndex = 9;
-            button2.Text = "Excluir chamado";
-            button2.UseVisualStyleBackColor = false;
+            txtIdTicket.Location = new System.Drawing.Point(201, 16);
+            txtIdTicket.Name = "txtIdTicket";
+            txtIdTicket.Size = new System.Drawing.Size(100, 23);
+            txtIdTicket.TabIndex = 10;
             // 
             // formChamados
             // 
@@ -341,6 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgv_chamados).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
 
         }
@@ -362,6 +374,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn stts_coluna;
         private System.Windows.Forms.Button btnCarregar;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_addchamado;
+        private System.Windows.Forms.TextBox txtIdTicket;
     }
 }

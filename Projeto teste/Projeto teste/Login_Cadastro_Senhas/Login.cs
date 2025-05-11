@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Windows.Forms;
+using Datai_Accesso;
 using Regras_de_negócio;
+using static Datai_Accesso.LoginDAL;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using Npgsql;
 
 namespace Projeto_teste {
     public partial class Login : Form {
@@ -15,6 +19,37 @@ namespace Projeto_teste {
             this.Show();
             LimparCampos();
         }
+
+        //teste de método
+        public int ObterIdUsuario(string email)
+        {
+            int idUsuario = 0;
+
+            using (var conexao = ConexaoDAL.Abrir())
+            {
+                string query = "SELECT idusuario FROM dados_pessoais WHERE email = @Email";
+
+                using (NpgsqlCommand comando = new NpgsqlCommand(query, conexao))
+                {
+                    comando.Parameters.AddWithValue("@Email", email);
+
+                    object resultado = comando.ExecuteScalar();
+
+                    if (resultado != null)
+                    {
+                        idUsuario = Convert.ToInt32(resultado);
+                    }
+                }
+            }
+
+            return idUsuario;
+        }
+        public static class SessaoUsuario
+        {
+            public static int UsuarioId { get; set; }
+        }
+        //dois métodos a cima são testes
+
         private void btnConfirmar_Click(object sender, EventArgs e) {
             string email = txtEmail.Text.Trim();
             string senha = txtSenha.Text.Trim();
@@ -23,8 +58,10 @@ namespace Projeto_teste {
 
             try {
                 if (loginBLL.ValidarLogin(email, senha)) {
+                    int ID_atual = ObterIdUsuario(email);
+                    SessaoUsuario.UsuarioId = ID_atual;
                     this.Hide();
-                    using (Projeto_teste.Home.Home home = new Projeto_teste.Home.Home()) {
+                    using (Home.Home home = new Home.Home()) {
                         home.ShowDialog();
                     }
                     this.Hide();
@@ -38,6 +75,7 @@ namespace Projeto_teste {
                 MessageBox.Show($"Erro: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        
         private void cbMostarSenha_CheckedChanged(object sender, EventArgs e) {
             txtSenha.PasswordChar = cbMostarSenha.Checked ? '\0' : '*';
         }
