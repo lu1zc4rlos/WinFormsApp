@@ -26,16 +26,26 @@ namespace Data_Access
         {
             var tickets = new List<Ticket>();
 
-            string query = "SELECT id_ticket, nome_chamado, prioridade, status, data_criacao, usuario_id FROM \"ticket\"";
+            string query = @"SELECT 
+                t.id_ticket, 
+                t.nome_chamado, 
+                t.prioridade, 
+                t.status, 
+                t.data_criacao, 
+                u.nome 
+             FROM 
+                ""ticket"" t
+             INNER JOIN 
+                ""dados_pessoais"" u ON t.usuario_id = u.idusuario";
+
             if (!string.IsNullOrEmpty(statusFiltro))
             {
-                query += " WHERE status = @StatusFiltro";
+                query += " WHERE t.status = @StatusFiltro";
             }
 
             using (var conexao = ConexaoDAL.Abrir())
             using (var comando = new NpgsqlCommand(query, conexao))
             {
-
                 if (!string.IsNullOrEmpty(statusFiltro))
                 {
                     comando.Parameters.AddWithValue("@StatusFiltro", statusFiltro);
@@ -45,14 +55,21 @@ namespace Data_Access
                 {
                     while (reader.Read())
                     {
+                        string nomeCompleto = reader.GetString(5);
+                        string[] partesNome = nomeCompleto.Split(' ');
+
+                        string nomeSimplificado = partesNome.Length >= 2
+                            ? partesNome[0] + " " + partesNome[1]
+                            : nomeCompleto;
+
                         var ticket = new Ticket
                         {
                             ID = "#HDN" + reader.GetInt32(0).ToString("D3"),
                             Titulo = reader.GetString(1),
-                            Cliente = "Usuário " + reader.GetInt32(5).ToString(),
                             Prioridade = reader.GetString(2),
+                            Status = reader.GetString(3),
                             Tempo = CalcularTempo(reader.GetDateTime(4)),
-                            Status = reader.GetString(3)
+                            Cliente = nomeSimplificado
                         };
                         tickets.Add(ticket);
                     }
