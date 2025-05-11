@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Banco_de_dados;
+using Data_Access;
 using Entidades;
+using ProjetoTeste.Home_Tecnico;
+using Regras_de_negócio;
 
 
 namespace ProjetoTeste.Home_Técnico
@@ -35,16 +34,10 @@ namespace ProjetoTeste.Home_Técnico
 
             botao.Region = new Region(path);
         }
-        private List<Ticket> ObterTicketsDoBanco()
-        {
-            return new List<Ticket> {
-                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Aberto" },
-                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Em andamento" },
-                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Aberto" },
-                new Ticket {Codigo="#HDN201", Titulo="Sistema fora do ar", Cliente="João Silva", Prioridade="Alta", Tempo="5 minutos", Status="Aberto" },
-            };
-        }
-        public Panel CriarTicketCard(string codigo, string titulo, string cliente, string prioridade, string tempo, string status)
+
+        TicketDAL _ticketDAL = new TicketDAL();
+        UsuarioDAL _usuarioDAL = new UsuarioDAL();
+        public Panel CriarTicketCard(string id, string titulo, string cliente, string prioridade, string tempo, string status)
         {
             Panel card = new Panel();
             card.Width = 750;
@@ -56,12 +49,12 @@ namespace ProjetoTeste.Home_Técnico
 
             TableLayoutPanel table = new TableLayoutPanel();
             table.Dock = DockStyle.Fill;
-            table.ColumnCount = 7; // Aumentado para 7 colunas
+            table.ColumnCount = 7;
             table.RowCount = 2;
             table.Padding = new Padding(0);
             table.Margin = new Padding(0);
 
-            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7));  // Código
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 7));  // ID
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9));  // Nome chamado
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6));  // Cliente
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6));  // Prioridade
@@ -69,7 +62,7 @@ namespace ProjetoTeste.Home_Técnico
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6)); // Status
             table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 6)); // Botão
 
-            table.Controls.Add(NovaLabel("Código", true), 0, 0);
+            table.Controls.Add(NovaLabel("ID", true), 0, 0);
             table.Controls.Add(NovaLabel("Nome chamado", true), 1, 0);
             table.Controls.Add(NovaLabel("Cliente", true), 2, 0);
             table.Controls.Add(NovaLabel("Prioridade", true), 3, 0);
@@ -77,28 +70,48 @@ namespace ProjetoTeste.Home_Técnico
             table.Controls.Add(NovaLabel("Status", true), 5, 0);
             table.Controls.Add(NovaLabel("Ação", true), 6, 0);
 
-            table.Controls.Add(NovaLabel(codigo), 0, 1);
+            table.Controls.Add(NovaLabel(id), 0, 1);
             table.Controls.Add(NovaLabel(titulo, false, Color.DeepPink), 1, 1);
             table.Controls.Add(NovaLabel(cliente), 2, 1);
             table.Controls.Add(NovaLabel(prioridade), 3, 1);
             table.Controls.Add(NovaLabel(tempo), 4, 1);
             table.Controls.Add(NovaLabel(status), 5, 1);
 
-            // 🔘 Botão de atualização de status
+            // O Botão de atualização de status
             Button btnAtualizar = new Button();
             btnAtualizar.AutoSize = true;
             btnAtualizar.Text = status == "Aberto" ? "Iniciar" :
-                                status == "Em andamento" ? "Concluir" : "";
+                                status == "Em andamento" ? "Responder" : "";
             btnAtualizar.Enabled = status != "Concluído";
-
             btnAtualizar.Click += (s, e) =>
             {
-                string novoStatus = status == "Aberto" ? "Em andamento" :
-                                    status == "Em andamento" ? "Concluído" : status;
+                int idNumerico = int.Parse(id.Replace("#HDN", ""));
 
-               // AtualizarStatus(codigo, novoStatus);
-                CarregarTickets(); // Atualiza os cards na tela
+                if (status == "Aberto")
+                {
+                    status = "Em andamento";
+                    _ticketDAL.AtualizarStatus(idNumerico, "Em andamento");
+                    CarregarTickets();
+                }
+                else if (status == "Em andamento")
+                {
+                    status = "Concluído";
+
+                    // Buscar o ticket e o usuário
+                    Ticket ticketSelecionado = _ticketDAL.BuscarTicketPorId(idNumerico);
+                    Usuario usuario = _usuarioDAL.BuscarUsuarioPorId(ticketSelecionado.UsuarioId);
+
+                    this.Hide();
+                    using (ResponderTicket responderTicket = new ResponderTicket(ticketSelecionado, usuario))
+                    {
+                        responderTicket.ShowDialog();
+                    }
+                    this.Show();
+
+                    CarregarTickets();
+                }
             };
+
 
             table.Controls.Add(btnAtualizar, 6, 1);
 
@@ -108,17 +121,13 @@ namespace ProjetoTeste.Home_Técnico
         private void CarregarTickets()
         {
             flowLayoutPanelCards.Controls.Clear();
-           
-            List<Ticket> tickets = ObterTicketsDoBanco(); // Exemplo de função fictícia
-
+            List<Ticket> tickets = _ticketDAL.ObterTicketsDoBanco();
             foreach (var ticket in tickets)
             {
-                Panel card = CriarTicketCard(ticket.Codigo, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
+                Panel card = CriarTicketCard(ticket.ID, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
                 flowLayoutPanelCards.Controls.Add(card);
             }
         }
-
-
         private Label NovaLabel(string texto, bool negrito = false, Color? cor = null)
         {
             return new Label
@@ -128,25 +137,55 @@ namespace ProjetoTeste.Home_Técnico
                 ForeColor = cor ?? Color.Black,
                 AutoSize = true,
                 Anchor = AnchorStyles.Left,
-                Margin = new Padding(3, 0, 3, 0) 
+                Margin = new Padding(3, 0, 3, 0)
             };
         }
         private void btnTicketsTotais_Click(object sender, EventArgs e)
         {
-            flowLayoutPanelCards.Controls.Clear(); 
-
-            var listaTickets = ObterTicketsDoBanco(); 
+            flowLayoutPanelCards.Controls.Clear();
+            var listaTickets = _ticketDAL.ObterTicketsDoBanco();
 
             foreach (var ticket in listaTickets)
             {
-                var card = CriarTicketCard(ticket.Codigo, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
+                var card = CriarTicketCard(ticket.ID, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
                 flowLayoutPanelCards.Controls.Add(card);
             }
         }
-        private void HomeTecnico_Load(object sender, EventArgs e){}
-        private void btnTicketsAbertos_Click(object sender, EventArgs e){}
-        private void btnEmAtendimento_Click(object sender, EventArgs e){}
-        private void lblDashboardPrincipal_Click(object sender, EventArgs e){}
-        private void flowLayoutPanelCards_Paint(object sender, PaintEventArgs e){}
+        private void btnTicketsAbertos_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanelCards.Controls.Clear();
+            var listaTickets = _ticketDAL.ObterTicketsDoBanco("Aberto");
+
+            foreach (var ticket in listaTickets)
+            {
+                var card = CriarTicketCard(ticket.ID, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
+                flowLayoutPanelCards.Controls.Add(card);
+            }
+        }
+        private void btnEmAtendimento_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanelCards.Controls.Clear();
+            var listaTickets = _ticketDAL.ObterTicketsDoBanco("Em andamento");
+
+            foreach (var ticket in listaTickets)
+            {
+                var card = CriarTicketCard(ticket.ID, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
+                flowLayoutPanelCards.Controls.Add(card);
+            }
+        }
+        private void btnTicketsFechados_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanelCards.Controls.Clear();
+            var listaTickets = _ticketDAL.ObterTicketsDoBanco("Concluído");
+
+            foreach (var ticket in listaTickets)
+            {
+                var card = CriarTicketCard(ticket.ID, ticket.Titulo, ticket.Cliente, ticket.Prioridade, ticket.Tempo, ticket.Status);
+                flowLayoutPanelCards.Controls.Add(card);
+            }
+        }
+        private void HomeTecnico_Load(object sender, EventArgs e) { }
+        private void lblDashboardPrincipal_Click(object sender, EventArgs e) { }
+        private void flowLayoutPanelCards_Paint(object sender, PaintEventArgs e) { }
     }
 }

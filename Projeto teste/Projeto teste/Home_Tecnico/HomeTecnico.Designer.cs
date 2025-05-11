@@ -47,7 +47,7 @@
             btnTicketsTotais.ForeColor = System.Drawing.SystemColors.ControlLight;
             btnTicketsTotais.Image = (System.Drawing.Image)resources.GetObject("btnTicketsTotais.Image");
             btnTicketsTotais.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            btnTicketsTotais.Location = new System.Drawing.Point(283, 211);
+            btnTicketsTotais.Location = new System.Drawing.Point(118, 211);
             btnTicketsTotais.Name = "btnTicketsTotais";
             btnTicketsTotais.Size = new System.Drawing.Size(150, 121);
             btnTicketsTotais.TabIndex = 0;
@@ -65,13 +65,14 @@
             btnTicketsFechados.ForeColor = System.Drawing.SystemColors.ControlLight;
             btnTicketsFechados.Image = (System.Drawing.Image)resources.GetObject("btnTicketsFechados.Image");
             btnTicketsFechados.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            btnTicketsFechados.Location = new System.Drawing.Point(975, 211);
+            btnTicketsFechados.Location = new System.Drawing.Point(810, 211);
             btnTicketsFechados.Name = "btnTicketsFechados";
             btnTicketsFechados.Size = new System.Drawing.Size(150, 121);
             btnTicketsFechados.TabIndex = 1;
             btnTicketsFechados.Text = "Tickets fechados";
             btnTicketsFechados.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             btnTicketsFechados.UseVisualStyleBackColor = false;
+            btnTicketsFechados.Click += btnTicketsFechados_Click;
             // 
             // btnEmAtendimento
             // 
@@ -82,7 +83,7 @@
             btnEmAtendimento.ForeColor = System.Drawing.SystemColors.ControlLight;
             btnEmAtendimento.Image = (System.Drawing.Image)resources.GetObject("btnEmAtendimento.Image");
             btnEmAtendimento.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            btnEmAtendimento.Location = new System.Drawing.Point(746, 211);
+            btnEmAtendimento.Location = new System.Drawing.Point(581, 211);
             btnEmAtendimento.Name = "btnEmAtendimento";
             btnEmAtendimento.Size = new System.Drawing.Size(150, 121);
             btnEmAtendimento.TabIndex = 2;
@@ -100,7 +101,7 @@
             btnTicketsAbertos.ForeColor = System.Drawing.SystemColors.ControlLight;
             btnTicketsAbertos.Image = (System.Drawing.Image)resources.GetObject("btnTicketsAbertos.Image");
             btnTicketsAbertos.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            btnTicketsAbertos.Location = new System.Drawing.Point(519, 211);
+            btnTicketsAbertos.Location = new System.Drawing.Point(354, 211);
             btnTicketsAbertos.Name = "btnTicketsAbertos";
             btnTicketsAbertos.Size = new System.Drawing.Size(150, 121);
             btnTicketsAbertos.TabIndex = 3;
@@ -113,7 +114,7 @@
             // 
             lblDashboardPrincipal.AutoSize = true;
             lblDashboardPrincipal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            lblDashboardPrincipal.Location = new System.Drawing.Point(265, 124);
+            lblDashboardPrincipal.Location = new System.Drawing.Point(100, 124);
             lblDashboardPrincipal.Name = "lblDashboardPrincipal";
             lblDashboardPrincipal.Size = new System.Drawing.Size(404, 54);
             lblDashboardPrincipal.TabIndex = 4;
@@ -124,7 +125,7 @@
             // 
             lblUltimosTickets.AutoSize = true;
             lblUltimosTickets.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            lblUltimosTickets.Location = new System.Drawing.Point(265, 406);
+            lblUltimosTickets.Location = new System.Drawing.Point(100, 406);
             lblUltimosTickets.Name = "lblUltimosTickets";
             lblUltimosTickets.Size = new System.Drawing.Size(210, 37);
             lblUltimosTickets.TabIndex = 5;
@@ -133,7 +134,7 @@
             // flowLayoutPanelCards
             // 
             flowLayoutPanelCards.AutoScroll = true;
-            flowLayoutPanelCards.Location = new System.Drawing.Point(265, 468);
+            flowLayoutPanelCards.Location = new System.Drawing.Point(100, 468);
             flowLayoutPanelCards.Name = "flowLayoutPanelCards";
             flowLayoutPanelCards.Size = new System.Drawing.Size(893, 375);
             flowLayoutPanelCards.TabIndex = 6;
@@ -143,7 +144,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(1185, 917);
+            ClientSize = new System.Drawing.Size(1068, 917);
             Controls.Add(flowLayoutPanelCards);
             Controls.Add(lblUltimosTickets);
             Controls.Add(lblDashboardPrincipal);
@@ -152,6 +153,7 @@
             Controls.Add(btnTicketsFechados);
             Controls.Add(btnTicketsTotais);
             Name = "HomeTecnico";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "HomeTecnico";
             Load += HomeTecnico_Load;
             ResumeLayout(false);
