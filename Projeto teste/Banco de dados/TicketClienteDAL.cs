@@ -95,10 +95,18 @@ namespace Data_Access
         }
         public void ExcluirTicket(int idTicket)
         {
-            string query = "DELETE FROM \"ticket\" WHERE id_ticket = @IdTicket";
+            string query = "DELETE FROM tecnico WHERE ticket_id = @IdTicket";
+            string query1 = "DELETE FROM \"ticket\" WHERE id_ticket = @IdTicket";
 
             using (var conexao = ConexaoDAL.Abrir())
             using (var comando = new NpgsqlCommand(query, conexao))
+            {
+                comando.Parameters.AddWithValue("@IdTicket", idTicket);
+                comando.ExecuteNonQuery();
+            }
+
+            using (var conexao = ConexaoDAL.Abrir())
+            using (var comando = new NpgsqlCommand(query1, conexao))
             {
                 comando.Parameters.AddWithValue("@IdTicket", idTicket);
                 comando.ExecuteNonQuery();

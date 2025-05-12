@@ -143,12 +143,6 @@ namespace Projeto_teste.Home
         {
             flowLayoutPanelCards.Controls.Clear();
 
-            if (_usuario == null)
-            {
-                MessageBox.Show("Usuário não definido.");
-                return;
-            }
-
             var listaTickets = _tickeClientetDAL.ObterTicketsDoBancoPorUsuario(_usuario.Id);
 
             foreach (var ticket in listaTickets)
