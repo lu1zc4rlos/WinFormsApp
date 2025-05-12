@@ -35,12 +35,14 @@
             label1 = new System.Windows.Forms.Label();
             txtResposta = new System.Windows.Forms.TextBox();
             btnConfirmarChamado = new System.Windows.Forms.Button();
+            nightControlBox1 = new ReaLTaiizor.Controls.NightControlBox();
             SuspendLayout();
             // 
             // lblDashboardPrincipal
             // 
             lblDashboardPrincipal.AutoSize = true;
             lblDashboardPrincipal.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            lblDashboardPrincipal.ForeColor = System.Drawing.Color.White;
             lblDashboardPrincipal.Location = new System.Drawing.Point(39, 135);
             lblDashboardPrincipal.Name = "lblDashboardPrincipal";
             lblDashboardPrincipal.Size = new System.Drawing.Size(411, 54);
@@ -50,6 +52,8 @@
             // flowLayoutPanelDescricao
             // 
             flowLayoutPanelDescricao.AutoScroll = true;
+            flowLayoutPanelDescricao.BackColor = System.Drawing.Color.White;
+            flowLayoutPanelDescricao.ForeColor = System.Drawing.Color.Black;
             flowLayoutPanelDescricao.Location = new System.Drawing.Point(39, 209);
             flowLayoutPanelDescricao.Name = "flowLayoutPanelDescricao";
             flowLayoutPanelDescricao.Size = new System.Drawing.Size(558, 257);
@@ -57,6 +61,8 @@
             // 
             // flowLayoutPanelCard
             // 
+            flowLayoutPanelCard.BackColor = System.Drawing.Color.White;
+            flowLayoutPanelCard.ForeColor = System.Drawing.Color.Black;
             flowLayoutPanelCard.Location = new System.Drawing.Point(603, 209);
             flowLayoutPanelCard.Name = "flowLayoutPanelCard";
             flowLayoutPanelCard.Size = new System.Drawing.Size(296, 228);
@@ -67,7 +73,8 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
-            label1.Location = new System.Drawing.Point(39, 452);
+            label1.ForeColor = System.Drawing.Color.White;
+            label1.Location = new System.Drawing.Point(40, 469);
             label1.Name = "label1";
             label1.Size = new System.Drawing.Size(410, 54);
             label1.TabIndex = 8;
@@ -100,17 +107,43 @@
             btnConfirmarChamado.UseVisualStyleBackColor = false;
             btnConfirmarChamado.Click += btnConfirmarChamado_Click;
             // 
+            // nightControlBox1
+            // 
+            nightControlBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            nightControlBox1.BackColor = System.Drawing.Color.Transparent;
+            nightControlBox1.CloseHoverColor = System.Drawing.Color.FromArgb(199, 80, 80);
+            nightControlBox1.CloseHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.DefaultLocation = true;
+            nightControlBox1.DisableMaximizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.DisableMinimizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox1.EnableCloseColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMaximizeButton = true;
+            nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.EnableMinimizeButton = true;
+            nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox1.Location = new System.Drawing.Point(806, 12);
+            nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox1.MinimizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox1.Name = "nightControlBox1";
+            nightControlBox1.Size = new System.Drawing.Size(139, 31);
+            nightControlBox1.TabIndex = 11;
+            // 
             // ResponderTicket
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
             ClientSize = new System.Drawing.Size(957, 820);
+            Controls.Add(nightControlBox1);
             Controls.Add(btnConfirmarChamado);
             Controls.Add(txtResposta);
             Controls.Add(label1);
             Controls.Add(flowLayoutPanelCard);
             Controls.Add(flowLayoutPanelDescricao);
             Controls.Add(lblDashboardPrincipal);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "ResponderTicket";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "ResponderTicket";
@@ -127,5 +160,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtResposta;
         private System.Windows.Forms.Button btnConfirmarChamado;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox1;
     }
 }

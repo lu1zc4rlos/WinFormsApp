@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAbrirChamado));
             comboBoxTipo = new System.Windows.Forms.ComboBox();
             txtDescricao = new System.Windows.Forms.TextBox();
             comboBox2 = new System.Windows.Forms.ComboBox();
@@ -35,6 +36,13 @@
             lblPrioridade = new System.Windows.Forms.Label();
             lblMensagem = new System.Windows.Forms.Label();
             button1 = new System.Windows.Forms.Button();
+            pn_title = new System.Windows.Forms.Panel();
+            pictureBox2 = new System.Windows.Forms.PictureBox();
+            nightControlBox2 = new ReaLTaiizor.Controls.NightControlBox();
+            lbl_omega = new System.Windows.Forms.Label();
+            lbl_titulo = new System.Windows.Forms.Label();
+            pn_title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // comboBoxTipo
@@ -66,27 +74,33 @@
             // lblTipoOcorencia
             // 
             lblTipoOcorencia.AutoSize = true;
+            lblTipoOcorencia.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            lblTipoOcorencia.ForeColor = System.Drawing.Color.White;
             lblTipoOcorencia.Location = new System.Drawing.Point(307, 132);
             lblTipoOcorencia.Name = "lblTipoOcorencia";
-            lblTipoOcorencia.Size = new System.Drawing.Size(137, 20);
+            lblTipoOcorencia.Size = new System.Drawing.Size(141, 20);
             lblTipoOcorencia.TabIndex = 3;
             lblTipoOcorencia.Text = "Tipo da ocorrência:";
             // 
             // lblPrioridade
             // 
             lblPrioridade.AutoSize = true;
+            lblPrioridade.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            lblPrioridade.ForeColor = System.Drawing.Color.White;
             lblPrioridade.Location = new System.Drawing.Point(307, 189);
             lblPrioridade.Name = "lblPrioridade";
-            lblPrioridade.Size = new System.Drawing.Size(138, 20);
+            lblPrioridade.Size = new System.Drawing.Size(143, 20);
             lblPrioridade.TabIndex = 4;
             lblPrioridade.Text = "Grau de prioridade:";
             // 
             // lblMensagem
             // 
             lblMensagem.AutoSize = true;
+            lblMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
+            lblMensagem.ForeColor = System.Drawing.Color.White;
             lblMensagem.Location = new System.Drawing.Point(307, 251);
             lblMensagem.Name = "lblMensagem";
-            lblMensagem.Size = new System.Drawing.Size(290, 20);
+            lblMensagem.Size = new System.Drawing.Size(298, 20);
             lblMensagem.TabIndex = 5;
             lblMensagem.Text = "por favor digite a descrição da ocorrencia:";
             // 
@@ -108,11 +122,89 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // pn_title
+            // 
+            pn_title.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
+            pn_title.Controls.Add(lbl_titulo);
+            pn_title.Controls.Add(pictureBox2);
+            pn_title.Controls.Add(nightControlBox2);
+            pn_title.Controls.Add(lbl_omega);
+            pn_title.Dock = System.Windows.Forms.DockStyle.Top;
+            pn_title.Location = new System.Drawing.Point(0, 0);
+            pn_title.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pn_title.Name = "pn_title";
+            pn_title.Size = new System.Drawing.Size(957, 99);
+            pn_title.TabIndex = 22;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            pictureBox2.Location = new System.Drawing.Point(71, 16);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new System.Drawing.Size(64, 58);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 23;
+            pictureBox2.TabStop = false;
+            // 
+            // nightControlBox2
+            // 
+            nightControlBox2.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            nightControlBox2.BackColor = System.Drawing.Color.Transparent;
+            nightControlBox2.CloseHoverColor = System.Drawing.Color.FromArgb(199, 80, 80);
+            nightControlBox2.CloseHoverForeColor = System.Drawing.Color.White;
+            nightControlBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            nightControlBox2.DefaultLocation = true;
+            nightControlBox2.DisableMaximizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox2.DisableMinimizeColor = System.Drawing.Color.FromArgb(105, 105, 105);
+            nightControlBox2.EnableCloseColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox2.EnableMaximizeButton = true;
+            nightControlBox2.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox2.EnableMinimizeButton = true;
+            nightControlBox2.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
+            nightControlBox2.Location = new System.Drawing.Point(818, 0);
+            nightControlBox2.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox2.MaximizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox2.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
+            nightControlBox2.MinimizeHoverForeColor = System.Drawing.Color.White;
+            nightControlBox2.Name = "nightControlBox2";
+            nightControlBox2.Size = new System.Drawing.Size(139, 31);
+            nightControlBox2.TabIndex = 24;
+            // 
+            // lbl_omega
+            // 
+            lbl_omega.AutoSize = true;
+            lbl_omega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            lbl_omega.ForeColor = System.Drawing.Color.White;
+            lbl_omega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            lbl_omega.Location = new System.Drawing.Point(451, 46);
+            lbl_omega.Name = "lbl_omega";
+            lbl_omega.Size = new System.Drawing.Size(119, 28);
+            lbl_omega.TabIndex = 20;
+            lbl_omega.Text = "OmegaTech\r\n";
+            // 
+            // lbl_titulo
+            // 
+            lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            lbl_titulo.AutoSize = true;
+            lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            lbl_titulo.ForeColor = System.Drawing.Color.White;
+            lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            lbl_titulo.Location = new System.Drawing.Point(416, 9);
+            lbl_titulo.Name = "lbl_titulo";
+            lbl_titulo.Size = new System.Drawing.Size(186, 37);
+            lbl_titulo.TabIndex = 22;
+            lbl_titulo.Text = "ABRIR TICKET";
+            lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // formAbrirChamado
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
             ClientSize = new System.Drawing.Size(957, 707);
+            Controls.Add(pn_title);
             Controls.Add(button1);
             Controls.Add(lblMensagem);
             Controls.Add(lblPrioridade);
@@ -120,9 +212,13 @@
             Controls.Add(comboBox2);
             Controls.Add(txtDescricao);
             Controls.Add(comboBoxTipo);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "formAbrirChamado";
             Text = "formAbrirChamado";
             Load += formAbrirChamado_Load;
+            pn_title.ResumeLayout(false);
+            pn_title.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -136,5 +232,10 @@
         private System.Windows.Forms.Label lblPrioridade;
         private System.Windows.Forms.Label lblMensagem;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pn_title;
+        private System.Windows.Forms.Label lbl_titulo;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private ReaLTaiizor.Controls.NightControlBox nightControlBox2;
+        private System.Windows.Forms.Label lbl_omega;
     }
 }
