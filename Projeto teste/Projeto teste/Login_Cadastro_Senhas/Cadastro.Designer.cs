@@ -23,7 +23,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblConfirmarSenha;
         private System.Windows.Forms.Button btnConfirmar;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblEmailCadastrado;
         private System.Windows.Forms.DateTimePicker atpDataNascimento;
         private System.Windows.Forms.CheckBox cbMostrarSenha;

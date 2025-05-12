@@ -59,7 +59,7 @@
             nightControlBox1.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
             nightControlBox1.EnableMinimizeButton = true;
             nightControlBox1.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
-            nightControlBox1.Location = new System.Drawing.Point(862, 0);
+            nightControlBox1.Location = new System.Drawing.Point(879, 0);
             nightControlBox1.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
             nightControlBox1.MaximizeHoverForeColor = System.Drawing.Color.White;
             nightControlBox1.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
@@ -70,7 +70,7 @@
             // 
             // pn_title
             // 
-            pn_title.BackColor = System.Drawing.Color.FromArgb(255, 204, 128);
+            pn_title.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
             pn_title.Controls.Add(pic_home);
             pn_title.Controls.Add(lbl_titulo);
             pn_title.Controls.Add(pictureBox2);
@@ -90,7 +90,7 @@
             pic_home.Location = new System.Drawing.Point(11, 21);
             pic_home.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pic_home.Name = "pic_home";
-            pic_home.Size = new System.Drawing.Size(37, 49);
+            pic_home.Size = new System.Drawing.Size(43, 49);
             pic_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pic_home.TabIndex = 0;
             pic_home.TabStop = false;
@@ -101,8 +101,9 @@
             lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             lbl_titulo.AutoSize = true;
             lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            lbl_titulo.ForeColor = System.Drawing.Color.White;
             lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lbl_titulo.Location = new System.Drawing.Point(446, 24);
+            lbl_titulo.Location = new System.Drawing.Point(432, 30);
             lbl_titulo.Name = "lbl_titulo";
             lbl_titulo.Size = new System.Drawing.Size(162, 37);
             lbl_titulo.TabIndex = 0;
@@ -113,7 +114,7 @@
             // 
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            pictureBox2.Location = new System.Drawing.Point(69, 12);
+            pictureBox2.Location = new System.Drawing.Point(78, 20);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(50, 50);
@@ -136,7 +137,7 @@
             nightControlBox2.EnableMaximizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
             nightControlBox2.EnableMinimizeButton = true;
             nightControlBox2.EnableMinimizeColor = System.Drawing.Color.FromArgb(160, 160, 160);
-            nightControlBox2.Location = new System.Drawing.Point(841, 0);
+            nightControlBox2.Location = new System.Drawing.Point(861, 0);
             nightControlBox2.MaximizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
             nightControlBox2.MaximizeHoverForeColor = System.Drawing.Color.White;
             nightControlBox2.MinimizeHoverColor = System.Drawing.Color.FromArgb(15, 255, 255, 255);
@@ -149,8 +150,9 @@
             // 
             lbl_omega.AutoSize = true;
             lbl_omega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            lbl_omega.ForeColor = System.Drawing.Color.White;
             lbl_omega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lbl_omega.Location = new System.Drawing.Point(133, 37);
+            lbl_omega.Location = new System.Drawing.Point(144, 30);
             lbl_omega.Name = "lbl_omega";
             lbl_omega.Size = new System.Drawing.Size(119, 28);
             lbl_omega.TabIndex = 1;
@@ -171,7 +173,7 @@
             // btnEnviar
             // 
             btnEnviar.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
-            btnEnviar.BackColor = System.Drawing.Color.PapayaWhip;
+            btnEnviar.BackColor = System.Drawing.Color.WhiteSmoke;
             btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btnEnviar.Location = new System.Drawing.Point(887, 760);
             btnEnviar.Name = "btnEnviar";
@@ -185,6 +187,7 @@
             // 
             flowLayoutPanelChat.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             flowLayoutPanelChat.AutoScroll = true;
+            flowLayoutPanelChat.BackColor = System.Drawing.Color.FromArgb(100, 102, 140);
             flowLayoutPanelChat.Location = new System.Drawing.Point(11, 107);
             flowLayoutPanelChat.Name = "flowLayoutPanelChat";
             flowLayoutPanelChat.Size = new System.Drawing.Size(969, 648);
@@ -194,7 +197,7 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
+            BackColor = System.Drawing.Color.FromArgb(100, 102, 140);
             ClientSize = new System.Drawing.Size(1000, 800);
             Controls.Add(flowLayoutPanelChat);
             Controls.Add(btnEnviar);

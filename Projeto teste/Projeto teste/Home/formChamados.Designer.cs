@@ -50,7 +50,7 @@
             // 
             // pn_title
             // 
-            pn_title.BackColor = System.Drawing.Color.FromArgb(255, 204, 128);
+            pn_title.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
             pn_title.Controls.Add(pic_home);
             pn_title.Controls.Add(lbl_titulo);
             pn_title.Controls.Add(pictureBox2);
@@ -70,7 +70,7 @@
             pic_home.Location = new System.Drawing.Point(11, 21);
             pic_home.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pic_home.Name = "pic_home";
-            pic_home.Size = new System.Drawing.Size(37, 49);
+            pic_home.Size = new System.Drawing.Size(41, 49);
             pic_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pic_home.TabIndex = 0;
             pic_home.TabStop = false;
@@ -81,6 +81,7 @@
             lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             lbl_titulo.AutoSize = true;
             lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            lbl_titulo.ForeColor = System.Drawing.Color.White;
             lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             lbl_titulo.Location = new System.Drawing.Point(446, 24);
             lbl_titulo.Name = "lbl_titulo";
@@ -93,7 +94,7 @@
             // 
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            pictureBox2.Location = new System.Drawing.Point(69, 15);
+            pictureBox2.Location = new System.Drawing.Point(77, 21);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(50, 50);
@@ -129,8 +130,9 @@
             // 
             lbl_omega.AutoSize = true;
             lbl_omega.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            lbl_omega.ForeColor = System.Drawing.Color.White;
             lbl_omega.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lbl_omega.Location = new System.Drawing.Point(133, 37);
+            lbl_omega.Location = new System.Drawing.Point(133, 33);
             lbl_omega.Name = "lbl_omega";
             lbl_omega.Size = new System.Drawing.Size(119, 28);
             lbl_omega.TabIndex = 20;
@@ -244,7 +246,7 @@
             // flowLayoutPanelCards
             // 
             flowLayoutPanelCards.AutoScroll = true;
-            flowLayoutPanelCards.BackColor = System.Drawing.Color.FromArgb(60, 62, 110);
+            flowLayoutPanelCards.BackColor = System.Drawing.Color.FromArgb(100, 102, 140);
             flowLayoutPanelCards.Location = new System.Drawing.Point(0, 98);
             flowLayoutPanelCards.Name = "flowLayoutPanelCards";
             flowLayoutPanelCards.Size = new System.Drawing.Size(1000, 639);

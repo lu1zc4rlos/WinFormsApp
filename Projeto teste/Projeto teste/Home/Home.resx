@@ -124,25 +124,31 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
+        +uoAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>60, 12</value>
+    <value>70, 15</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pictureBox1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>50, 50</value>
@@ -176,10 +182,10 @@
     <value>Segoe UI Semibold, 16pt, style=Bold</value>
   </data>
   <data name="lbl_titulo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>494, 18</value>
+    <value>542, 28</value>
   </data>
   <data name="lbl_titulo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>77, 30</value>
+    <value>96, 37</value>
   </data>
   <data name="lbl_titulo.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -206,7 +212,7 @@
     <value>Top, Right</value>
   </data>
   <data name="nightControlBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>736, 0</value>
+    <value>841, 0</value>
   </data>
   <data name="nightControlBox1.Size" type="System.Drawing.Size, System.Drawing">
     <value>139, 31</value>
@@ -233,10 +239,10 @@
     <value>Segoe UI Semibold, 12pt, style=Bold</value>
   </data>
   <data name="lbl_omega.Location" type="System.Drawing.Point, System.Drawing">
-    <value>116, 28</value>
+    <value>144, 28</value>
   </data>
   <data name="lbl_omega.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 21</value>
+    <value>119, 28</value>
   </data>
   <data name="lbl_omega.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -259,19 +265,23 @@
   </data>
   <data name="btn_sidebar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAADNJREFUSEvt07ENACAMA8HsPxYMBqGmQiKp7qSvXTmACjNbxZ2NS8fwyKCPO8E3
-        7gQ8iNgV/piSltL8ZQAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAACxIAAAsSAdLdfvwAAABWSURBVGhD7da5DcAwDANAj57NHaSV+0Ri7gAOwELPWgB8
+        Ye99JeQpEkGRbqKKHIMzMXWJAcA/1Qs5NVG/VgRFuskZdgDAG9+PIt1EFTkGZ2LqEgPgFTcrMW3g2GV1
+        dgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btn_sidebar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>9, 15</value>
+    <value>10, 20</value>
+  </data>
+  <data name="btn_sidebar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="btn_sidebar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>30, 30</value>
+    <value>38, 36</value>
   </data>
   <data name="btn_sidebar.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>AutoSize</value>
+    <value>StretchImage</value>
   </data>
   <data name="btn_sidebar.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -291,8 +301,11 @@
   <data name="pn_title.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="pn_title.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
   <data name="pn_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>875, 74</value>
+    <value>1000, 99</value>
   </data>
   <data name="pn_title.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -321,23 +334,25 @@
   <data name="btn_chamados.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAHNJREFUSEvd0DEKwDAMA8D8/9PtcnjTEBUvvS1CyJDzP89HZjK9mplMr2Ym06uZ
-        yfRqZjK9IZ7cc4iHONMb4r0Dt8xkejUzmd4Q732ReO/ALTOZXs1MpjfEe18k3jtwy0ymVzOT6dXMZHo1
-        M5lezcxvnPMCCK1rzavF2GIAAAAASUVORK5CYII=
+        DAAACwwBP0AiyAAAAHhJREFUSEvdzLENwDAQAzHvv3TSU1AhuErY2Y/TOb/zXHIvGKzcCwYr94LByr1g
+        sHIvtMC3/+0eWuDb/3YPBiv3gsHKvdAC3/63e2iBb//bPRis3AsGK/dCC3z73+6hBb79b/dgsHIvGKzc
+        CwYr94LByr1gsHLv+14IrWvNCnWR3AAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="btn_chamados.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="btn_chamados.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
+    <value>3, 4</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btn_chamados.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
+  </data>
   <data name="btn_chamados.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>22, 0, 0, 0</value>
+    <value>25, 0, 0, 0</value>
   </data>
   <data name="btn_chamados.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 71</value>
+    <value>274, 95</value>
   </data>
   <data name="btn_chamados.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -369,28 +384,30 @@
   <data name="btn_chatbot.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAAdBJREFUSEvtlj1Ow1AQhCMhJH6OQAISOQaiowHuA3RATsMBEIgkJYKaBiJ+GqAC
-        CRrET0OY8Rubtf3sZweKFPmkkcjs7K5j+Tk0JowVw+FwE3qEHqB12YX+v6HBMfeyC/2RwZA5qAPdQl9Q
-        CsWYy8Ise/ahWcWqgQYuPYcKUdS32HIGVV+OML9pzCG0ADWhIxpE0dBisqdoGIR5q2Kasum3nOVd3IPa
-        UOoCwY2iYRD+cD0Rbdn0OThClheUkwsE77LDIDxwPRF92fT7zqq1eCC7HAR3Xf4XlVhLkGW9+FZz6TEN
-        Q0dxPwisuVwalUOLQ2yopT4aECGrzuKuWuqBxlXX75BdZ/GLWvKg+OoyYdRiF3vPu+FZLXlQTJ7aEGqx
-        i73n3XCgch4U+UtTCbXYxd7zLp6gpO4FAb7cLfEt5LDcOdZH4j3v4ApaVqkcBO0LJLmFPpSJkJXywLXs
-        MAjbV2btxSODGXduVASfUD6poVtNVmSPBgZsuTnFKJpd7KP8dWlBeBoqPVqKhhafQvOKVgMNU9A2dAl9
-        Q5ZPxZjL/lvE7AW0A80oNhoYkP32yXsXf/NXydJT6e9g2CLE5W/QCT+rxNoS1FWNF9FSacK40Gj8ANze
-        USKZ6B6BAAAAAElFTkSuQmCC
+        DAAACwwBP0AiyAAAAaJJREFUSEvtljtOAzEURSMhJD5LIAGJLAPR0QD7ATogq2EBCARJiaCmgYhPA1Qg
+        QYP4NBzkkT26dhx7JlCkyOly37v3eayxJ43GhHEC2ASegEdgPaf/GzbY8ZDTRwaYAzrAHfAt4QXSF2J6
+        jWcfmPVTM9ihF2GiIr0pzmsNt0/qOAQWgCZw5ETpzbHnpyewW+Voit5yomiOLtAOFwjclsE5gE8xtkU3
+        wQW+w0cXCHyE9aEAfTH2RO850Xf4BIP7YT0KsCumAqmlNLfVZuix6IZOOSAGsBYYCqSe1DJslIPqoikx
+        LcOpn1YRYFVTRK/Kq58oAG9h9zDE44ied+HFnyboW5tDPI7oeRcOykEh9ktTCfE4oufd8qz1KPZyV9wW
+        mrCBcyx90fMOXAPL5YAUwQVSbmEM6YstxnDjOxIEV2btwSMD3EueeUPNm5rbasOKn1QTYCsIHEB6c6Sv
+        SwWYzh0t6U1xBsz76RmAKWAbuAJ+gsAv6Qv/FpneS2AHmPFTaxJ5+vLetV8lpeu7/wCwaIe/Ayfmt9SW
+        zEJszSyi5bsnjAG/3N5RIgfw5VwAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btn_chatbot.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="btn_chatbot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 80</value>
+    <value>3, 107</value>
+  </data>
+  <data name="btn_chatbot.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="btn_chatbot.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>22, 0, 0, 0</value>
+    <value>25, 0, 0, 0</value>
   </data>
   <data name="btn_chatbot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>240, 71</value>
+    <value>274, 95</value>
   </data>
   <data name="btn_chatbot.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -417,10 +434,13 @@
     <value>TopDown</value>
   </data>
   <data name="sideBar.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 73</value>
+    <value>0, 97</value>
+  </data>
+  <data name="sideBar.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="sideBar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>230, 592</value>
+    <value>263, 789</value>
   </data>
   <data name="sideBar.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -447,13 +467,16 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 15</value>
+    <value>8, 20</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>875, 600</value>
+    <value>1000, 800</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 3</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 4, 3, 4</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

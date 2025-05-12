@@ -50,7 +50,7 @@
             // pn_title
             // 
             resources.ApplyResources(pn_title, "pn_title");
-            pn_title.BackColor = System.Drawing.Color.FromArgb(255, 204, 128);
+            pn_title.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
             pn_title.Controls.Add(pictureBox1);
             pn_title.Controls.Add(lbl_titulo);
             pn_title.Controls.Add(nightControlBox1);
@@ -67,6 +67,7 @@
             // lbl_titulo
             // 
             resources.ApplyResources(lbl_titulo, "lbl_titulo");
+            lbl_titulo.ForeColor = System.Drawing.Color.White;
             lbl_titulo.Name = "lbl_titulo";
             // 
             // nightControlBox1
@@ -93,6 +94,7 @@
             // lbl_omega
             // 
             resources.ApplyResources(lbl_omega, "lbl_omega");
+            lbl_omega.ForeColor = System.Drawing.Color.White;
             lbl_omega.Name = "lbl_omega";
             // 
             // btn_sidebar
@@ -139,7 +141,7 @@
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
+            BackColor = System.Drawing.Color.FromArgb(100, 102, 140);
             Controls.Add(pn_title);
             Controls.Add(sideBar);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
