@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data_Access;
 using Datai_Accesso;
@@ -23,10 +24,15 @@ namespace Projeto_teste.Home
         {
             CarregarTicketsDoCliente();
         }
+
+        int IdUsuarioLogado = Login.Sessao.UsuarioLogado.Id;
         private void CarregarTicketsDoCliente()
         {
             flowLayoutPanelCards.Controls.Clear();
-            var listaTickets = _tickeClientetDAL.ObterTicketsDoBancoPorUsuario(_usuario.Id);
+
+
+            var listaTickets = _tickeClientetDAL.ObterTicketsDoBancoPorUsuario(IdUsuarioLogado);
+
 
             foreach (var ticket in listaTickets)
             {
@@ -136,6 +142,13 @@ namespace Projeto_teste.Home
         private void btnCarregar_Click(object sender, EventArgs e)
         {
             flowLayoutPanelCards.Controls.Clear();
+
+            if (_usuario == null)
+            {
+                MessageBox.Show("Usuário não definido.");
+                return;
+            }
+
             var listaTickets = _tickeClientetDAL.ObterTicketsDoBancoPorUsuario(_usuario.Id);
 
             foreach (var ticket in listaTickets)
@@ -187,7 +200,15 @@ namespace Projeto_teste.Home
             this.Hide();
         }
         private void dgv_chamados_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
-        private void pic_home_Click(object sender, EventArgs e) { }
+
+        Home home;
+        private void pic_home_Click(object sender, EventArgs e) 
+        {
+            home = new Home(_usuario);
+            home.FormClosed += (s, args) => Application.Exit();
+            home.Show();
+            this.Hide();
+        }
 
         private void flowLayoutPanelCards_Paint(object sender, PaintEventArgs e)
         {

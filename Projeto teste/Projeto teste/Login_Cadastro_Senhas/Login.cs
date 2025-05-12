@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Banco_de_dados;
 using Regras_de_negócio;
 
 namespace Projeto_teste {
@@ -19,21 +20,31 @@ namespace Projeto_teste {
             this.Show();
             LimparCampos();
         }
+        //classe para guardar os dados do usuario
+        public static class Sessao
+        {
+            public static Usuario UsuarioLogado { get; set; }
+        }
+
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             string email = txtEmail.Text.Trim();
             string senha = txtSenha.Text.Trim();
 
+
             LoginBLL loginBLL = new LoginBLL();
+            UsuarioDAL usuarioDAL = new UsuarioDAL();
 
             try
             {
-                Usuario usuario = loginBLL.ObterUsuarioPorEmail(email);
+                Usuario usuario = loginBLL.ObterUsuarioPorEmaileSenha(email, senha);
 
                 if (usuario != null)
                 {
+                    //teste do método para pegar o usuario
+                    Sessao.UsuarioLogado = usuarioDAL.BuscarPorEmail(email);
                     this.Hide();
-                    using (Projeto_teste.Home.Home home = new Projeto_teste.Home.Home(usuario))
+                    using (Home.Home home = new Home.Home(usuario))
                     {
                         home.ShowDialog();
                     }

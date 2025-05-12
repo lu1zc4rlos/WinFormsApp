@@ -8,7 +8,7 @@ namespace Regras_de_negócio {
     public class LoginBLL {
 
         private LoginDAL _logindal = new LoginDAL();
-
+        
         //Método de validação do email
         public bool EmailValido(string email) {
             string padrao = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
@@ -40,6 +40,18 @@ namespace Regras_de_negócio {
            
             return usuarioDAL.BuscarPorEmail(email);
         }
+
+        public Usuario ObterUsuarioPorEmaileSenha(string email, string senha)
+        {
+
+            return usuarioDAL.BuscarPorEmaileSenha(email,senha);
+        }
+
+         /*public static bool VerificarSenha(string senhaDigitada, string hashArmazenado)
+         {
+             string hashDigitado = CriptografiaDAL.GerarHashSenha(senhaDigitada);
+             return hashDigitado == hashArmazenado;
+         }*/
 
     }
 }

@@ -6,7 +6,7 @@ using Regras_de_negócio;
 
 namespace Banco_de_dados
 {
-
+    
     public class UsuarioDAL
     {
 
@@ -129,6 +129,65 @@ namespace Banco_de_dados
             }
 
         }
+
+        public Usuario BuscarPorEmaileSenha(string email, string senhaDigitada)
+        {
+            try
+            {
+                // 1. Busca apenas pelo e-mail
+                string query = "SELECT idusuario, nome, email, senha FROM dados_pessoais WHERE email = @email";
+
+                using (var conexao = ConexaoDAL.Abrir())
+                using (var comando = new NpgsqlCommand(query, conexao))
+                {
+                    comando.Parameters.AddWithValue("@email", email);
+
+                    using (var reader = comando.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string hashArmazenado = reader.GetString(reader.GetOrdinal("senha"));
+
+                            // 2. Verifica a senha digitada com o hash
+                            bool senhaValida = VerificarSenha(senhaDigitada, hashArmazenado);
+
+                            if (!senhaValida)
+                                return null;
+
+                            // 3. Se a senha for válida, retorna o usuário
+                            return new Usuario
+                            {
+                                Id = reader.GetInt32(reader.GetOrdinal("idusuario")),
+                                Nome = reader.GetString(reader.GetOrdinal("nome")),
+                                Email = reader.GetString(reader.GetOrdinal("email")),
+                                Senha = hashArmazenado // você pode até omitir a senha se quiser
+                            };
+                        }
+                        else
+                        {
+                            return null;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao buscar usuário por e-mail e senha: {ex.Message}");
+            }
+
+        }
+
+
+        public static bool VerificarSenha(string senhaDigitada, string hashArmazenado)
+        {
+            string hashDigitado = CriptografiaDAL.GerarHashSenha(senhaDigitada);
+            return hashDigitado == hashArmazenado;
+        }
+
+
+
+
+
     }
 }
     
