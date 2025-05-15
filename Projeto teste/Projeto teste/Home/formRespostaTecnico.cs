@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data_Access;
 using Entidades;
+using Projeto_teste.Home;
 using Regras_de_negócio;
 
 namespace ProjetoTeste.Home
@@ -16,11 +11,13 @@ namespace ProjetoTeste.Home
     public partial class formRespostaTecnico : Form
     {
         private int _idTicket;
+        private Usuario _usuario;
         private TicketClienteDAL _ticketClienteDAL = new TicketClienteDAL();
-        public formRespostaTecnico(int idTicket)
+        public formRespostaTecnico(int idTicket,Usuario usuario)
         {
             InitializeComponent();
             _idTicket = idTicket;
+            _usuario = usuario;
         }
         private void formRespostaTecnico_Load(object sender, EventArgs e)
         {
@@ -34,8 +31,43 @@ namespace ProjetoTeste.Home
 
                 if (ticket != null)
                 {
-                    label3.Text = ticket.Descricao;
-                    label4.Text = ticket.Resposta;
+                    Panel descricaoCard = new Panel();
+                    descricaoCard.Size = new Size(680, 1000);
+                    descricaoCard.BorderStyle = BorderStyle.FixedSingle;
+                    descricaoCard.Margin = new Padding(10);
+                    descricaoCard.Padding = new Padding(10);
+
+                    Panel respostaCard = new Panel();
+                    respostaCard.Size = new Size(680, 1000);
+                    respostaCard.BorderStyle = BorderStyle.FixedSingle;
+                    respostaCard.Margin = new Padding(10);
+                    respostaCard.Padding = new Padding(10);
+
+                    Label lblDescricao = new Label();
+                    lblDescricao.Text = ticket.Descricao;
+                    lblDescricao.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+                    lblDescricao.ForeColor = Color.FromArgb(70, 70, 70);
+                    lblDescricao.AutoSize = false;
+                    lblDescricao.Dock = DockStyle.Fill;
+                    lblDescricao.TextAlign = ContentAlignment.TopLeft;
+                    lblDescricao.MaximumSize = new Size(280, 0);
+
+                    Label lblResposta = new Label();
+                    lblResposta.Text = ticket.Resposta;
+                    lblResposta.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+                    lblResposta.ForeColor = Color.FromArgb(70, 70, 70);
+                    lblResposta.AutoSize = false;
+                    lblResposta.Dock = DockStyle.Fill;
+                    lblResposta.TextAlign = ContentAlignment.TopLeft;
+                    lblResposta.MaximumSize = new Size(280, 0);
+
+
+                    descricaoCard.Controls.Add(lblDescricao);
+                    respostaCard.Controls.Add(lblResposta);
+
+                    flowLayoutPanelDescricao.Controls.Add(descricaoCard);
+
+                    flowLayoutPanelResposta.Controls.Add(respostaCard);
                 }
                 else
                 {
@@ -48,15 +80,16 @@ namespace ProjetoTeste.Home
                 MessageBox.Show("Erro ao carregar detalhes do chamado: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void panelDescricao_Paint(object sender, PaintEventArgs e)
+        private void pic_home_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            formChamados _formChamados = new formChamados(_usuario);
+            _formChamados.FormClosed += (s, args) => Application.Exit();
+            _formChamados.ShowDialog();
+            this.Close();
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void flowLayoutPanelResposta_Paint(object sender, PaintEventArgs e) {}
+        private void label1_Click(object sender, EventArgs e) {}
+        private void panelDescricao_Paint(object sender, PaintEventArgs e) {}
     }
 }

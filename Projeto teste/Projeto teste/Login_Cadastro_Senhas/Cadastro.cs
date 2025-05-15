@@ -5,7 +5,6 @@ using System.Runtime.Serialization;
 using System.Threading;
 using System.Windows.Forms;
 using Regras_de_negócio;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste {
     public partial class Cadastro : Form {

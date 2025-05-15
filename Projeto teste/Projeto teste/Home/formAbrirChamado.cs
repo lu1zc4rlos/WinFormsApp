@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data_Access;
 using Entidades;
@@ -22,7 +15,7 @@ namespace ProjetoTeste.Home
             InitializeComponent();
             _usuario = usuario;
         }
-      
+
         private void formAbrirChamado_Load(object sender, EventArgs e)
         {
 
@@ -41,9 +34,9 @@ namespace ProjetoTeste.Home
             string prioridade = comboBox2.SelectedItem.ToString();
             string tipoChamado = comboBoxTipo.SelectedItem.ToString();
             string descricao = txtDescricao.Text.Trim();
-            string status = "Aberto"; 
+            string status = "Aberto";
             DateTime dataCriacao = DateTime.Now;
-            int usuarioId = _usuario.Id; 
+            int usuarioId = _usuario.Id;
 
             try
             {
@@ -72,6 +65,20 @@ namespace ProjetoTeste.Home
             {
                 MessageBox.Show("Erro ao enviar chamado: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void pn_title_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pic_home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            formChamados _formChamados = new formChamados(_usuario);
+            _formChamados.FormClosed += (s, args) => Application.Exit();
+            _formChamados.ShowDialog();
+            this.Close();
         }
     }
 }

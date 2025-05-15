@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using Datai_Accesso;
 using Regras_de_negócio;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Projeto_teste.Home
 {
@@ -85,10 +83,11 @@ namespace Projeto_teste.Home
 
         private void pic_home_Click(object sender, EventArgs e)
         {
+            this.Hide();
             home = new Home(usuario);
             home.FormClosed += (s, args) => Application.Exit();
-            home.Show();
-            this.Hide();
+            home.ShowDialog();
+            this.Close();
         }
         private void pn_title_Paint(object sender, PaintEventArgs e){}
     }

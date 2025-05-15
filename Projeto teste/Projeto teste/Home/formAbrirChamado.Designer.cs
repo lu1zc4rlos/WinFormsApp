@@ -37,36 +37,38 @@
             lblMensagem = new System.Windows.Forms.Label();
             button1 = new System.Windows.Forms.Button();
             pn_title = new System.Windows.Forms.Panel();
+            pic_home = new System.Windows.Forms.PictureBox();
+            lbl_titulo = new System.Windows.Forms.Label();
             pictureBox2 = new System.Windows.Forms.PictureBox();
             nightControlBox2 = new ReaLTaiizor.Controls.NightControlBox();
             lbl_omega = new System.Windows.Forms.Label();
-            lbl_titulo = new System.Windows.Forms.Label();
             pn_title.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_home).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // comboBoxTipo
             // 
             comboBoxTipo.FormattingEnabled = true;
-            comboBoxTipo.Items.AddRange(new object[] { "Internet Lenta", "Sem Conexão", "Impressora Off", "Problema Login", "Trocar Senha", "Vírus no PC", "Atualizar App", "Instalar Driver", "PC Travando", "Tela Azul", "Sem Áudio", "Sem Vídeo", "Erro Sistema", "", "", "Backup Falhou", "", "", "Email Não Envia" });
-            comboBoxTipo.Location = new System.Drawing.Point(451, 129);
+            comboBoxTipo.Items.AddRange(new object[] { "Internet Lenta", "Sem Conexão", "Impressora Off", "Problema Login", "Trocar Senha", "Vírus no PC", "Atualizar App", "Instalar Driver", "PC Travando", "Tela Azul", "Sem Áudio", "Sem Vídeo", "Erro Sistema", "Backup Falhou", "Email Não Envia" });
+            comboBoxTipo.Location = new System.Drawing.Point(218, 138);
             comboBoxTipo.Name = "comboBoxTipo";
             comboBoxTipo.Size = new System.Drawing.Size(151, 28);
             comboBoxTipo.TabIndex = 0;
             // 
             // txtDescricao
             // 
-            txtDescricao.Location = new System.Drawing.Point(307, 289);
+            txtDescricao.Location = new System.Drawing.Point(71, 304);
             txtDescricao.Multiline = true;
             txtDescricao.Name = "txtDescricao";
-            txtDescricao.Size = new System.Drawing.Size(415, 228);
+            txtDescricao.Size = new System.Drawing.Size(807, 288);
             txtDescricao.TabIndex = 1;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "Baixa", "Média", "Alta" });
-            comboBox2.Location = new System.Drawing.Point(451, 189);
+            comboBox2.Location = new System.Drawing.Point(218, 198);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new System.Drawing.Size(151, 28);
             comboBox2.TabIndex = 2;
@@ -76,7 +78,7 @@
             lblTipoOcorencia.AutoSize = true;
             lblTipoOcorencia.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             lblTipoOcorencia.ForeColor = System.Drawing.Color.White;
-            lblTipoOcorencia.Location = new System.Drawing.Point(307, 132);
+            lblTipoOcorencia.Location = new System.Drawing.Point(74, 141);
             lblTipoOcorencia.Name = "lblTipoOcorencia";
             lblTipoOcorencia.Size = new System.Drawing.Size(141, 20);
             lblTipoOcorencia.TabIndex = 3;
@@ -87,7 +89,7 @@
             lblPrioridade.AutoSize = true;
             lblPrioridade.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             lblPrioridade.ForeColor = System.Drawing.Color.White;
-            lblPrioridade.Location = new System.Drawing.Point(307, 189);
+            lblPrioridade.Location = new System.Drawing.Point(74, 198);
             lblPrioridade.Name = "lblPrioridade";
             lblPrioridade.Size = new System.Drawing.Size(143, 20);
             lblPrioridade.TabIndex = 4;
@@ -98,7 +100,7 @@
             lblMensagem.AutoSize = true;
             lblMensagem.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold);
             lblMensagem.ForeColor = System.Drawing.Color.White;
-            lblMensagem.Location = new System.Drawing.Point(307, 251);
+            lblMensagem.Location = new System.Drawing.Point(71, 264);
             lblMensagem.Name = "lblMensagem";
             lblMensagem.Size = new System.Drawing.Size(298, 20);
             lblMensagem.TabIndex = 5;
@@ -113,7 +115,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(562, 534);
+            button1.Location = new System.Drawing.Point(718, 599);
             button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(160, 40);
@@ -125,6 +127,7 @@
             // pn_title
             // 
             pn_title.BackColor = System.Drawing.Color.FromArgb(40, 42, 90);
+            pn_title.Controls.Add(pic_home);
             pn_title.Controls.Add(lbl_titulo);
             pn_title.Controls.Add(pictureBox2);
             pn_title.Controls.Add(nightControlBox2);
@@ -135,15 +138,42 @@
             pn_title.Name = "pn_title";
             pn_title.Size = new System.Drawing.Size(957, 99);
             pn_title.TabIndex = 22;
+            pn_title.Paint += pn_title_Paint;
+            // 
+            // pic_home
+            // 
+            pic_home.Image = (System.Drawing.Image)resources.GetObject("pic_home.Image");
+            pic_home.Location = new System.Drawing.Point(12, 25);
+            pic_home.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            pic_home.Name = "pic_home";
+            pic_home.Size = new System.Drawing.Size(56, 49);
+            pic_home.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pic_home.TabIndex = 25;
+            pic_home.TabStop = false;
+            pic_home.Click += pic_home_Click;
+            // 
+            // lbl_titulo
+            // 
+            lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            lbl_titulo.AutoSize = true;
+            lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
+            lbl_titulo.ForeColor = System.Drawing.Color.White;
+            lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            lbl_titulo.Location = new System.Drawing.Point(416, 9);
+            lbl_titulo.Name = "lbl_titulo";
+            lbl_titulo.Size = new System.Drawing.Size(186, 37);
+            lbl_titulo.TabIndex = 22;
+            lbl_titulo.Text = "ABRIR TICKET";
+            lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            pictureBox2.Location = new System.Drawing.Point(71, 16);
+            pictureBox2.Location = new System.Drawing.Point(74, 25);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(64, 58);
+            pictureBox2.Size = new System.Drawing.Size(50, 50);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 23;
             pictureBox2.TabStop = false;
@@ -184,20 +214,6 @@
             lbl_omega.TabIndex = 20;
             lbl_omega.Text = "OmegaTech\r\n";
             // 
-            // lbl_titulo
-            // 
-            lbl_titulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            lbl_titulo.AutoSize = true;
-            lbl_titulo.Font = new System.Drawing.Font("Segoe UI Semibold", 16F, System.Drawing.FontStyle.Bold);
-            lbl_titulo.ForeColor = System.Drawing.Color.White;
-            lbl_titulo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            lbl_titulo.Location = new System.Drawing.Point(416, 9);
-            lbl_titulo.Name = "lbl_titulo";
-            lbl_titulo.Size = new System.Drawing.Size(186, 37);
-            lbl_titulo.TabIndex = 22;
-            lbl_titulo.Text = "ABRIR TICKET";
-            lbl_titulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // formAbrirChamado
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -214,10 +230,12 @@
             Controls.Add(comboBoxTipo);
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Name = "formAbrirChamado";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "formAbrirChamado";
             Load += formAbrirChamado_Load;
             pn_title.ResumeLayout(false);
             pn_title.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pic_home).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -237,5 +255,6 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private ReaLTaiizor.Controls.NightControlBox nightControlBox2;
         private System.Windows.Forms.Label lbl_omega;
+        private System.Windows.Forms.PictureBox pic_home;
     }
 }

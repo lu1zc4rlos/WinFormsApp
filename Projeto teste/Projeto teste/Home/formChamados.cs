@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Data_Access;
-using Datai_Accesso;
-using Npgsql;
 using ProjetoTeste.Home;
 using Regras_de_negócio;
 
@@ -93,10 +89,12 @@ namespace Projeto_teste.Home
                 {
                     int idNumerico = int.Parse(id.Replace("#HDN", ""));
 
+                    this.Hide();
                     // Abre a tela de resposta do técnico
-                    using (formRespostaTecnico respostaTecnico = new formRespostaTecnico(idNumerico))
+                    using (formRespostaTecnico respostaTecnico = new formRespostaTecnico(idNumerico,_usuario))
                     {
                         respostaTecnico.ShowDialog();
+                        this.Close();
                     }
                 };
             }
@@ -198,10 +196,11 @@ namespace Projeto_teste.Home
         Home home;
         private void pic_home_Click(object sender, EventArgs e) 
         {
+            this.Hide();
             home = new Home(_usuario);
             home.FormClosed += (s, args) => Application.Exit();
-            home.Show();
-            this.Hide();
+            home.ShowDialog();
+            this.Close();
         }
 
         private void flowLayoutPanelCards_Paint(object sender, PaintEventArgs e)

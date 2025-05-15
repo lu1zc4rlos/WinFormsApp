@@ -99,12 +99,12 @@ namespace Projeto_teste.Home
             btn_atual(sender);
             if (Chamados == null)
             {
-               
+                this.Hide();
                 Chamados = new formChamados(_usuario);
                 Chamados.FormClosed += chamados_FormClosed;
-                this.Hide();
-                Chamados.Show();
                 Chamados.FormClosed += (s, args) => Application.Exit();
+                Chamados.ShowDialog();
+                this.Close();
             }
             else
             {
@@ -122,12 +122,13 @@ namespace Projeto_teste.Home
             btn_atual(sender);
             if(OmegaHelp == null)
             {
-                
+                this.Hide();
                 OmegaHelp = new formOmegaHelp(_usuario);
                 OmegaHelp.FormClosed += OmegaHelp_FormClosed;
-                this.Hide();
-                OmegaHelp.Show();
                 OmegaHelp.FormClosed += (s, args) => Application.Exit();
+                OmegaHelp.ShowDialog();
+                this.Close();
+               
             }
             else
             {

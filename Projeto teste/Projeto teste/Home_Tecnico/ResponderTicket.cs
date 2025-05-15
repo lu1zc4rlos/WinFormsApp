@@ -4,6 +4,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using Data_Access;
 using Entidades;
+using ProjetoTeste.Home_Técnico;
 using Regras_de_negócio;
 
 namespace ProjetoTeste.Home_Tecnico
@@ -108,13 +109,6 @@ namespace ProjetoTeste.Home_Tecnico
             flowLayoutPanelDescricao.Controls.Add(descricaoCard);
 
         }
-        private void flowLayoutPanelCard_Paint(object sender, PaintEventArgs e) { }
-
-        private void txtResposta_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnConfirmarChamado_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtResposta.Text))
@@ -136,6 +130,19 @@ namespace ProjetoTeste.Home_Tecnico
             {
                 MessageBox.Show($"Erro ao enviar resposta: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void flowLayoutPanelDescricao_Paint(object sender, PaintEventArgs e) { }
+        private void txtResposta_TextChanged(object sender, EventArgs e) { }
+        private void flowLayoutPanelCard_Paint(object sender, PaintEventArgs e) { }
+
+        private void pic_home_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            HomeTecnico _homeTecnico = new HomeTecnico();
+            _homeTecnico.FormClosed += (s, args) => Application.Exit();
+            _homeTecnico.ShowDialog();
+            this.Close();
         }
     }
 }

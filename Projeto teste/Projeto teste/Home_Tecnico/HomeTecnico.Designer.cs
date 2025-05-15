@@ -167,7 +167,7 @@
             // 
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            pictureBox2.Location = new System.Drawing.Point(71, 16);
+            pictureBox2.Location = new System.Drawing.Point(12, 13);
             pictureBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(64, 58);

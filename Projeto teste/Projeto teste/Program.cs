@@ -13,7 +13,7 @@ namespace Projeto_teste {
             Application.Run(new Login());
 
 
-            //Application.Run(new ProjetoTeste.Home_Técnico.HomeTecnico());
+           //Application.Run(new ProjetoTeste.Home_Técnico.HomeTecnico());
         }
     }
 }
