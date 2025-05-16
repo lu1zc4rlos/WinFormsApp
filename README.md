@@ -76,3 +76,5 @@ Esta camada serve como base para troca de dados entre BLL e DAL.
 
 ## Tela de Login
 ![Tela de Login](UI/Imagens/Image1.png)
+![Tela de Login](UI/Imagens/TelaAbrirChamado.png)
+
