@@ -71,3 +71,8 @@ Camada de acesso a dados, responsável pela conexão com o banco de dados e exec
 WinFormsApp.Entidades
 Camada de modelos de dados (DTOs), contendo as entidades que representam os objetos do sistema (como Usuario, Ticket, etc.).
 Esta camada serve como base para troca de dados entre BLL e DAL.
+
+# Telas do Sistema
+
+## Tela de Login
+![Tela de Login](UI/Imagens/TelaDeLogin.png)
