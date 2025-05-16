@@ -75,7 +75,46 @@ Esta camada serve como base para troca de dados entre BLL e DAL.
 # Telas do Sistema
 
 ## Tela de Login
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Image1.png" alt="Tela de Login" width="800"/>
 
-![Tela de Login](Projeto%20teste/Projeto%20teste/Imagens/TelaAbrirChamado.png)
-<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaAbrirChamado.png" alt="Tela de Login" width="800"/>
+## Tela de Cadastro
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaDeCadastro.png" alt="Tela de Cadastro" width="800"/>
+
+## Tela de Troca de Senha
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaTrocarDeSenha.png" alt="Tela de Troca de Senha" width="800"/>
+
+## Telas de Troca de Senha por Código 
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaTrocarSenhaCodigo.png" alt="Telas de Troca de Senha por Código" width="800"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaAlterarSenha.png" alt="Telas de Troca de Senha por Código" width="800"/>
+
+## Tela de Home
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaHome.png" alt="Tela de Home" width="800"/>
+
+## Tela de OmegaHelp
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaOmegaHelp.png" alt="Tela de OmegaHelp" width="800"/>
+
+## Tela de Chamados
+<img src="Projeto%20teste/Projeto%20teste/Imagens/chamados.png" alt="Tela de Chamados" width="800"/>
+
+## Tela de Abrir Chamados
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaAbrirChamado.png" alt="Tela de Abrir Chamados" width="800"/>
+
+## Tela Dashboard Principal Técnico
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaTecnicoChamados.png" alt="Tela Dashboard Principal Técnico" width="800"/>
+
+## Tela de Responder Cliente
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaResponderCliente.png" alt="Tela de Responder Cliente" width="800"/>
+
+## Tela de Resposta do Técnico
+<img src="Projeto%20teste/Projeto%20teste/Imagens/TelaRespostaTecnico.png" alt="Tela de Resposta do Técnico" width="800"/>
+
+## Workshop do Projeto OmegaTech
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop1.png" alt="Workshop1" width="800"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop2.png" alt="Workshop2" width="800"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop3.png" alt="Workshop3" width="800"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop4.png" alt="Workshop4" width="800"/>
+
+
+
+
 
