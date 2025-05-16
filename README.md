@@ -109,10 +109,10 @@ Esta camada serve como base para troca de dados entre BLL e DAL.
 <img src="Projeto%20teste/Projeto%20teste/Imagens/TelaRespostaTecnico.png" alt="Tela de Resposta do Técnico" width="800"/>
 
 ## Workshop do Projeto OmegaTech
-<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop1.png" alt="Workshop1" width="800"/>
-<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop2.png" alt="Workshop2" width="800"/>
-<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop3.png" alt="Workshop3" width="800"/>
-<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop4.png" alt="Workshop4" width="800"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop1.png" alt="Workshop1" width="600"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop2.png" alt="Workshop2" width="600"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/workshop3.png" alt="Workshop3" width="600"/>
+<img src="Projeto%20teste/Projeto%20teste/Imagens/Workshop4.png" alt="Workshop4" width="600"/>
 
 
 
