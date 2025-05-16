@@ -72,7 +72,7 @@ WinFormsApp.Entidades
 Camada de modelos de dados (DTOs), contendo as entidades que representam os objetos do sistema (como Usuario, Ticket, etc.).
 Esta camada serve como base para troca de dados entre BLL e DAL.
 
-# Telas do Sistema
+# 💻 Telas do Sistema
 
 ## Tela de Login
 <img src="Projeto%20teste/Projeto%20teste/Imagens/Image1.png" alt="Tela de Login" width="800"/>
