@@ -32,13 +32,13 @@ namespace ProjetoTeste.Home
                 if (ticket != null)
                 {
                     Panel descricaoCard = new Panel();
-                    descricaoCard.Size = new Size(680, 1000);
+                    descricaoCard.Size = new Size(670, 1000);
                     descricaoCard.BorderStyle = BorderStyle.FixedSingle;
                     descricaoCard.Margin = new Padding(10);
                     descricaoCard.Padding = new Padding(10);
 
                     Panel respostaCard = new Panel();
-                    respostaCard.Size = new Size(680, 1000);
+                    respostaCard.Size = new Size(670, 1000);
                     respostaCard.BorderStyle = BorderStyle.FixedSingle;
                     respostaCard.Margin = new Padding(10);
                     respostaCard.Padding = new Padding(10);
@@ -50,7 +50,7 @@ namespace ProjetoTeste.Home
                     lblDescricao.AutoSize = false;
                     lblDescricao.Dock = DockStyle.Fill;
                     lblDescricao.TextAlign = ContentAlignment.TopLeft;
-                    lblDescricao.MaximumSize = new Size(280, 0);
+                    lblDescricao.MaximumSize = new Size(660, 0);
 
                     Label lblResposta = new Label();
                     lblResposta.Text = ticket.Resposta;
@@ -59,7 +59,7 @@ namespace ProjetoTeste.Home
                     lblResposta.AutoSize = false;
                     lblResposta.Dock = DockStyle.Fill;
                     lblResposta.TextAlign = ContentAlignment.TopLeft;
-                    lblResposta.MaximumSize = new Size(280, 0);
+                    lblResposta.MaximumSize = new Size(660, 0);
 
 
                     descricaoCard.Controls.Add(lblDescricao);

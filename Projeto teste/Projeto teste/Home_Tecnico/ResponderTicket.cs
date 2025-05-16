@@ -88,7 +88,7 @@ namespace ProjetoTeste.Home_Tecnico
             flowLayoutPanelCard.Controls.Add(card);
 
             Panel descricaoCard = new Panel();
-            descricaoCard.Size = new Size(450, 160);
+            descricaoCard.Size = new Size(660, 670);
             descricaoCard.BackColor = Color.White;
             descricaoCard.BorderStyle = BorderStyle.FixedSingle;
             descricaoCard.Margin = new Padding(10);
@@ -101,7 +101,7 @@ namespace ProjetoTeste.Home_Tecnico
             lblDescricao.AutoSize = false;
             lblDescricao.Dock = DockStyle.Fill;
             lblDescricao.TextAlign = ContentAlignment.TopLeft;
-            lblDescricao.MaximumSize = new Size(280, 0);
+            lblDescricao.MaximumSize = new Size(600, 0);
 
 
             descricaoCard.Controls.Add(lblDescricao);

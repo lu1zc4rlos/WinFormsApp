@@ -49,13 +49,10 @@ namespace Projeto_teste.Home
                 }
             }
         }
-
         private void btn_sidebar_Click(object sender, EventArgs e)
         {
                 SideBarTransition.Start();
         }
-
-
         //botões 
         private Button currentButton;
         private void btn_atual(object btnsender)
@@ -74,7 +71,6 @@ namespace Projeto_teste.Home
                 }
             }
         }
-
         private void Btn_normal()
         {
             foreach(Control previousBtn in sideBar.Controls)
@@ -87,8 +83,6 @@ namespace Projeto_teste.Home
                 }
             }
         }
-
-
 
         //requisições de outros forms.
 
@@ -111,7 +105,6 @@ namespace Projeto_teste.Home
                 Chamados.Activate();
             }
         }
-
         private void chamados_FormClosed(object sender, FormClosedEventArgs e)
         {
             Chamados = null;
@@ -127,25 +120,17 @@ namespace Projeto_teste.Home
                 OmegaHelp.FormClosed += OmegaHelp_FormClosed;
                 OmegaHelp.FormClosed += (s, args) => Application.Exit();
                 OmegaHelp.ShowDialog();
-                this.Close();
-               
+                this.Close();              
             }
             else
             {
                 OmegaHelp.Activate();
             }
-
-
         }
-
         private void OmegaHelp_FormClosed(Object sender, FormClosedEventArgs e)
         {
             OmegaHelp = null;
         }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void Home_Load(object sender, EventArgs e) {}
     }
 }

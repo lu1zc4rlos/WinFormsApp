@@ -10,6 +10,9 @@
 		<NoWarn>$(NoWarn);CA1416</NoWarn>
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Imagens\Image1.png" />
+	</ItemGroup>
+	<ItemGroup>
 		<ProjectReference Include="..\Banco de dados\DAL.csproj" />
 		<ProjectReference Include="..\Entidades\Entidades.csproj" />
 		<ProjectReference Include="..\Regras de negócio\BLL.csproj" />
